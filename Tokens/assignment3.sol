@@ -19,11 +19,14 @@ contract ASSignment3 is ERC721URIStorage, Ownable {
     bool publicSaleOpen;
     address[] public verifiedUsers;
     uint256 id;
+    string private baseURI;
 
-    constructor(uint256 _preSaleLimit) ERC721("STAKE", "NSX") {
+    constructor(uint256 _preSaleLimit, string memory _baseURI) ERC721("STAKE", "NSX") {
         preSaleLimit = _preSaleLimit;
+        baseURI = _baseURI;
         preSaleOpen = true;
         preSaleEnd = block.timestamp + 120;
+
     }
 
     function user(address addr) public onlyOwner {
@@ -51,7 +54,7 @@ contract ASSignment3 is ERC721URIStorage, Ownable {
             preSaleClaimed += 1;
             _setTokenURI(
                 id,
-                string(abi.encodePacked(uri, Strings.toString(id), ".json"))
+                string(abi.encodePacked(baseURI, Strings.toString(id), ".json"))
             );
             console.log(tokenURI(id));
         }
@@ -73,7 +76,7 @@ contract ASSignment3 is ERC721URIStorage, Ownable {
             publicSaleClaimed += 1;
             _setTokenURI(
                 id,
-                string(abi.encodePacked(uri, Strings.toString(id), ".json"))
+                string(abi.encodePacked(baseURI, Strings.toString(id), ".json"))
             );
         }
     }

@@ -11,6 +11,11 @@
 						"internalType": "uint256",
 						"name": "_preSaleLimit",
 						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_baseURI",
+						"type": "string"
 					}
 				],
 				"stateMutability": "nonpayable",
@@ -730,11 +735,11 @@
 			]
 		},
 		"Tokens/assignment3.sol": {
-			"keccak256": "0x5bc2d63f1d4165d4716dd6b163239c70e49cfebb765149f8ea7494f4a970a393",
+			"keccak256": "0xb8a0042c2ae788bc310bd8b519f3f02c4c4b867c53391a86b4fd434b8e616106",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://d1359fa0a608319abae3faabc1f0a993314e3004f5abba233e5b0a2180a7f6a3",
-				"dweb:/ipfs/QmRD48eXz6PdQzocfoMqFsfBuUN8UmhpXWBJC1QNMqq1Vj"
+				"bzz-raw://6509f116938eb962e68a576bab6044f8bc118f0fd11c6b361209ed8133d877fd",
+				"dweb:/ipfs/Qmb1Peee8z7Lvn5duHy2bVRP1pLrJ7d1iAA5qFiGbczkrc"
 			]
 		},
 		"hardhat/console.sol": {
