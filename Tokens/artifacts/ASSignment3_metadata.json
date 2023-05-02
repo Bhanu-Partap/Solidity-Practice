@@ -266,11 +266,6 @@
 						"internalType": "uint256",
 						"name": "_quantity",
 						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "uri",
-						"type": "string"
 					}
 				],
 				"name": "preMint",
@@ -310,11 +305,6 @@
 						"internalType": "uint256",
 						"name": "_quantity",
 						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "uri",
-						"type": "string"
 					}
 				],
 				"name": "publicMint",
@@ -735,11 +725,11 @@
 			]
 		},
 		"Tokens/assignment3.sol": {
-			"keccak256": "0xb8a0042c2ae788bc310bd8b519f3f02c4c4b867c53391a86b4fd434b8e616106",
+			"keccak256": "0xc0df0d0af868620e4b5fd9649bd5d4698a5bf5c9d6e0e081943cda1723991b25",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6509f116938eb962e68a576bab6044f8bc118f0fd11c6b361209ed8133d877fd",
-				"dweb:/ipfs/Qmb1Peee8z7Lvn5duHy2bVRP1pLrJ7d1iAA5qFiGbczkrc"
+				"bzz-raw://0e2f33ac1508b598a29e151bdda3b8b6046fc2558d80e03a0b429fd2e9fc45a8",
+				"dweb:/ipfs/Qmeh5Xu4zZWaESY7HvS3kQLWe5sstCfctHFNWhm7QhwZiK"
 			]
 		},
 		"hardhat/console.sol": {
