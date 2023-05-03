@@ -4,6 +4,7 @@ pragma solidity ^0.8.9;
 import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC1155/extensions/ERC1155Supply.sol";
+import "@openzeppelin/contracts/utils/Strings.sol";
 
 contract Multitokens is ERC1155, Ownable, ERC1155Supply {
     constructor() ERC1155("") {}
@@ -27,8 +28,8 @@ contract Multitokens is ERC1155, Ownable, ERC1155Supply {
     }
 
     
-    function setURI(string memory newuri) public onlyOwner {
-        _setURI(newuri);
+    function uri(uint256 id) public view virtual override returns (string memory) {
+        // return string(abi.encodePacked(super.uri(id),Strings.toString(id));
     }
 
     // The following functions are overrides required by Solidity.

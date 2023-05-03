@@ -261,6 +261,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "preCharge",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -725,11 +738,11 @@
 			]
 		},
 		"Tokens/assignment3.sol": {
-			"keccak256": "0xc0df0d0af868620e4b5fd9649bd5d4698a5bf5c9d6e0e081943cda1723991b25",
+			"keccak256": "0xb9066d9c9e6ac88aa40ae39e93f0f0b633ca413634545b035b77b518862f89c2",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://0e2f33ac1508b598a29e151bdda3b8b6046fc2558d80e03a0b429fd2e9fc45a8",
-				"dweb:/ipfs/Qmeh5Xu4zZWaESY7HvS3kQLWe5sstCfctHFNWhm7QhwZiK"
+				"bzz-raw://46dae64cbde37cdd3b17d32b98dc63c24e0742f9f277ea860fadb38adf5821da",
+				"dweb:/ipfs/QmeWV8j99V8p33Q8Xapvb94bnTzmTvRhcnZ7CgNbrKkk5Q"
 			]
 		},
 		"hardhat/console.sol": {

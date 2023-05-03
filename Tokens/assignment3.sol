@@ -16,6 +16,7 @@ contract ASSignment3 is ERC721URIStorage, Ownable {
     uint256 publicSaleStart;
     uint256 public publicSaleClaimed;
     bool preSaleOpen;
+    uint256 public preCharge = 20 wei;
     bool publicSaleOpen;
     address[] public verifiedUsers;
     uint256 id;
@@ -45,7 +46,7 @@ contract ASSignment3 is ERC721URIStorage, Ownable {
         require(msg.sender == _address, "Not a Verified User");
         require(preSaleLimit > preSaleClaimed, " Stock Out");
         require(
-            msg.value >= 20 wei * _quantity,
+            msg.value >= preCharge * _quantity,
             "Have to pay the correct amount"
         );
         for (i = 0; i < _quantity; i++) {
