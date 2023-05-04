@@ -150,6 +150,24 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "allowListMint",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
 						"name": "account",
 						"type": "address"
@@ -626,11 +644,11 @@
 			]
 		},
 		"Tokens/ERC1155 Wizard.sol": {
-			"keccak256": "0x31114fd1a96123986de2d43f3795bbf23453be8b8e181bed792319452a9d9ab8",
+			"keccak256": "0x59c89690d1e767e6ee91b9c2935fe35ba00b6897d20ee3571599ba9e9e870652",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://68c43457b834411d92effce45eccb416cb2f19990453fc797767f480630f922c",
-				"dweb:/ipfs/Qmb5eEkLfqo21Cu6jFexNjKhAF1zDDqjkmWtcHpnNKPRoY"
+				"bzz-raw://5486db1f9be62390ecb8948d64a3728a460b704c8e6bacf0ae158992878c0b12",
+				"dweb:/ipfs/QmWPb6BSxX6JJ7R1z8ktbKnM3KEMFJ4F6RTwng2ytrXgb7"
 			]
 		}
 	},

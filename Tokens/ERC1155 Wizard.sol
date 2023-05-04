@@ -11,13 +11,20 @@ contract Multitokens is ERC1155, Ownable, ERC1155Supply {
 
     uint256 public constant maxSupply = 50;
 
+    function allowListMint(uint256 id, uint256 amount) public payable  {
+        require(msg.value == 20 wei * amount ,"Not Enough money sent !");
+        require(id<2, "Sorry you are mintng wrong nft");
+        require(totalSupply(id) + amount <=maxSupply, "Limiy exeeded");
+        _mint(msg.sender, id, amount, " ");
+        
+    }
 
     function mint( uint256 id, uint256 amount)
         public
         payable 
     {
         require(id<2, "Sorry you are mintng wrong nft");
-        require(msg.value == 0.0002 ether * amount, "Enter right amount");
+        require(msg.value == 40 wei * amount, "Enter right amount");
         require(totalSupply(id) + amount <=maxSupply, "Limiy exeeded");
         _mint(msg.sender, id, amount, " ");
     }
