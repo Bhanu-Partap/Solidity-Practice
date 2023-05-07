@@ -84,6 +84,25 @@
 						"type": "address"
 					}
 				],
+				"name": "balanceO",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
 				"name": "balanceOf",
 				"outputs": [
 					{
@@ -176,11 +195,11 @@
 	},
 	"sources": {
 		"Tokens/ERC - 20.sol": {
-			"keccak256": "0xf6f28d5271f69b10f593362de132c951e9a0aad827f65a5996edd252cb97962c",
+			"keccak256": "0x968aa5f99a457070b446dd9b47af8fa196afa702e0df509c67adcc971af19c7e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://23d24f4922d50b9debdab97de3ebc750f04d563678ac6e43c56774d7727829e0",
-				"dweb:/ipfs/Qmf13kZtTdLfJbTPFBWoUj9ZcXS9sBcnaMYLYWefTH5KKF"
+				"bzz-raw://42f53185b436118b1c23b9462701be3f203b57892b738b36e8db648c6d1afc27",
+				"dweb:/ipfs/QmWBQuC6XLRtr4wferxSrhq5GbFc9BoUGPNxQiS7rLB4F4"
 			]
 		}
 	},

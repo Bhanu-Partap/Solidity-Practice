@@ -29,5 +29,9 @@ contract ERC20{
         return balances[_owner];
     }
 
+    function balanceO(address _owner) public view returns(uint256){
+        require(_owner != address(0)," Not the owner");
+        return balances[_owner];
+    }
 
 }
