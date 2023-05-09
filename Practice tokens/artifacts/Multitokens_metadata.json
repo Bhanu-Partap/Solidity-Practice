@@ -590,7 +590,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Tokens/ERC1155 Wizard.sol": "Multitokens"
+			"Practice tokens/ERC1155 Wizard.sol": "Multitokens"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -700,7 +700,7 @@
 				"dweb:/ipfs/Qmct36zWXv3j7LZB83uwbg7TXwnZSN1fqHNDZ93GG98bGz"
 			]
 		},
-		"Tokens/ERC1155 Wizard.sol": {
+		"Practice tokens/ERC1155 Wizard.sol": {
 			"keccak256": "0xe6aa0fd6a257d2cc9ab704f58e6ffd3f004f82be001cff4fe49354b466cea4f6",
 			"license": "MIT",
 			"urls": [

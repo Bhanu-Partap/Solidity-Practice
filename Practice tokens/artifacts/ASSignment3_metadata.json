@@ -627,7 +627,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Tokens/assignment3.sol": "ASSignment3"
+			"Practice tokens/assignment3.sol": "ASSignment3"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -737,7 +737,7 @@
 				"dweb:/ipfs/Qmct36zWXv3j7LZB83uwbg7TXwnZSN1fqHNDZ93GG98bGz"
 			]
 		},
-		"Tokens/assignment3.sol": {
+		"Practice tokens/assignment3.sol": {
 			"keccak256": "0xb9066d9c9e6ac88aa40ae39e93f0f0b633ca413634545b035b77b518862f89c2",
 			"license": "MIT",
 			"urls": [

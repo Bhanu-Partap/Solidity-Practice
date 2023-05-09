@@ -375,7 +375,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Tokens/zepplin1155.sol": "ERC1155"
+			"Practice tokens/zepplin1155.sol": "ERC1155"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -453,7 +453,7 @@
 				"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy"
 			]
 		},
-		"Tokens/zepplin1155.sol": {
+		"Practice tokens/zepplin1155.sol": {
 			"keccak256": "0x012bfeeadbd0030e44036a6a0be2ffbe19b3d0768c5f98cf291c900d4c71cae6",
 			"license": "MIT",
 			"urls": [

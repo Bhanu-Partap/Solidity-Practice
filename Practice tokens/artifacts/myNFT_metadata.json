@@ -528,7 +528,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Tokens/NFT.sol": "myNFT"
+			"Practice tokens/NFT.sol": "myNFT"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -542,7 +542,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"Tokens/NFT.sol": {
+		"Practice tokens/NFT.sol": {
 			"keccak256": "0x474fa49c76378dd40dbdeae73d6017c9c0688f3f3400eb8f8a765d08e51e8674",
 			"license": "MIT",
 			"urls": [

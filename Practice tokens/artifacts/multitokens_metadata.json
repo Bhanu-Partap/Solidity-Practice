@@ -437,7 +437,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Tokens/ERC-1155.sol": "multitokens"
+			"Practice tokens/ERC-1155.sol": "multitokens"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -571,7 +571,7 @@
 				"dweb:/ipfs/Qmct36zWXv3j7LZB83uwbg7TXwnZSN1fqHNDZ93GG98bGz"
 			]
 		},
-		"Tokens/ERC-1155.sol": {
+		"Practice tokens/ERC-1155.sol": {
 			"keccak256": "0xdd399792d96188ded3a37ba402bf0f85c9ef60119a2c7fe21c0886efd0f71b58",
 			"license": "MIT",
 			"urls": [
