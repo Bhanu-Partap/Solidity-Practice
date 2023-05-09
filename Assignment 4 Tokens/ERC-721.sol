@@ -12,7 +12,7 @@ contract MyNFT is ERC721URIStorage, Ownable {
 
     Counters.Counter private _tokenIds;
 
-    constructor() ERC721("Abhishek Garg", "AG") {}
+    constructor() ERC721("Nitro", "NSX") {}
     uint mintCount=3;
 
 

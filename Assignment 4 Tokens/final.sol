@@ -1,7 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract finaL {
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+
+
+contract finaL is ERC721{
     struct auction{
         uint256 amount;
         address owner;
@@ -13,8 +16,10 @@ contract finaL {
         string _nft_type;
     }
 
-    constructor(string memory name, string memory symbol) ERC721(name, symbol){
+    constructor(string memory _name, string memory _symbol) ERC721(_name, _symbol) {}
+
+
+    function mint()public {
 
     }
-
 }
