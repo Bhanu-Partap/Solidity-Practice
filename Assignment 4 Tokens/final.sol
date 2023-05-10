@@ -19,7 +19,7 @@ contract finaL is ERC721{
         mapping(address => mapping(uint256 =>itemD)) public itemDetails;
 
         // events
-        event Createitem(address owner,uint id,string name, string description);
+        event createItem(address owner,uint id,string name, string description);
         event Bid(address _address, uint256 _bidamount);
         event transfer(address _from, address _to, itemD  _item);
     
@@ -30,9 +30,7 @@ contract finaL is ERC721{
         itemDetails[msg.sender][id].highestBider=address(0);
         itemDetails[msg.sender][id].lastHighestBider=address (0);
         itemDetails[msg.sender][id].auction_time=block.timestamp + 120;
-
-
-        
+        emit createItem(msg.sender, id , _name);
     }
 
     function placeBid(uint256 id)public payable  {
