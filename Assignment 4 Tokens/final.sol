@@ -35,6 +35,9 @@ contract finaL {
 
     function placeBid(address _address,uint256 id)public payable  {
         itemDetails[_address][id].lastBid=msg.value;
+        
+        );
+
     }
 
     function getHighestBid(address _bidder,uint256 _amount)public {
