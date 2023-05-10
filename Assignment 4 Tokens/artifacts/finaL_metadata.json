@@ -305,11 +305,11 @@
 	},
 	"sources": {
 		"Assignment 4 Tokens/final.sol": {
-			"keccak256": "0x346f618dc815d39b58835284e8a7e1e816f0167c0e8ae9e1ace16a52710bfd50",
+			"keccak256": "0x11320b08bd1ea20a1d6b227e8396f773d9acc2b2907b169d3f4b390a87d1b83f",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://fef5c54f834239011a941d5e4a7345ce827933e251cd5134c885fd71530201c4",
-				"dweb:/ipfs/QmeDMTu57xkk6ePicMxNZ1B6bhYyUmAkTAN3iefAPTRRJx"
+				"bzz-raw://fa131b3f074bc080b67baacb98189deb08cda88739c70ee85ad5d04a87830af6",
+				"dweb:/ipfs/QmdxfMpjgy1EGMQKCCRiFXk2gNWLgQRP9DYjDpncBpQb9y"
 			]
 		}
 	},

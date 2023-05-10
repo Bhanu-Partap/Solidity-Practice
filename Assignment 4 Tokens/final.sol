@@ -38,6 +38,8 @@ contract finaL {
         itemDetails[_address][id].highestBid=itemDetails[_address][id].lastBid;
         itemDetails[_address][id].lastHighestBider=msg.sender;
         itemDetails[_address][id].highestBider=msg.sender;
+        payable(itemDetails[_address][id].lastHighestBider).transfer(itemDetails[_address][id].highestBid);
+        emit Bid(msg.sender, msg.value);
 
     }
 
