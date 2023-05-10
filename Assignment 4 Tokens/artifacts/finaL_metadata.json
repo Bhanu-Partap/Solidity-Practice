@@ -159,17 +159,23 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "_bidder",
+						"name": "_address",
 						"type": "address"
 					},
 					{
 						"internalType": "uint256",
-						"name": "_amount",
+						"name": "id",
 						"type": "uint256"
 					}
 				],
 				"name": "getHighestBid",
-				"outputs": [],
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
@@ -305,11 +311,11 @@
 	},
 	"sources": {
 		"Assignment 4 Tokens/final.sol": {
-			"keccak256": "0x11320b08bd1ea20a1d6b227e8396f773d9acc2b2907b169d3f4b390a87d1b83f",
+			"keccak256": "0x104813e645ab40c19c5aed7b2066ab8f8c22f10e99eee417c62c08297ff7c537",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://fa131b3f074bc080b67baacb98189deb08cda88739c70ee85ad5d04a87830af6",
-				"dweb:/ipfs/QmdxfMpjgy1EGMQKCCRiFXk2gNWLgQRP9DYjDpncBpQb9y"
+				"bzz-raw://7e61882807aa2a890a1ed13f87d04dde6895e10d36d64ffd96b9b85e5bb9a123",
+				"dweb:/ipfs/QmWhL3KEgDa6gT4mMEBEjPA5DH7x5dVnEL8uZWrUxM7mu1"
 			]
 		}
 	},

@@ -43,8 +43,8 @@ contract finaL {
 
     }
 
-    function getHighestBid(address _bidder,uint256 _amount)public {
-        
+    function getHighestBid(address _address, uint256 id)public  returns(uint256) {
+        return itemDetails[_address][id].highestBid;
     }
 
     function getWinningBidder(address _bidder,uint256 _amount)public {
