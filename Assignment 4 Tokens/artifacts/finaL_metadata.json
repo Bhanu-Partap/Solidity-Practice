@@ -87,14 +87,14 @@
 								"type": "address"
 							},
 							{
-								"internalType": "address",
-								"name": "lastHighestBider",
-								"type": "address"
-							},
-							{
 								"internalType": "uint256",
 								"name": "auction_time",
 								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "lastHighestBider",
+								"type": "address"
 							}
 						],
 						"indexed": false,
@@ -122,19 +122,6 @@
 				"name": "CreateItem",
 				"outputs": [],
 				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "auctioneer",
-				"outputs": [
-					{
-						"internalType": "address payable",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -239,14 +226,14 @@
 						"type": "address"
 					},
 					{
-						"internalType": "address",
-						"name": "lastHighestBider",
-						"type": "address"
-					},
-					{
 						"internalType": "uint256",
 						"name": "auction_time",
 						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "lastHighestBider",
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -317,11 +304,11 @@
 	},
 	"sources": {
 		"Assignment 4 Tokens/final.sol": {
-			"keccak256": "0x9c67115e3d1a6e946988e068b59a0e7aae2bdf9ec2842f992a02bcdfdc2bada3",
+			"keccak256": "0xb673cf509aaa382b5cdc6b78b17cfa224a879b27dffb8fa1deacc6e2e81e1922",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://1d65b6900d88ea4f6e186054d6be3ff82b53c2fa6e98053ed6c1a72f78db6ed3",
-				"dweb:/ipfs/QmPDUeCKJ3uNKPCadyMn9d29zPD6St7KjwMKX9WnTbGspj"
+				"bzz-raw://9ebef47cb11db2c6c93e54e642cba7b2e557c7b46ff585ed1d910109a98921c9",
+				"dweb:/ipfs/QmUaLC8Evtq6voc7hnmbCtt9nE5dGAk1yPzMAic4PidLLM"
 			]
 		}
 	},

@@ -13,7 +13,6 @@ contract finaL  {
         uint256 auction_time;
         address lastHighestBider;
     }
-        address payable public auctioneer;
 
         // mapping
         mapping(address => mapping(uint256 =>itemD)) public itemDetails;
@@ -24,6 +23,7 @@ contract finaL  {
         event transfer(address _from, address _to, itemD  _item);
     
     function CreateItem(uint256 id, string memory _name) public {
+        require(msg.sender != address(0) ,"Not Valid");
         itemDetails[msg.sender][id].name=_name;
         itemDetails[msg.sender][id].lastBid=0;
         itemDetails[msg.sender][id].highestBid=0;
@@ -34,6 +34,9 @@ contract finaL  {
     }
 
     function placeBid(address _address,uint256 id)public payable  {
+        require(_address != msg.sender," owner can't bid");
+        require(itemDetails[_address][id].auction_time > 0," Nothing to Place the Bid ");
+        require(msg.value > itemDetails[_address][id].highestBid," Increase the amount by 1 ether");
         itemDetails[_address][id].lastBid=msg.value;
         itemDetails[_address][id].highestBid=itemDetails[_address][id].lastBid;
         itemDetails[_address][id].lastHighestBider=msg.sender;
@@ -57,7 +60,6 @@ contract finaL  {
     }
 
     function ownershipTransfer(address _address,uint256 id)public {
-        transferFrom();
-        emit  transfer(msg.sender,  _address,  id);
+
     }
 }
