@@ -141,12 +141,12 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "_bidder",
+						"name": "_address",
 						"type": "address"
 					},
 					{
 						"internalType": "uint256",
-						"name": "_amount",
+						"name": "id",
 						"type": "uint256"
 					}
 				],
@@ -317,11 +317,11 @@
 	},
 	"sources": {
 		"Assignment 4 Tokens/final.sol": {
-			"keccak256": "0x6373dd060a4850f45785964ad8ff60e1debab4e1c063e13b8db1dd858e5b7d66",
+			"keccak256": "0x3921b63f880fff010281afccc2bd674ee3dad351e026db4c825e307d4f0175ad",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f86eac9c61d5259919f338fbdd617095f394c714d8f448df6e6c9624703e4c6d",
-				"dweb:/ipfs/QmYvRhe5brWh9Q58LVv3uyhokpyxW4Dw9bXQuVZfaU5yRN"
+				"bzz-raw://ef7ae25d199bb6fae91fc960473e0ebdc038f7cda49021db57138f53a4af6bf3",
+				"dweb:/ipfs/QmPc2SMawrVxwHH8BqyAWAx45RpZR3SVvLHb8aTKQvc4sG"
 			]
 		}
 	},

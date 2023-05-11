@@ -51,8 +51,8 @@ contract finaL {
         return itemDetails[_address][id].highestBider;
     }
 
-    function cancelAuction(address _bidder,uint256 _amount)public {
-        
+    function cancelAuction(address _address,uint256 id)public {
+        payable (itemDetails[_address][id].highestBider).transfer(itemDetails[_address][id].highestBid);
     }
 
     function ownershipTransfer(address _bidder,uint256 _amount)public {
