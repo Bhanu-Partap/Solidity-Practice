@@ -4,14 +4,14 @@ pragma solidity ^0.8.0;
 // import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 
-contract finaL {
+contract finaL  {
     struct itemD{
         string name;
         uint256 lastBid;
         uint256 highestBid;
         address highestBider;
-        address lastHighestBider;
         uint256 auction_time;
+        address lastHighestBider;
     }
         address payable public auctioneer;
 
@@ -53,9 +53,11 @@ contract finaL {
 
     function cancelAuction(address _address,uint256 id)public {
         payable (itemDetails[_address][id].highestBider).transfer(itemDetails[_address][id].highestBid);
+
     }
 
-    function ownershipTransfer(address _bidder,uint256 _amount)public {
-        
+    function ownershipTransfer(address _address,uint256 id)public {
+        transferFrom();
+        emit  transfer(msg.sender,  _address,  id);
     }
 }
