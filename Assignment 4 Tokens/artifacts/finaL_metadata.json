@@ -242,7 +242,7 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
+						"internalType": "address payable",
 						"name": "_address",
 						"type": "address"
 					},
@@ -304,11 +304,11 @@
 	},
 	"sources": {
 		"Assignment 4 Tokens/final.sol": {
-			"keccak256": "0xb673cf509aaa382b5cdc6b78b17cfa224a879b27dffb8fa1deacc6e2e81e1922",
+			"keccak256": "0xc2cbcd5726cf23ea2e3b8d3d4993dc2ee7d1bce0454d167a39207ee6f94f5be6",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://9ebef47cb11db2c6c93e54e642cba7b2e557c7b46ff585ed1d910109a98921c9",
-				"dweb:/ipfs/QmUaLC8Evtq6voc7hnmbCtt9nE5dGAk1yPzMAic4PidLLM"
+				"bzz-raw://2b1026893e37b00c608d5b330e2cbac41ac6ff7592f3d6365468e52134ec1ed9",
+				"dweb:/ipfs/QmS9GS7Y45wPQRcJ2B2j3vDX7LiUT8Qjhy65M2oz6XJxJS"
 			]
 		}
 	},

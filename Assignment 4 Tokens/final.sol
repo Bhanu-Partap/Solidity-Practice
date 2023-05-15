@@ -55,12 +55,12 @@ contract finaL  {
     }
 
     function cancelAuction(address _address,uint256 id)public {
-        require(condition);
+
         payable (itemDetails[_address][id].highestBider).transfer(itemDetails[_address][id].highestBid);
 
     }
 
-    function ownershipTransfer(address _address,uint256 id)public {
+    function ownershipTransfer(address payable  _address,uint256 id)public {
 
     }
 }
