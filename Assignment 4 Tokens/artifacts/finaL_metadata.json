@@ -250,6 +250,11 @@
 						"internalType": "uint256",
 						"name": "id",
 						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "id2",
+						"type": "uint256"
 					}
 				],
 				"name": "ownershipTransfer",
@@ -304,11 +309,11 @@
 	},
 	"sources": {
 		"Assignment 4 Tokens/final.sol": {
-			"keccak256": "0xc2cbcd5726cf23ea2e3b8d3d4993dc2ee7d1bce0454d167a39207ee6f94f5be6",
+			"keccak256": "0x84594390487af73b68f5575dcde0f0759d7656255514dd19115b8f666fa98a26",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2b1026893e37b00c608d5b330e2cbac41ac6ff7592f3d6365468e52134ec1ed9",
-				"dweb:/ipfs/QmS9GS7Y45wPQRcJ2B2j3vDX7LiUT8Qjhy65M2oz6XJxJS"
+				"bzz-raw://4996c5fed78a0c4b8a04642487be8c858eb519db439c5630fba4c40d9fc8c6f0",
+				"dweb:/ipfs/QmdpoQ8uNFkyktoT6ZiPRytM2sszjeVsynjEV8rsRVsNJg"
 			]
 		}
 	},

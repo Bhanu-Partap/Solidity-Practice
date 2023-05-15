@@ -60,7 +60,9 @@ contract finaL  {
 
     }
 
-    function ownershipTransfer(address payable  _address,uint256 id)public {
-
+    function ownershipTransfer(address payable  _address,uint256 id, uint256 id2)public {
+        _address.transfer(itemDetails[_address][id].highestBid);
+        itemDetails[itemDetails[_address][id].highestBider][id2]= itemDetails[_address][id];
+        delete itemDetails[_address][id];
     }
 }
