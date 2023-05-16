@@ -16,6 +16,7 @@ contract finaL  {
     }
 
         address Owner;
+
         // mapping
         mapping(address => mapping(uint256 =>itemD)) public itemDetails;
 
@@ -63,7 +64,7 @@ contract finaL  {
     }
 
     function cancelAuction(address _address,uint256 id) public  {
-        require(msg.sender == _address," Only Owner can cancel the Auction");
+        require(msg.sender == Owner," Only Owner can cancel the Auction");
         payable (itemDetails[_address][id].highestBider).transfer(itemDetails[_address][id].highestBid);
 
     }
