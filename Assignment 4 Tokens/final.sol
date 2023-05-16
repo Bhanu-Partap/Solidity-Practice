@@ -2,6 +2,7 @@
 pragma solidity ^0.8.0;
 
 // import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
 
 contract finaL  {
@@ -12,10 +13,6 @@ contract finaL  {
         address highestBider;
         uint256 auction_time;
         address lastHighestBider;
-    }
-
-    constructor ()  {
-      address  _owner = msg.sender; 
     }
 
         // mapping
@@ -58,8 +55,8 @@ contract finaL  {
         return itemDetails[_address][id].highestBider;
     }
 
-    function cancelAuction(address _address,uint256 id)public  {
-
+    function cancelAuction(address _address,uint256 id) public  {
+        require(msg.sender == _address," Only Owner can cancel the Auction");
         payable (itemDetails[_address][id].highestBider).transfer(itemDetails[_address][id].highestBid);
 
     }

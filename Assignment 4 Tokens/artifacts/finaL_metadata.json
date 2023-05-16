@@ -6,11 +6,6 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
 				"anonymous": false,
 				"inputs": [
 					{
@@ -313,12 +308,28 @@
 		"remappings": []
 	},
 	"sources": {
-		"Assignment 4 Tokens/final.sol": {
-			"keccak256": "0x433e7e8111aaa96f84d31848026f3dc0f48d2e7c8b504e41a845985349d17a42",
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f68642e3eb4c70e52fe54bddc33d45a7266e7ec8c2e36ae1a4bc7019ff58c348",
-				"dweb:/ipfs/QmRaz939DK8pE5TTt8wQHpnYm2wA7y7Rjb8iPKzV32EUme"
+				"bzz-raw://40fb1b5102468f783961d0af743f91b9980cf66b50d1d12009f6bb1869cea4d2",
+				"dweb:/ipfs/QmYqEbJML4jB1GHbzD4cUZDtJg5wVwNm3vDJq1GbyDus8y"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
+				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
+			]
+		},
+		"Assignment 4 Tokens/final.sol": {
+			"keccak256": "0x9ac70d7ea4f23c242453ffc391314a6c5c7803ba157da363afa81938a4dab414",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://efe2b227215f85b5ea51cabf8d760978cde9c6033c4c1cd1b043ed6b132e27a2",
+				"dweb:/ipfs/QmdnASc9AJdVhSrzYMdJuj1JzmTBiU44J18qxHUxqDBTMn"
 			]
 		}
 	},
