@@ -100,11 +100,6 @@
 								"internalType": "address",
 								"name": "lastHighestBider",
 								"type": "address"
-							},
-							{
-								"internalType": "address",
-								"name": "Owner",
-								"type": "address"
 							}
 						],
 						"indexed": false,
@@ -244,11 +239,6 @@
 						"internalType": "address",
 						"name": "lastHighestBider",
 						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "Owner",
-						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -340,11 +330,11 @@
 			]
 		},
 		"Assignment 4 Tokens/final.sol": {
-			"keccak256": "0xaf8ff1e826af50db59c763751754e06dd65dc47d11a4559621d5c8eb03732199",
+			"keccak256": "0x877fd63dbbd2a21b0dc05b9673a68b3a91f814103b84af4c525ea20ed075cd90",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://21f02564fb62103b8e8a53fea5fa164042490c872fef9f91af8089c225567a2d",
-				"dweb:/ipfs/QmQapc8WroTHL5WjwMLwG5fMJFMfpnBELQtZaYJGB9SGGH"
+				"bzz-raw://589190842e5a2f80434cbcb61e532182ecbf2f76f2a3f5e630b9dcdbbfacf9c9",
+				"dweb:/ipfs/QmQsDMjMAFJoboYBfxYxEgMP12HMBJ82pTnWR7cPkZq1aZ"
 			]
 		}
 	},

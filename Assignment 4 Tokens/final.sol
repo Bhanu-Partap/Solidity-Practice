@@ -13,18 +13,16 @@ contract finaL  {
         address highestBider;
         uint256 auction_time;
         address lastHighestBider;
-        address Owner;
     }
 
+        address Owner;
         // mapping
         mapping(address => mapping(uint256 =>itemD)) public itemDetails;
 
 
-        constructor(){
-             itemDetails[msg.sender][id].Owner = msg.sender;
+        constructor() {
+            Owner = msg.sender;
          }
-
-
 
         // events
         event createItem(address owner,uint id,string name);
@@ -56,11 +54,11 @@ contract finaL  {
 
     }
 
-    function getHighestBid(address _address, uint256 id)public view returns(uint256) {
+    function getHighestBid(address _address, uint256 id) public view returns(uint256) {
         return itemDetails[_address][id].highestBid;
     }
 
-    function getWinningBidder(address _address,uint256 id)public view returns(address){
+    function getWinningBidder(address _address,uint256 id) public view returns(address){
         return itemDetails[_address][id].highestBider;
     }
 
@@ -70,7 +68,7 @@ contract finaL  {
 
     }
 
-    function ownershipTransfer(address payable  _address,uint256 id, uint256 id2)public {
+    function ownershipTransfer(address payable  _address,uint256 id, uint256 id2) public {
         _address.transfer(itemDetails[_address][id].highestBid);
         itemDetails[itemDetails[_address][id].highestBider][id2]= itemDetails[_address][id];
         delete itemDetails[_address][id];
