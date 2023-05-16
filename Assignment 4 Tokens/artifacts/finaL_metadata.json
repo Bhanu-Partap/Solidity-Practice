@@ -6,6 +6,11 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
 				"anonymous": false,
 				"inputs": [
 					{
@@ -94,6 +99,11 @@
 							{
 								"internalType": "address",
 								"name": "lastHighestBider",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "Owner",
 								"type": "address"
 							}
 						],
@@ -234,6 +244,11 @@
 						"internalType": "address",
 						"name": "lastHighestBider",
 						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "Owner",
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -325,11 +340,11 @@
 			]
 		},
 		"Assignment 4 Tokens/final.sol": {
-			"keccak256": "0xb1ee7f1282cd81cc78dc4a5689882bd99c967c4caaccfa565239c1ba7b909b87",
+			"keccak256": "0xaf8ff1e826af50db59c763751754e06dd65dc47d11a4559621d5c8eb03732199",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f4496c0ad3bca0005efecb043f9dca904bbf3e88ee97dacc8745055d6121943d",
-				"dweb:/ipfs/QmbRYmERU412mJuuyfD1AXj1tGFxT9DrntL751rnEsKJ53"
+				"bzz-raw://21f02564fb62103b8e8a53fea5fa164042490c872fef9f91af8089c225567a2d",
+				"dweb:/ipfs/QmQapc8WroTHL5WjwMLwG5fMJFMfpnBELQtZaYJGB9SGGH"
 			]
 		}
 	},

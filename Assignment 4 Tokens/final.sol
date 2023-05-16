@@ -13,10 +13,18 @@ contract finaL  {
         address highestBider;
         uint256 auction_time;
         address lastHighestBider;
+        address Owner;
     }
 
         // mapping
         mapping(address => mapping(uint256 =>itemD)) public itemDetails;
+
+
+        constructor(){
+             itemDetails[msg.sender][id].Owner = msg.sender;
+         }
+
+
 
         // events
         event createItem(address owner,uint id,string name);
