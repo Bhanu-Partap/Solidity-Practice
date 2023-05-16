@@ -14,6 +14,10 @@ contract finaL  {
         address lastHighestBider;
     }
 
+    // constructor () {
+    //     owner
+    // }
+
         // mapping
         mapping(address => mapping(uint256 =>itemD)) public itemDetails;
 
