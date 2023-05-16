@@ -39,11 +39,11 @@ contract finaL  {
         require(itemDetails[_address][id].auction_time > block.timestamp," Nothing to Place the Bid ");
         require(msg.value >= 1 ether, "Not a Valid Amount");
         require(msg.value > itemDetails[_address][id].highestBid," Increase the amount by 1 ether");
-        // itemDetails[_address][id].lastBid=itemDetails[_address][id].highestBid;
+        itemDetails[_address][id].lastBid=itemDetails[_address][id].highestBid;
+        itemDetails[_address][id].lastHighestBider=itemDetails[_address][id].highestBider;
         itemDetails[_address][id].highestBid=msg.value;
-        itemDetails[_address][id].lastHighestBider=msg.sender;
         itemDetails[_address][id].highestBider=msg.sender;
-        payable(address(this)).transfer(itemDetails[_address][id].highestBid);
+        payable(itemDetails[_address][id].lastHighestBider).transfer(itemDetails[_address][id].lastBid);
         emit Bid(msg.sender, msg.value);
 
     }
