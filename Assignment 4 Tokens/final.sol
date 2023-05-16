@@ -35,10 +35,10 @@ contract finaL  {
     }
 
     function placeBid(address _address,uint256 id)public payable  {
-        // require(_address != msg.sender," owner can't bid");
+        require(_address != msg.sender," owner can't bid");
         require(itemDetails[_address][id].auction_time > block.timestamp," Nothing to Place the Bid ");
-        require(msg.value > itemDetails[_address][id].highestBid," Increase the amount by 1 ether");
         require(msg.value >= 1 ether, "Not a Valid Amount");
+        require(msg.value > itemDetails[_address][id].highestBid," Increase the amount by 1 ether");
         itemDetails[_address][id].lastBid=msg.value;
         itemDetails[_address][id].highestBid=itemDetails[_address][id].lastBid;
         itemDetails[_address][id].lastHighestBider=msg.sender;
