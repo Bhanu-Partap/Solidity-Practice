@@ -6,6 +6,11 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
 				"anonymous": false,
 				"inputs": [
 					{
@@ -309,11 +314,11 @@
 	},
 	"sources": {
 		"Assignment 4 Tokens/final.sol": {
-			"keccak256": "0xba3c9285a18346d9ea989bfb75759ca981eca88468e4e79e704e27c145bd2f2f",
+			"keccak256": "0x433e7e8111aaa96f84d31848026f3dc0f48d2e7c8b504e41a845985349d17a42",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://68f8431ed7051aafbadfc3db4212a3eb702d02277ed0befd06c21721d1c52193",
-				"dweb:/ipfs/QmTn7GaXgYuf4GvCBYJVhfRAxANhCJHxyKJdbQ4TS3fgmi"
+				"bzz-raw://f68642e3eb4c70e52fe54bddc33d45a7266e7ec8c2e36ae1a4bc7019ff58c348",
+				"dweb:/ipfs/QmRaz939DK8pE5TTt8wQHpnYm2wA7y7Rjb8iPKzV32EUme"
 			]
 		}
 	},

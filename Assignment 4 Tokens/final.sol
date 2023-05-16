@@ -14,9 +14,9 @@ contract finaL  {
         address lastHighestBider;
     }
 
-    // constructor () {
-    //     owner
-    // }
+    constructor ()  {
+      address  _owner = msg.sender; 
+    }
 
         // mapping
         mapping(address => mapping(uint256 =>itemD)) public itemDetails;
@@ -58,7 +58,7 @@ contract finaL  {
         return itemDetails[_address][id].highestBider;
     }
 
-    function cancelAuction(address _address,uint256 id)public {
+    function cancelAuction(address _address,uint256 id)public  {
 
         payable (itemDetails[_address][id].highestBider).transfer(itemDetails[_address][id].highestBid);
 
