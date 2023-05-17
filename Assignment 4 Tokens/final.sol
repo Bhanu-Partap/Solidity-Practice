@@ -8,71 +8,71 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract finaL  {
     struct itemD{
         string name;
+        address Owner;
         uint256 lastBid;
         uint256 highestBid;
         address highestBider;
         uint256 auction_time;
         address lastHighestBider;
     }
+    uint itemID =1;
 
-        address Owner;
 
         // mapping
-        mapping(address => mapping(uint256 =>itemD)) public itemDetails;
+        mapping(uint => itemD) public itemDetails;
 
-
-        constructor() {
-            Owner = msg.sender;
-         }
 
         // events
         event createItem(address owner,uint id,string name);
         event Bid(address _address, uint256 _bidamount);
         event transfer(address _from, address _to, itemD  _item);
     
-    function CreateItem(uint256 id, string memory _name) public {
+    function CreateItem( string memory _name) public {
         require(msg.sender != address(0) ,"Not Valid");
-        itemDetails[msg.sender][id].name=_name;
-        itemDetails[msg.sender][id].lastBid=0;
-        itemDetails[msg.sender][id].highestBid=0;
-        itemDetails[msg.sender][id].highestBider=address(0);
-        itemDetails[msg.sender][id].lastHighestBider=address (0);
-        itemDetails[msg.sender][id].auction_time=block.timestamp + 3600;
-        emit createItem(msg.sender, id , _name);
+        itemDetails[itemID].name=_name;
+        itemDetails[itemID].owner=msg.sender;
+        itemDetails[itemID].lastBid=0;
+        itemDetails[itemID].highestBid=0;
+        itemDetails[itemID].highestBider=address(0);
+        itemDetails[itemID].lastHighestBider=address (0);
+        itemDetails[itemID].auction_time=block.timestamp + 3600;
+        emit createItem(msg.sender, itemID , _name);
+        itemID+=1;
     }
 
-    function placeBid(address _address,uint256 id) public payable  {
-        require(_address != msg.sender," owner can't bid");
-        require(itemDetails[_address][id].auction_time > block.timestamp," Nothing to Place the Bid ");
-        require(msg.value >= itemDetails[_address][id].lastBid, "Not a Valid Amount");
-        require(msg.value > itemDetails[_address][id].highestBid," Increase the amount by 1 ether");
-        itemDetails[_address][id].lastBid=itemDetails[_address][id].highestBid;
-        itemDetails[_address][id].lastHighestBider=itemDetails[_address][id].highestBider;
-        itemDetails[_address][id].highestBid=msg.value;
-        itemDetails[_address][id].highestBider=msg.sender;
-        payable(itemDetails[_address][id].lastHighestBider).transfer(itemDetails[_address][id].lastBid);
+    function placeBid(uint256 id) public payable  {
+        require(itemDetails[msg.sender][id].owner= msg.sender," owner can't bid");
+        require(itemDetails[id].auction_time > block.timestamp," Nothing to Place the Bid ");
+        require(msg.value >= itemDetails[id].lastBid, "Not a Valid Amount");
+        require(msg.value > itemDetails[id].highestBid," Increase the amount by 1 ether");
+        itemDetails[id].lastBid=itemDetails[id].highestBid;
+        itemDetails[id].lastHighestBider=itemDetails[id].highestBider;
+        itemDetails[id].highestBid=msg.value;
+        itemDetails[id].highestBider=msg.sender;
+        payable(itemDetails[id].lastHighestBider).transfer(itemDetails[id].lastBid);
         emit Bid(msg.sender, msg.value);
 
     }
 
-    function getHighestBid(address _address, uint256 id) public view returns(uint256) {
-        return itemDetails[_address][id].highestBid;
+    function getHighestBid( uint256 id) public view returns(uint256) {
+        return itemDetails[id].highestBid;
     }
 
-    function getWinningBidder(address _address,uint256 id) public view returns(address){
-        return itemDetails[_address][id].highestBider;
+    function getWinningBidder(uint256 id) public view returns(address){
+        return itemDetails[id].highestBider;
     }
 
-    function cancelAuction(address _address,uint256 id) public  {
-        require(msg.sender == Owner," Only Owner can cancel the Auction");
-        payable (itemDetails[_address][id].highestBider).transfer(itemDetails[_address][id].highestBid);
+    function cancelAuction( uint256 id) public  {
+        require(msg.sender == itemDetails[id].owner," Only Owner can cancel the Auction");
+        payable (itemDetails[id].highestBider).transfer(itemDetails[id].highestBid);
 
     }
 
     function ownershipTransfer(address payable  _address,uint256 id, uint256 id2) public {
-        
+        require(msg.sender == itemDetails[id].owner, " Onle The owner of the Item can access.");
         _address.transfer(itemDetails[_address][id].highestBid);
-        itemDetails[itemDetails[_address][id].highestBider][id2]= itemDetails[_address][id];
+        itemDetails[itemDetails[_address][id].highestBider]= itemDetails[_address][id];
         delete itemDetails[_address][id];
     }
+
 }

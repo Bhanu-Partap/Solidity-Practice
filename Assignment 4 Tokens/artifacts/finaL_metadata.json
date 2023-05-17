@@ -284,6 +284,13 @@
 				"outputs": [],
 				"stateMutability": "payable",
 				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -330,11 +337,11 @@
 			]
 		},
 		"Assignment 4 Tokens/final.sol": {
-			"keccak256": "0x5db6889689d83e723d00a9e4c1b071c763b52b486d5017544660fd7cc33e5ef9",
+			"keccak256": "0x77d4cd67fe037ea2be675cbc5dffd1178dd12f9eb0bd5cab5499e98cfb2dfdc5",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8f90c3090d36c9830694f9d2f4b30d3d21d6e54c272158b1b16913c0ba8e5d7b",
-				"dweb:/ipfs/QmWy84rA6wD33X9ERj6ihtmuVz2YcYMxZzehByKg3vjjTP"
+				"bzz-raw://6d73e2a475da6c0c56691c1f3797d4d897783f8f06a193da305af50e6619b1eb",
+				"dweb:/ipfs/QmYYdhwv9p7dAbvDT1x1o8kNW9KZn3qQrqYEKUz6Ramg1E"
 			]
 		}
 	},
