@@ -65,6 +65,7 @@ contract finaL  {
     function cancelAuction( uint256 id) public  {
         require(msg.sender == itemDetails[id].owner," Only Owner can cancel the Auction");
         payable (itemDetails[id].highestBider).transfer(itemDetails[id].highestBid);
+        delete itemDetails[id];
 
     }
 
@@ -72,6 +73,7 @@ contract finaL  {
         require(msg.sender == itemDetails[id].owner, " Onle The owner of the Item can access.");
         payable(itemDetails[id].owner).transfer(itemDetails[id].highestBid);
         itemDetails[id].owner= itemDetails[id].highestBider;
+        delete itemDetails[id];
     }
 
 }
