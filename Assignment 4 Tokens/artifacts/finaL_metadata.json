@@ -6,11 +6,6 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
 				"anonymous": false,
 				"inputs": [
 					{
@@ -77,6 +72,11 @@
 								"type": "string"
 							},
 							{
+								"internalType": "address",
+								"name": "owner",
+								"type": "address"
+							},
+							{
 								"internalType": "uint256",
 								"name": "lastBid",
 								"type": "uint256"
@@ -114,11 +114,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "id",
-						"type": "uint256"
-					},
-					{
 						"internalType": "string",
 						"name": "_name",
 						"type": "string"
@@ -132,11 +127,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "_address",
-						"type": "address"
-					},
-					{
 						"internalType": "uint256",
 						"name": "id",
 						"type": "uint256"
@@ -149,11 +139,6 @@
 			},
 			{
 				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_address",
-						"type": "address"
-					},
 					{
 						"internalType": "uint256",
 						"name": "id",
@@ -174,11 +159,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "_address",
-						"type": "address"
-					},
-					{
 						"internalType": "uint256",
 						"name": "id",
 						"type": "uint256"
@@ -198,11 +178,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					},
-					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
@@ -214,6 +189,11 @@
 						"internalType": "string",
 						"name": "name",
 						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
 					},
 					{
 						"internalType": "uint256",
@@ -247,18 +227,8 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address payable",
-						"name": "_address",
-						"type": "address"
-					},
-					{
 						"internalType": "uint256",
 						"name": "id",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "id2",
 						"type": "uint256"
 					}
 				],
@@ -270,11 +240,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "_address",
-						"type": "address"
-					},
-					{
 						"internalType": "uint256",
 						"name": "id",
 						"type": "uint256"
@@ -283,13 +248,6 @@
 				"name": "placeBid",
 				"outputs": [],
 				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "withdraw",
-				"outputs": [],
-				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -337,11 +295,11 @@
 			]
 		},
 		"Assignment 4 Tokens/final.sol": {
-			"keccak256": "0x77d4cd67fe037ea2be675cbc5dffd1178dd12f9eb0bd5cab5499e98cfb2dfdc5",
+			"keccak256": "0xf5b54b48184db85843b948cb10611238310163313aa59bd20a2ca6a72941f412",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6d73e2a475da6c0c56691c1f3797d4d897783f8f06a193da305af50e6619b1eb",
-				"dweb:/ipfs/QmYYdhwv9p7dAbvDT1x1o8kNW9KZn3qQrqYEKUz6Ramg1E"
+				"bzz-raw://957ae5c9fc5eefbd215d706679d6e9453a12299f46d78a2a5fdc89ddf2cad650",
+				"dweb:/ipfs/Qmdx7yNPvZghn81XTM2DipSZ4SmPpzL2pby4y21qapESER"
 			]
 		}
 	},

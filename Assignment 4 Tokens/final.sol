@@ -68,11 +68,10 @@ contract finaL  {
 
     }
 
-    function ownershipTransfer(address payable  _address,uint256 id, uint256 id2) public {
+    function ownershipTransfer(uint256 id) public {
         require(msg.sender == itemDetails[id].owner, " Onle The owner of the Item can access.");
-        itemDetails[id].lasBid.transfer(itemDetails[id].highestBid);
-        itemDetails[itemDetails[_address][id].highestBider]= itemDetails[_address][id];
-        delete itemDetails[_address][id];
+        payable(itemDetails[id].owner).transfer(itemDetails[id].highestBid);
+        itemDetails[id].owner= itemDetails[id].highestBider;
     }
 
 }
