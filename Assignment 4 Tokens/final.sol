@@ -69,7 +69,8 @@ contract finaL  {
 
     }
 
-    function ownershipTransfer(uint256 id) public {
+    function auctionEnd(uint256 id) public payable {
+        require(block.timestamp > itemDetails[id].auction_time);
         require(msg.sender == itemDetails[id].owner, " Onle The owner of the Item can access.");
         payable(itemDetails[id].owner).transfer(itemDetails[id].highestBid);
         itemDetails[id].owner= itemDetails[id].highestBider;

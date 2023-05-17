@@ -132,6 +132,19 @@
 						"type": "uint256"
 					}
 				],
+				"name": "auctionEnd",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
 				"name": "cancelAuction",
 				"outputs": [],
 				"stateMutability": "nonpayable",
@@ -232,19 +245,6 @@
 						"type": "uint256"
 					}
 				],
-				"name": "ownershipTransfer",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "id",
-						"type": "uint256"
-					}
-				],
 				"name": "placeBid",
 				"outputs": [],
 				"stateMutability": "payable",
@@ -295,11 +295,11 @@
 			]
 		},
 		"Assignment 4 Tokens/final.sol": {
-			"keccak256": "0x7cfb63153a76207107dc5b67ffb18ec418a926f42923fcb9aba662f2569471a6",
+			"keccak256": "0x2655214e4ec533ff966c817d05ed9a70993412c2c7bf3b808e9d41e58816250c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8e658be82a48abddeb0411681af6c6f07c157b12c1b7e7f41303b98ef7ea4cea",
-				"dweb:/ipfs/QmbK1n1u5Lytzgm14YTKKcoxt7RBW5MH9ZoD8MWTojhfwf"
+				"bzz-raw://e88c38eb8a848e2b8a4f0af1308520af8da3551526135d166a560a84a46cae1e",
+				"dweb:/ipfs/QmVv61xkLQhF1CNtsuuZSZ4kSWBwvXeMCQ5GoWpNyWpFQZ"
 			]
 		}
 	},
