@@ -8,7 +8,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract finaL  {
     struct itemD{
         string name;
-        address Owner;
+        address owner;
         uint256 lastBid;
         uint256 highestBid;
         address highestBider;
@@ -41,10 +41,10 @@ contract finaL  {
     }
 
     function placeBid(uint256 id) public payable  {
-        require(itemDetails[msg.sender][id].owner= msg.sender," owner can't bid");
+        require(itemDetails[id].owner != msg.sender," owner can't bid");
         require(itemDetails[id].auction_time > block.timestamp," Nothing to Place the Bid ");
-        require(msg.value >= itemDetails[id].lastBid, "Not a Valid Amount");
-        require(msg.value > itemDetails[id].highestBid," Increase the amount by 1 ether");
+        require(msg.value >= itemDetails[id].lastBid, "Increase the Amount");
+        // require(msg.value > itemDetails[id].highestBid," Increase the amount by 1 ether");
         itemDetails[id].lastBid=itemDetails[id].highestBid;
         itemDetails[id].lastHighestBider=itemDetails[id].highestBider;
         itemDetails[id].highestBid=msg.value;
@@ -70,7 +70,7 @@ contract finaL  {
 
     function ownershipTransfer(address payable  _address,uint256 id, uint256 id2) public {
         require(msg.sender == itemDetails[id].owner, " Onle The owner of the Item can access.");
-        _address.transfer(itemDetails[_address][id].highestBid);
+        itemDetails[id].lasBid.transfer(itemDetails[id].highestBid);
         itemDetails[itemDetails[_address][id].highestBider]= itemDetails[_address][id];
         delete itemDetails[_address][id];
     }
