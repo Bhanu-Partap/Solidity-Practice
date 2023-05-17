@@ -17,10 +17,8 @@ contract finaL  {
     }
     uint itemID =1;
 
-
         // mapping
         mapping(uint => itemD) public itemDetails;
-
 
         // events
         event createItem(address owner,uint id,string name);
@@ -44,7 +42,6 @@ contract finaL  {
         require(itemDetails[id].owner != msg.sender," owner can't bid");
         require(itemDetails[id].auction_time > block.timestamp,"not started yet");
         require(msg.value >= itemDetails[id].lastBid, "Increase the Amount");
-        // require(msg.value > itemDetails[id].highestBid," Increase the amount by 1 ether");
         itemDetails[id].lastBid=itemDetails[id].highestBid;
         itemDetails[id].lastHighestBider=itemDetails[id].highestBider;
         itemDetails[id].highestBid=msg.value;
