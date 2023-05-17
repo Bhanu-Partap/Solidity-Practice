@@ -42,7 +42,7 @@ contract finaL  {
 
     function placeBid(uint256 id) public payable  {
         require(itemDetails[id].owner != msg.sender," owner can't bid");
-        require(itemDetails[id].auction_time > block.timestamp," Nothing to Place the Bid ");
+        require(itemDetails[id].auction_time > block.timestamp,"not started yet");
         require(msg.value >= itemDetails[id].lastBid, "Increase the Amount");
         // require(msg.value > itemDetails[id].highestBid," Increase the amount by 1 ether");
         itemDetails[id].lastBid=itemDetails[id].highestBid;
