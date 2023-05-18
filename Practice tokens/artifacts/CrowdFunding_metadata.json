@@ -11,6 +11,24 @@
 						"internalType": "uint256",
 						"name": "_id",
 						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "conditionNotMet",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
 					}
 				],
 				"name": "contribute",
@@ -119,11 +137,11 @@
 	},
 	"sources": {
 		"Practice tokens/Assignment7.sol": {
-			"keccak256": "0xa123925374baed4644dc167e17d1a6c5b728fadc5ad27ec8386313701ce5ed83",
+			"keccak256": "0xcbb1c84fc698b1bada42282ba18a15b2d6488f194b5c80444f75347572b313de",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://a60c63b3eab37fb4917612f88c819aff0573d9130804bed07bf3236067188f5a",
-				"dweb:/ipfs/QmVhwWCaPdpES9pwALCRJBcwAHGNRMuQPYgkcXsstKwhwA"
+				"bzz-raw://f28f32694762a576bdcc12029516d4b2506a1455ddbb2231950d237412cb4269",
+				"dweb:/ipfs/QmNthDtJgDLEKWao8QtFFpZBBdUdoiw9UZ2PuE2oUojRW1"
 			]
 		}
 	},

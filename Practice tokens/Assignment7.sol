@@ -27,4 +27,9 @@ contract CrowdFunding {
     function contribute(uint _id) public payable {
         userProjects[_id].funding = msg.value;
     }
+
+    function conditionNotMet(uint _id, uint _amount) public {
+        
+    }
+
 }
