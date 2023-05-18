@@ -27,14 +27,17 @@ contract CrowdFunding {
     }
 
     function contribute(uint _id) public payable {
+        require(msg.sender != userProjects[_id]._owner," Owner can't contribute");
         userProjects[_id].funding = msg.value;
     }
 
     function conditionNotMet(uint _id) public payable {
+        require(msg.sender != userProjects[_id]._owner," Owner can't take money if contribution not completed");
         payable(msg.sender).transfer(userProjects[_id].funding);
     }
 
     function fundingComplete(uint _id) public payable{
+        require(msg.sender == userProjects[_id]._owner," Only Owner can widthdraw");
         payable(userProjects[_id]._owner).transfer(userProjects[_id].funding);
     }
 

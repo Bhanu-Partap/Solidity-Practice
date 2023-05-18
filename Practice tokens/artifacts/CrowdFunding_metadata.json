@@ -11,16 +11,11 @@
 						"internalType": "uint256",
 						"name": "_id",
 						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_amount",
-						"type": "uint256"
 					}
 				],
 				"name": "conditionNotMet",
 				"outputs": [],
-				"stateMutability": "nonpayable",
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
@@ -32,6 +27,19 @@
 					}
 				],
 				"name": "contribute",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "fundingComplete",
 				"outputs": [],
 				"stateMutability": "payable",
 				"type": "function"
@@ -103,6 +111,11 @@
 						"internalType": "uint256",
 						"name": "funding",
 						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -137,11 +150,11 @@
 	},
 	"sources": {
 		"Practice tokens/Assignment7.sol": {
-			"keccak256": "0xcbb1c84fc698b1bada42282ba18a15b2d6488f194b5c80444f75347572b313de",
+			"keccak256": "0xf12907091d65f7624256714f68c2a6acc41bb16166d859fad0b4439e1912d256",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f28f32694762a576bdcc12029516d4b2506a1455ddbb2231950d237412cb4269",
-				"dweb:/ipfs/QmNthDtJgDLEKWao8QtFFpZBBdUdoiw9UZ2PuE2oUojRW1"
+				"bzz-raw://954a8c704d0717a5411e12f9e3020dc552eb449462465436a2173ecec8f86bd8",
+				"dweb:/ipfs/QmSgSzF7t38X8N2eyYJPHL4vwabaWWzoA76dFo7Pdrpqo7"
 			]
 		}
 	},
