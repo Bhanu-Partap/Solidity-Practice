@@ -10,4 +10,11 @@ contract CrowdFunding{
         uint deadLine;
     }
 
+    uint id;
+    projectDetails[] public project;
+
+
+
+
+
 }

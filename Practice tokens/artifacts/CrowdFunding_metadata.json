@@ -4,7 +4,42 @@
 	},
 	"language": "Solidity",
 	"output": {
-		"abi": [],
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "project",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "funding_goal",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deadLine",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
 		"devdoc": {
 			"kind": "dev",
 			"methods": {},
@@ -33,11 +68,11 @@
 	},
 	"sources": {
 		"Practice tokens/Assignment7.sol": {
-			"keccak256": "0x285fa8c1c95cc86b263e6508a231a294e504a7841f4deda2c5db91d6dd91d93d",
+			"keccak256": "0x4a3ca276eec0964c1c5f1cbc6770003ba8cf6cb3f675f272d45ffef8ac69163f",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://c714645e001ddb6cdc949c393021259886e748c602f1d41171951a08c84b1e51",
-				"dweb:/ipfs/Qmed9phDPjVqAepoD222fQDCeTfLRY9bPcKMWU4xP3Tsnd"
+				"bzz-raw://1f726436f70c0644ebe5e7f7d14a7ae7c1b1cc21b9744516735e33160f03f283",
+				"dweb:/ipfs/QmUGYcLbABYaoPAwjXiDEWxdLC8ty8RC8QLQWSDtCGE11k"
 			]
 		}
 	},
