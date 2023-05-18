@@ -9,6 +9,22 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
+						"name": "_funding_goal",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_deadline",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
 					}
@@ -32,7 +48,7 @@
 					},
 					{
 						"internalType": "uint256",
-						"name": "deadLine",
+						"name": "deadline",
 						"type": "uint256"
 					}
 				],
@@ -40,7 +56,23 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_description",
+						"type": "string"
+					}
+				],
 				"name": "setProjectDetails",
 				"outputs": [],
 				"stateMutability": "nonpayable",
@@ -73,7 +105,7 @@
 					},
 					{
 						"internalType": "uint256",
-						"name": "deadLine",
+						"name": "deadline",
 						"type": "uint256"
 					}
 				],
@@ -109,11 +141,11 @@
 	},
 	"sources": {
 		"Practice tokens/Assignment7.sol": {
-			"keccak256": "0x8cc6b8dec958d8e9b0e715823dc1527b4b1738fe16852e4a8778d961fa305e11",
+			"keccak256": "0x5c3f02373781a4d9219d6800b22bc8ab05adb3ea4f25332e468319d381ec66fb",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://9ccb0c4c444b2f5c2426c4835939fbb7b36f05e6dafd06b36098f648d7b625a8",
-				"dweb:/ipfs/Qmb76gmcqsP2CBaMRen8QNaC4Zrz181VfP6cTLoP3gtacZ"
+				"bzz-raw://3dd22a1e4684da23d9235b525f3a64014b8d5e04776151c1ecea79971c602ea5",
+				"dweb:/ipfs/QmX2sdmG2oguf1YJLUqL5Er479Mv5jWempwP9HSYq4T27L"
 			]
 		}
 	},
