@@ -20,8 +20,11 @@ contract CrowdFunding {
     function setProjectDetails( uint256 _id, string memory _name,string memory _description,uint256 _funding_goal, uint256 _deadline ) public {
         userProjects[_id].name = _name;
         userProjects[_id].description = _description;
-        userProjects[id].funding_goal = _funding_goal;
-        userProjects[id].deadline = block.timestamp + _deadline;
+        userProjects[_id].funding_goal = _funding_goal;
+        userProjects[_id].deadline = block.timestamp + _deadline;
+    }
 
+    function contribute(uint _id) public payable {
+        userProjects[_id].funding = msg.value;
     }
 }
