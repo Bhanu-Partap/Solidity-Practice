@@ -38,6 +38,47 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "setProjectDetails",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "userProjects",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "funding_goal",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deadLine",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -68,11 +109,11 @@
 	},
 	"sources": {
 		"Practice tokens/Assignment7.sol": {
-			"keccak256": "0x4a3ca276eec0964c1c5f1cbc6770003ba8cf6cb3f675f272d45ffef8ac69163f",
+			"keccak256": "0x8cc6b8dec958d8e9b0e715823dc1527b4b1738fe16852e4a8778d961fa305e11",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://1f726436f70c0644ebe5e7f7d14a7ae7c1b1cc21b9744516735e33160f03f283",
-				"dweb:/ipfs/QmUGYcLbABYaoPAwjXiDEWxdLC8ty8RC8QLQWSDtCGE11k"
+				"bzz-raw://9ccb0c4c444b2f5c2426c4835939fbb7b36f05e6dafd06b36098f648d7b625a8",
+				"dweb:/ipfs/Qmb76gmcqsP2CBaMRen8QNaC4Zrz181VfP6cTLoP3gtacZ"
 			]
 		}
 	},

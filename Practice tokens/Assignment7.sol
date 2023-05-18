@@ -13,7 +13,13 @@ contract CrowdFunding{
     uint id;
     projectDetails[] public project;
 
+    // mapping
+    mapping(uint => projectDetails) public userProjects;
 
+
+    function setProjectDetails() public {
+
+    }
 
 
 
