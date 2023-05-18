@@ -7,6 +7,7 @@ contract CrowdFunding {
         string description;
         uint256 funding_goal;
         uint256 deadline;
+        uint funding;
     }
 
     uint256 id;
@@ -15,16 +16,12 @@ contract CrowdFunding {
     // mapping
     mapping(uint256 => projectDetails) public userProjects;
 
-    constructor(uint256 _funding_goal, uint256 _deadline) {
-        // owner = msg.sender;
-        userProjects[id].funding_goal = _funding_goal;
-        userProjects[id].deadline = block.timestamp + _deadline;
-    }
 
-    function setProjectDetails( uint256 _id, string memory _name,string memory _description ) public {
+    function setProjectDetails( uint256 _id, string memory _name,string memory _description,uint256 _funding_goal, uint256 _deadline ) public {
         userProjects[_id].name = _name;
         userProjects[_id].description = _description;
-
+        userProjects[id].funding_goal = _funding_goal;
+        userProjects[id].deadline = block.timestamp + _deadline;
 
     }
 }
