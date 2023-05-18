@@ -10,7 +10,7 @@ contract CrowdFunding {
     }
 
     uint256 id;
-    projectDetails[] public project;
+    projectDetails[]  project;
 
     // mapping
     mapping(uint256 => projectDetails) public userProjects;
@@ -24,9 +24,6 @@ contract CrowdFunding {
     function setProjectDetails( uint256 _id, string memory _name,string memory _description ) public {
         userProjects[_id].name = _name;
         userProjects[_id].description = _description;
-        userProjects[_id].name = _name;
-        userProjects[_id].name = _name;
-        userProjects[_id].name = _name;
 
 
     }
