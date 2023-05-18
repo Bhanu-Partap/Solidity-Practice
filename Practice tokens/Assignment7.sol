@@ -8,6 +8,7 @@ contract CrowdFunding {
         uint256 funding_goal;
         uint256 deadline;
         uint funding;
+        address _owner;
     }
 
     uint256 id;
@@ -21,6 +22,7 @@ contract CrowdFunding {
         userProjects[_id].name = _name;
         userProjects[_id].description = _description;
         userProjects[_id].funding_goal = _funding_goal;
+        userProjects[_id]._owner = msg.sender;
         userProjects[_id].deadline = block.timestamp + _deadline;
     }
 
@@ -28,8 +30,12 @@ contract CrowdFunding {
         userProjects[_id].funding = msg.value;
     }
 
-    function conditionNotMet(uint _id, uint _amount) public {
-        
+    function conditionNotMet(uint _id) public payable {
+        payable(msg.sender).transfer(userProjects[_id].funding);
+    }
+
+    function fundingComplete(uint _id) public payable{
+        payable(userProjects[_id]._owner).transfer(userProjects[_id].funding);
     }
 
 }
