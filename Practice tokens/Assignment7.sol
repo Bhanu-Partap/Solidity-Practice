@@ -7,16 +7,21 @@ contract CrowdFunding {
         string description;
         uint256 funding_goal;
         uint256 deadline;
-        uint funding;
         address _owner;
+        userbalance[] balance;
     }
 
+    struct userbalance{
+        address _address;
+        uint _balance;
+    }
+
+    
     uint256 id;
-    projectDetails[]  project;
 
     // mapping
     mapping(uint256 => projectDetails) public userProjects;
-
+    
 
     function setProjectDetails( uint256 _id, string memory _name,string memory _description,uint256 _funding_goal, uint256 _deadline ) public {
         userProjects[_id].name = _name;
@@ -28,17 +33,21 @@ contract CrowdFunding {
 
     function contribute(uint _id) public payable {
         require(msg.sender != userProjects[_id]._owner," Owner can't contribute");
-        userProjects[_id].funding = msg.value;
+        userProjects[_id].balance.push(userbalance(msg.sender,msg.value));
+
     }
 
     function conditionNotMet(uint _id) public payable {
-        require(msg.sender != userProjects[_id]._owner," Owner can't take money if contribution not completed");
-        payable(msg.sender).transfer(userProjects[_id].funding);
+        require(msg.sender == userProjects[_id]._owner," Owner can't take money if contribution not completed");
+        for(uint i=0; i< userProjects[_id].balance.length;i++){
+        payable(userProjects[_id].balance[i]._address).transfer(userProjects[id].balance[i]._balance);
+        }
     }
 
     function fundingComplete(uint _id) public payable{
         require(msg.sender == userProjects[_id]._owner," Only Owner can widthdraw");
-        payable(userProjects[_id]._owner).transfer(userProjects[_id].funding);
+        for(uint i=0; i< userProjects[_id].balance.length;i++){
+        payable(userProjects[_id]._owner).transfer(userProjects[id].funding_goal);
     }
-
+    }
 }

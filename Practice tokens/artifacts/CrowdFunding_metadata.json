@@ -108,11 +108,6 @@
 						"type": "uint256"
 					},
 					{
-						"internalType": "uint256",
-						"name": "funding",
-						"type": "uint256"
-					},
-					{
 						"internalType": "address",
 						"name": "_owner",
 						"type": "address"
@@ -150,11 +145,11 @@
 	},
 	"sources": {
 		"Practice tokens/Assignment7.sol": {
-			"keccak256": "0xf12907091d65f7624256714f68c2a6acc41bb16166d859fad0b4439e1912d256",
+			"keccak256": "0x065d7f74826ea096cf4a77f76afea81cd7c786636c3f31705d1a829d8d13f68f",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://954a8c704d0717a5411e12f9e3020dc552eb449462465436a2173ecec8f86bd8",
-				"dweb:/ipfs/QmSgSzF7t38X8N2eyYJPHL4vwabaWWzoA76dFo7Pdrpqo7"
+				"bzz-raw://664a58877edad005c0bba1dc6947025f4c9c19f8422adf0708428a15bf9470a9",
+				"dweb:/ipfs/QmWRXbKtfyQb6r2tvbi9kQYk8VX1nxzjUbQh1PaUniAVat"
 			]
 		}
 	},
