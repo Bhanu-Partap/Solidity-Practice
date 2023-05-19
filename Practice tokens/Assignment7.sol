@@ -38,7 +38,7 @@ contract CrowdFunding {
     }
 
     function conditionNotMet(uint _id) public payable {
-        require(msg.sender == userProjects[_id]._owner," Owner can't take money if contribution not completed");
+        require(msg.sender == userProjects[_id]._owner," Owner can send the money back only");
         for(uint i=0; i< userProjects[_id].balance.length;i++){
         payable(userProjects[_id].balance[i]._address).transfer(userProjects[id].balance[i]._balance);
         }
@@ -47,7 +47,7 @@ contract CrowdFunding {
     function fundingComplete(uint _id) public payable{
         require(msg.sender == userProjects[_id]._owner," Only Owner can widthdraw");
         for(uint i=0; i< userProjects[_id].balance.length;i++){
-        payable(userProjects[_id]._owner).transfer(userProjects[id].funding_goal);
+        payable(userProjects[_id]._owner).transfer(userProjects[id].balance[i]._balance);
     }
     }
 }
