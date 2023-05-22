@@ -200,11 +200,11 @@
 	},
 	"sources": {
 		"Practice tokens/Assignment7.sol": {
-			"keccak256": "0x86a5cbcbb35538c13238f6006270a13029b6e88e2f0aab49ede97c9a85b8cac0",
+			"keccak256": "0xacd2d7e6ff4142e7f333c17a46d53bb16ab989335d1172d75142d9c695be1ecf",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2d423d34c12dba5df3f827e547247796473aceae256439716ec02ef72e64dc6b",
-				"dweb:/ipfs/QmZQhcoX9htdPZAwKAvW8Y9kaT4kDxWBmxe22xuFBWEzs8"
+				"bzz-raw://451ca6051e5c26ad8d226349d45903ac1dc87e026e309773a5c8bf40b95271be",
+				"dweb:/ipfs/QmRt5amBBEXk38qsbCMMn4G4aM8Ef4wr8M5pfc1BYLgAsw"
 			]
 		}
 	},

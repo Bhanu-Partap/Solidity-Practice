@@ -70,7 +70,7 @@ contract CrowdFunding {
     mapping(uint => string) public feedBack;
     function feedback(string memory _feedback,uint _id) public {
         require(userProjects[_id]._owner == msg.sender,"only owner can give feedback");
-        require((userProjects[_id].recievedAmount == userProjects[_id].funding_goal)|| (block.timestamp >=  userProjects[_id].deadline) , "conditions not satisfied to withdraw" );
+        // require((userProjects[_id].recievedAmount == userProjects[_id].funding_goal)|| (block.timestamp >=  userProjects[_id].deadline) , "conditions not satisfied to withdraw" );
         feedBack[_id] = _feedback;
     }
 
