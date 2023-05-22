@@ -15,7 +15,7 @@
 				],
 				"name": "conditionNotMet",
 				"outputs": [],
-				"stateMutability": "payable",
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -145,11 +145,11 @@
 	},
 	"sources": {
 		"Practice tokens/Assignment7.sol": {
-			"keccak256": "0x341371009b58e801f4b364b8e6dc993d99bb3f26564ba78b4dc1340889b51c8b",
+			"keccak256": "0x420827da6d9bddb6d226ae6254e1fac2a0df3528a30ec2fbf700793ebda11581",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://661f8dd9c9cbe0a18c799cea0d53162b62c7f232319b5b2dc6f57723864093ff",
-				"dweb:/ipfs/QmeiTH39GrXKV4phdw3f9VrbNyXNt6wCnKEUNgh8LSvPwb"
+				"bzz-raw://aa4b4be454db1c42118b9910c9c3a59239add4ff3f9783424d699cff30fa8482",
+				"dweb:/ipfs/QmdUURMoqSnyRkRMGGgohMJuVeLn4Smukn62GHgiqCTdm6"
 			]
 		}
 	},

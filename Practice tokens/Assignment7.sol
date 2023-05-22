@@ -8,7 +8,7 @@ contract CrowdFunding {
         uint256 funding_goal;
         uint256 deadline;
         address _owner;
-        userbalance[] balance;
+        userbalance[]   balance;
     }
 
     struct userbalance{
@@ -33,21 +33,22 @@ contract CrowdFunding {
 
     function contribute(uint _id) public payable {
         require(msg.sender != userProjects[_id]._owner," Owner can't contribute");
+        require(msg.value <= userProjects[_id]._funding_goal,"Amount can not be greater than goal amount");
         userProjects[_id].balance.push(userbalance(msg.sender,msg.value));
 
     }
 
-    function conditionNotMet(uint _id) public payable {
-        require(msg.sender == userProjects[_id]._owner," Owner can send the money back only");
+    function conditionNotMet(uint _id) public  {
+        require();
         for(uint i=0; i< userProjects[_id].balance.length;i++){
-        payable(userProjects[_id].balance[i]._address).transfer(userProjects[id].balance[i]._balance);
+        payable(userProjects[_id].balance[i]._address).transfer(userProjects[_id].balance[i]._balance);
         }
     }
 
     function fundingComplete(uint _id) public payable{
         require(msg.sender == userProjects[_id]._owner," Only Owner can widthdraw");
         for(uint i=0; i < userProjects[_id].balance.length;i++){
-        payable(userProjects[_id]._owner).transfer(userProjects[id].balance[i]._balance);
+        payable(userProjects[_id]._owner).transfer(userProjects[_id].balance[i]._balance);
     }
     }
 }
