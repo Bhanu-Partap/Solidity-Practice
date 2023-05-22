@@ -44,12 +44,11 @@ contract CrowdFunding {
 
     function conditionNotMet(uint _id) public  {
         require(userProjects[_id]._owner == msg.sender, "only can refund");
-
         require(block.timestamp >= userProjects[_id].deadline," Still have some time left for funding " );
         for(uint i=0; i< userProjects[_id].balance.length;i++){
         payable(userProjects[_id].balance[i]._address).transfer(userProjects[_id].balance[i]._balance);
-        delete userProjects[_id].balance[i];
         }
+        delete userProjects[_id];
     }
 
     function fundingComplete(uint _id) public payable{
@@ -63,7 +62,7 @@ contract CrowdFunding {
          require(userProjects[_id]._owner == msg.sender, "only can refund");
         for(uint i=0; i< userProjects[_id].balance.length;i++){
         payable(userProjects[_id].balance[i]._address).transfer(userProjects[_id].balance[i]._balance);
-        delete userProjects[_id].balance[i];
         }
+        delete userProjects[_id];
     }
 }
