@@ -7,6 +7,7 @@ contract CrowdFunding {
         string description;
         uint256 funding_goal;
         uint256 deadline;
+        uint256 recievedAmount;
         address _owner;
         userbalance[]   balance;
     }
@@ -28,12 +29,14 @@ contract CrowdFunding {
         userProjects[_id].description = _description;
         userProjects[_id].funding_goal = _funding_goal;
         userProjects[_id]._owner = msg.sender;
+        userProjects[_id].recievedAmount =0;
         userProjects[_id].deadline = block.timestamp + _deadline;
     }
 
     function contribute(uint _id) public payable {
         require(msg.sender != userProjects[_id]._owner," Owner can't contribute");
-        require(msg.value <= userProjects[_id].funding_goal,"Amount can not be greater than goal amount");
+        require(msg.value <userProjects[_id].funding_goal,"Amount can not be greater than goal amount");
+        require(msg.value <= userProjects[_id].recievedAmount + userProjects[_id].funding_goal);
         userProjects[_id].balance.push(userbalance(msg.sender,msg.value));
 
     }
@@ -41,7 +44,7 @@ contract CrowdFunding {
     function conditionNotMet(uint _id) public  {
         require(userProjects[_id]._owner == msg.sender, "only can refund");
 
-        require(block.timestamp >= userProjects[_id].deadline," Still have some time left for funding" );
+        require(block.timestamp >= userProjects[_id].deadline," Still have some time left for funding " );
         for(uint i=0; i< userProjects[_id].balance.length;i++){
         payable(userProjects[_id].balance[i]._address).transfer(userProjects[_id].balance[i]._balance);
         delete userProjects[_id].balance[i];
@@ -53,5 +56,14 @@ contract CrowdFunding {
         for(uint i=0; i < userProjects[_id].balance.length;i++){
         payable(userProjects[_id]._owner).transfer(userProjects[_id].balance[i]._balance);
     }
+    }
+
+    function refundCancel(uint _id) public  payable {
+         require(userProjects[_id]._owner == msg.sender, "only can refund");
+        require(block.timestamp >= userProjects[_id].deadline," Still have some time left for funding " );
+        for(uint i=0; i< userProjects[_id].balance.length;i++){
+        payable(userProjects[_id].balance[i]._address).transfer(userProjects[_id].balance[i]._balance);
+        delete userProjects[_id].balance[i];
+        }
     }
 }
