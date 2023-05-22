@@ -55,7 +55,8 @@ contract CrowdFunding {
         require(msg.sender == userProjects[_id]._owner," Only Owner can widthdraw");
         for(uint i=0; i < userProjects[_id].balance.length;i++){
         payable(userProjects[_id]._owner).transfer(userProjects[_id].balance[i]._balance);
-    }
+        }
+        delete userProjects[_id];
     }
 
     function refundCancel(uint _id) public  payable {
