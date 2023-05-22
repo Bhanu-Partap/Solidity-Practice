@@ -163,11 +163,11 @@
 	},
 	"sources": {
 		"Practice tokens/Assignment7.sol": {
-			"keccak256": "0x9523680f0333872a6bcf1c54c1036b2becaacf10bac996ecc45a5962cf714846",
+			"keccak256": "0xe8e5f68870584dd996cdea3594cebc2606398504f80b41b1bb794e8a1c442d68",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://66d7266e70bccf4ce748730455459af3bb3cdbb2861b48ec8553fab42877d867",
-				"dweb:/ipfs/QmS9NTehcbsDSTMvKwXskvoprJmPd1HiRnNMePodWyPSQW"
+				"bzz-raw://dd6a208a4c0500f73cf8b775d4d190528e3a9aac4c1dd77df03bcaa611a1753a",
+				"dweb:/ipfs/QmZ5f15PF8erGng9fHzXGKgXDUSd8YKuMnjBMsJfEVFmXQ"
 			]
 		}
 	},

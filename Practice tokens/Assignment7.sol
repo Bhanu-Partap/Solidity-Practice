@@ -38,6 +38,7 @@ contract CrowdFunding {
         require(msg.value <userProjects[_id].funding_goal,"Amount can not be greater than goal amount");
         require(msg.value <= userProjects[_id].recievedAmount + userProjects[_id].funding_goal);
         userProjects[_id].balance.push(userbalance(msg.sender,msg.value));
+        userProjects[_id].recievedAmount = userProjects[_id].recievedAmount + msg.value;
 
     }
 
