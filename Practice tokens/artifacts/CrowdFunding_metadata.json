@@ -35,6 +35,43 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "feedBack",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_feedback",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "feedback",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
 						"name": "_id",
 						"type": "uint256"
 					}
@@ -163,11 +200,11 @@
 	},
 	"sources": {
 		"Practice tokens/Assignment7.sol": {
-			"keccak256": "0x531fda26a242222a3521a8fa9709d57d0b3e2b064c8a3fa368420d1330c86ad3",
+			"keccak256": "0x86a5cbcbb35538c13238f6006270a13029b6e88e2f0aab49ede97c9a85b8cac0",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ff179afca84dd8bc5778cc99a488f01f81d25bdf7949282f49860a0c7ae68336",
-				"dweb:/ipfs/QmX1iMmT5bkCrmmrYQrjdLNvzQ6mv5PtCqpprwXweu7E8F"
+				"bzz-raw://2d423d34c12dba5df3f827e547247796473aceae256439716ec02ef72e64dc6b",
+				"dweb:/ipfs/QmZQhcoX9htdPZAwKAvW8Y9kaT4kDxWBmxe22xuFBWEzs8"
 			]
 		}
 	},

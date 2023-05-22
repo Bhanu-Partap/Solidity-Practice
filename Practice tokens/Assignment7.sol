@@ -43,7 +43,7 @@ contract CrowdFunding {
     }
 
     function conditionNotMet(uint _id) public  {
-        require(userProjects[_id]._owner == msg.sender, "only can refund");
+        require(userProjects[_id]._owner == msg.sender, "only owner can refund");
         require(block.timestamp >= userProjects[_id].deadline," Still have some time left for funding " );
         for(uint i=0; i< userProjects[_id].balance.length;i++){
         payable(userProjects[_id].balance[i]._address).transfer(userProjects[_id].balance[i]._balance);
@@ -59,10 +59,20 @@ contract CrowdFunding {
     }
 
     function refundCancel(uint _id) public  payable {
-         require(userProjects[_id]._owner == msg.sender, "only can refund");
+         require(userProjects[_id]._owner == msg.sender, "only owner can refund or cancel the project contri");
         for(uint i=0; i< userProjects[_id].balance.length;i++){
         payable(userProjects[_id].balance[i]._address).transfer(userProjects[_id].balance[i]._balance);
         }
         delete userProjects[_id];
     }
+
+
+    mapping(uint => string) public feedBack;
+    function feedback(string memory _feedback,uint _id) public {
+        require(userProjects[_id]._owner == msg.sender,"only owner can give feedback");
+        require((userProjects[_id].recievedAmount == userProjects[_id].funding_goal)|| (block.timestamp >=  userProjects[_id].deadline) , "conditions not satisfied to withdraw" );
+        feedBack[_id] = _feedback;
+    }
+
+
 }
