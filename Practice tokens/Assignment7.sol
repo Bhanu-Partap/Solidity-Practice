@@ -58,6 +58,7 @@ contract CrowdFunding {
         }
         delete userProjects[_id];
     }
+    // 20000000000000000000
 
     function refundCancel(uint _id) public  payable {
          require(userProjects[_id]._owner == msg.sender, "only owner can refund or cancel the project contri");
