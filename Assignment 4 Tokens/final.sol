@@ -3,14 +3,19 @@ pragma solidity ^0.8.0;
 
 import "./ERC-20.sol";
 import "./ERC-721.sol";
-import "@openzeppelin/contracts/token/ERC1155/IERC1155.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
+import "./ERC-1155.sol";
 
 
 contract finaL  {
+
+ ERC20Basic a;
+ MyToken b;
+ ERC1155MYTOKEN c;
+
     
     struct itemD{
         string name;
+        uint256 id;
         address owner;
         uint256 lastBid;
         uint256 highestBid;
@@ -20,8 +25,16 @@ contract finaL  {
     }
     uint itemID =1;
 
+    struct listItem{
+        uint256 id;
+        uint256 listedItemPrice;
+        address addr;
+        string nft_typ;
+    }
+
         // mapping
         mapping(uint => itemD) public itemDetails;
+        mapping(uint => listItem) public ListItem;
 
         // events
         event createItem(address owner,uint id,string name);
@@ -40,6 +53,9 @@ contract finaL  {
         emit createItem(msg.sender, itemID , _name);
         itemID+=1;
     }
+
+
+
 
     function placeBid(uint256 id) public payable  {
         require(itemDetails[id].owner != msg.sender," owner can't bid");
