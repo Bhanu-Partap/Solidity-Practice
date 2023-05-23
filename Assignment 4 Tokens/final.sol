@@ -43,9 +43,15 @@ contract finaL  {
     
     function CreateItem( string memory _nft_type, address _addr, uint256 _listedItemPrice, uint256 id) public {
         require(msg.sender != address(0) ,"Not Valid");
+       if(){
+
         ListItem[id].nft_type = _nft_type;
         ListItem[id].addr = _addr;
         ListItem[id].listedItemPrice = _listedItemPrice;
+       }
+       else{
+           
+       }
 
         
     }
