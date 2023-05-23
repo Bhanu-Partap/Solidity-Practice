@@ -19,7 +19,7 @@ contract ERC1155MYTOKEN  is Ownable, ERC1155Supply {
       mapping(uint256 => uint256) public _totalSupply;
 
     constructor()
-        ERC1155("https://gateway.pinata.cloud/ipfs/QmW6pWuXAneY12Tb1w272A1GpckkXeULCH6zkM9Pk4mi9W/metadata-NFT1")
+        ERC1155("https://gateway.pinata.cloud/ipfs/QmZ1cAGhixojEhamSgqbdPVexCvAL5TJF1iSpQAx9DtQR2/1.json")
     {
              _mint(msg.sender, Token_Id, 100, "");
           //   _totalSupply[Token_Id] = 100;
@@ -37,11 +37,11 @@ contract ERC1155MYTOKEN  is Ownable, ERC1155Supply {
          return balanceOf(owner, _id)!=0;
      }
 
-        function mint(uint256 id, uint256 amount) public payable {
+        function mint(uint256 _id, uint256 _amount) public payable {
         require (msg.value>=PublicPrice*_amount,"not enough money");
          require(_totalSupply[_id]+ _amount <= maxSupply, "Exceeds maximum supply");
-        mint(msg.sender,_id, amount, "");
-         totalSupply[_id] += amount;
+        _mint(msg.sender,_id, _amount, "");
+         _totalSupply[_id] += _amount;
 
     }  
 
