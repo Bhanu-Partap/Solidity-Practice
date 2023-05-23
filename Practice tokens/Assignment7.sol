@@ -35,8 +35,8 @@ contract CrowdFunding {
 
     function contribute(uint _id) public payable {
         require(msg.sender != userProjects[_id]._owner," Owner can't contribute");
-        require(msg.value < userProjects[_id].funding_goal,"Amount can not be greater than goal amount");
-        require( userProjects[_id].recievedAmount + msg.value < userProjects[_id].funding_goal);
+        require(msg.value <= userProjects[_id].funding_goal,"Amount can not be greater than goal amount");
+        require( userProjects[_id].recievedAmount + msg.value <= userProjects[_id].funding_goal);
         userProjects[_id].balance.push(userbalance(msg.sender,msg.value));
         userProjects[_id].recievedAmount = userProjects[_id].recievedAmount + msg.value;
 
