@@ -44,7 +44,17 @@ contract finaL  {
     function Register( string memory _nft_type, address _addr, uint256 _listedItemPrice, uint256 id, string memory checkListAuction) public {
        // require(msg.sender != address(0) ,"Not Valid");
         if(keccak256(abi.encodePacked(_nft_type)) == keccak256(abi.encodePacked("ERC721"))){
-            if()
+            if(keccak256(abi.encodePacked(checkListAuction))== keccak256(abi.encodePacked("Auction"))){
+                 itemDetails[itemID].name=_name;
+                itemDetails[itemID].owner=msg.sender;
+                itemDetails[itemID].lastBid=0;
+                itemDetails[itemID].highestBid=0;
+                itemDetails[itemID].highestBider=address(0);
+                itemDetails[itemID].lastHighestBider=address (0);
+                itemDetails[itemID].auction_time=block.timestamp + 3600;
+                emit createItem(msg.sender, itemID , _name);
+                itemID+=1;
+                }
         }
 
         

@@ -119,34 +119,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "string",
-						"name": "_nft_type",
-						"type": "string"
-					},
-					{
-						"internalType": "address",
-						"name": "_addr",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_listedItemPrice",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "id",
-						"type": "uint256"
-					}
-				],
-				"name": "CreateItem",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
@@ -181,14 +153,34 @@
 			{
 				"inputs": [
 					{
+						"internalType": "string",
+						"name": "_nft_type",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_addr",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_listedItemPrice",
+						"type": "uint256"
+					},
+					{
 						"internalType": "uint256",
 						"name": "id",
 						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "checkListAuction",
+						"type": "string"
 					}
 				],
-				"name": "auctionEnd",
+				"name": "Register",
 				"outputs": [],
-				"stateMutability": "payable",
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -218,25 +210,6 @@
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "id",
-						"type": "uint256"
-					}
-				],
-				"name": "getWinningBidder",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -362,11 +335,11 @@
 			]
 		},
 		"Assignment 4 Tokens/final.sol": {
-			"keccak256": "0xa330ae772bedaa7b8856bcbe36f2b2f75b2a09dbe8bfb08fd103cee3dbde0ed9",
+			"keccak256": "0x2876ba6649016ce64cacf71c263eed03889edf25fa14ffe92a1510b08bbe66c7",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://b579b86d457df8ca26f81cd7357219a5db5768b62c143492c17573a9a3c00ded",
-				"dweb:/ipfs/QmNqPC6sPyHcac71k3fWqnR2Mjbbnnp2dRkZ3Ftf8BpyKK"
+				"bzz-raw://1ba513fddb440013a094edbc88dbbbd74307e7fb9c3f9cd121f7ea147c9c503d",
+				"dweb:/ipfs/QmTohk2DPwrHC5UAkYrzc1xMhKttAaD7MFBP2Caisn9njs"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol": {
