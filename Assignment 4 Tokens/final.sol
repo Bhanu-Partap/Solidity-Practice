@@ -46,8 +46,9 @@ contract finaL  {
         event Bid(address _address, uint256 _bidamount);
         event transfer(address _from, address _to, itemD  _item);
     
+    //functions
     function Register( string memory _nft_type, address _addr, uint256 _listedItemPrice, uint256 id, string memory checkListAuction) public {
-       // require(msg.sender != address(0) ,"Not Valid");
+       require(msg.sender != address(0) ,"Not Valid");
         if(keccak256(abi.encodePacked(_nft_type)) == keccak256(abi.encodePacked("ERC721"))){
             if(keccak256(abi.encodePacked(checkListAuction))== keccak256(abi.encodePacked("Auction"))){
                 itemDetails[itemID].owner=msg.sender;
@@ -101,6 +102,12 @@ contract finaL  {
 
     }
 
+
+    function LowerthePrice(uint256 id, uint256 loweredamount) public payable{
+         ListItem[id].listedItemPrice = loweredamount;
+    }
+
+
     function getHighestBid( uint256 id) public view returns(uint256) {
         return itemDetails[id].highestBid;
     }
@@ -111,6 +118,12 @@ contract finaL  {
         payable (itemDetails[id].highestBider).transfer(itemDetails[id].highestBid);
         delete itemDetails[id];
 
+    }
+
+
+
+    function getcontractaddress() public view returns(address){
+      return address(this);
     }
 
 }

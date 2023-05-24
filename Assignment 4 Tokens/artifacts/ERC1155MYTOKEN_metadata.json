@@ -260,6 +260,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "getcontractaddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -605,11 +618,11 @@
 	},
 	"sources": {
 		"Assignment 4 Tokens/ERC-1155.sol": {
-			"keccak256": "0x383859918645b1238f6819c221f391f3daa544affda9c83ee092fbfe5a515f4c",
+			"keccak256": "0x4ab76e6f89bc2777538096afc9879f9886ecd681e8bdcc211e63eefe36a6324b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://0987f236b754eb0ae27aefba695e826faec6dc75e2adcb8623e6613311af52bf",
-				"dweb:/ipfs/QmU7RrdiF1jr75kMaVeAANpEPzRtgZze5BpyA7QSX8uV7b"
+				"bzz-raw://451daf27e4866196a2229dd284ce5850f9c17d35531a86a07cf34394e537755b",
+				"dweb:/ipfs/QmYtWMD4GXKgJyCBQMFkFbi6K8FzoEGvLxsWpuS7dUShk8"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol": {

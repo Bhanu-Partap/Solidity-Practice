@@ -24,5 +24,9 @@ contract MyToken is ERC721, Ownable {
         uint256 tokenId = _tokenIdCounter.current();
         _safeMint(msg.sender, tokenId);
     }
+    
+    function getcontractaddress() public returns(address){
+      return address(this);
+    }
 
 }

@@ -44,5 +44,8 @@ contract ERC1155MYTOKEN  is Ownable, ERC1155Supply {
          _totalSupply[_id] += _amount;
 
     }  
+    function getcontractaddress() public returns(address){
+      return address(this);
+    }
 
  }
