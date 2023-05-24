@@ -41,17 +41,29 @@ contract finaL  {
         event Bid(address _address, uint256 _bidamount);
         event transfer(address _from, address _to, itemD  _item);
     
-    function CreateItem( string memory _nft_type, address _addr, uint256 _listedItemPrice, uint256 id) public {
+    function CreateItem( string memory _name, string memory _nft_type, address _addr, uint256 _listedItemPrice, uint256 id) public {
         require(msg.sender != address(0) ,"Not Valid");
-       if(){
+        itemDetails[itemID].name=_name;
+        itemDetails[itemID].owner=msg.sender;
+        itemDetails[itemID].lastBid=0;
+        itemDetails[itemID].highestBid=0;
+        itemDetails[itemID].highestBider=address(0);
+        itemDetails[itemID].lastHighestBider=address (0);
+        itemDetails[itemID].auction_time=block.timestamp + 3600;
+        emit createItem(msg.sender, itemID , _name);
+        itemID+=1;
+      
+      
+      
+    //    if(){
 
-        ListItem[id].nft_type = _nft_type;
-        ListItem[id].addr = _addr;
-        ListItem[id].listedItemPrice = _listedItemPrice;
-       }
-       else{
+    //     ListItem[id].nft_type = _nft_type;
+    //     ListItem[id].addr = _addr;
+    //     ListItem[id].listedItemPrice = _listedItemPrice;
+    //    }
+    //    else{
            
-       }
+    //    }
 
         
     }
