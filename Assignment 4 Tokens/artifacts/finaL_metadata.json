@@ -154,6 +154,11 @@
 				"inputs": [
 					{
 						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
 						"name": "_nft_type",
 						"type": "string"
 					},
@@ -335,11 +340,11 @@
 			]
 		},
 		"Assignment 4 Tokens/final.sol": {
-			"keccak256": "0x2876ba6649016ce64cacf71c263eed03889edf25fa14ffe92a1510b08bbe66c7",
+			"keccak256": "0x71d250a4be7300e92b85609baf200e693da61c4d786530e6c541a1814ba652e0",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://1ba513fddb440013a094edbc88dbbbd74307e7fb9c3f9cd121f7ea147c9c503d",
-				"dweb:/ipfs/QmTohk2DPwrHC5UAkYrzc1xMhKttAaD7MFBP2Caisn9njs"
+				"bzz-raw://6e4fb4354d0918881379295b2cb63dc9439899ba056a261f87b8b501042ee98f",
+				"dweb:/ipfs/QmYX2RnwTrZyVzCQKh8EHFkmtLJPFzwJT3ohJ39iMJh4im"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol": {
