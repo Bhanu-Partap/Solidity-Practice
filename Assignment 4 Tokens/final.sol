@@ -41,29 +41,11 @@ contract finaL  {
         event Bid(address _address, uint256 _bidamount);
         event transfer(address _from, address _to, itemD  _item);
     
-    function CreateItem( string memory _name, string memory _nft_type, address _addr, uint256 _listedItemPrice, uint256 id) public {
-        require(msg.sender != address(0) ,"Not Valid");
-        itemDetails[itemID].name=_name;
-        itemDetails[itemID].owner=msg.sender;
-        itemDetails[itemID].lastBid=0;
-        itemDetails[itemID].highestBid=0;
-        itemDetails[itemID].highestBider=address(0);
-        itemDetails[itemID].lastHighestBider=address (0);
-        itemDetails[itemID].auction_time=block.timestamp + 3600;
-        emit createItem(msg.sender, itemID , _name);
-        itemID+=1;
-      
-      
-      
-    //    if(){
-
-    //     ListItem[id].nft_type = _nft_type;
-    //     ListItem[id].addr = _addr;
-    //     ListItem[id].listedItemPrice = _listedItemPrice;
-    //    }
-    //    else{
-           
-    //    }
+    function Register( string memory _nft_type, address _addr, uint256 _listedItemPrice, uint256 id, string memory checkListAuction) public {
+       // require(msg.sender != address(0) ,"Not Valid");
+        if(keccak256(abi.encodePacked(_nft_type)) == keccak256(abi.encodePacked("ERC721"))){
+            if()
+        }
 
         
     }
@@ -88,10 +70,7 @@ contract finaL  {
         return itemDetails[id].highestBid;
     }
 
-    function getWinningBidder(uint256 id) public view returns(address){
-        return itemDetails[id].highestBider;
-    }
-
+ 
     function cancelAuction( uint256 id) public  {
         require(msg.sender == itemDetails[id].owner," Only Owner can cancel the Auction");
         payable (itemDetails[id].highestBider).transfer(itemDetails[id].highestBid);
@@ -99,12 +78,12 @@ contract finaL  {
 
     }
 
-    function auctionEnd(uint256 id) public payable {
-        require(block.timestamp > itemDetails[id].auction_time);
-        require(msg.sender == itemDetails[id].owner, " Onle The owner of the Item can access.");
-        payable(itemDetails[id].owner).transfer(itemDetails[id].highestBid);
-        itemDetails[id].owner= itemDetails[id].highestBider;
-        delete itemDetails[id];
-    }
+    // function auctionEnd(uint256 id) public payable {
+    //     require(block.timestamp > itemDetails[id].auction_time);
+    //     require(msg.sender == itemDetails[id].owner, " Onle The owner of the Item can access.");
+    //     payable(itemDetails[id].owner).transfer(itemDetails[id].highestBid);
+    //     itemDetails[id].owner= itemDetails[id].highestBider;
+    //     delete itemDetails[id];
+    // }
 
 }
