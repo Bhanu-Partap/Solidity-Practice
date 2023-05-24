@@ -32,6 +32,11 @@ contract finaL  {
         string nft_type;
     }
 
+    constructor(address addr1, address addr2 ){
+         nft=MyToken (addr1);
+         tokenwithsupply = ERC1155MYTOKEN(addr2);
+
+    }
         // mapping
         mapping(uint => itemD) public itemDetails;
         mapping(uint => listItem) public ListItem;
@@ -76,9 +81,6 @@ contract finaL  {
         }
     }
 
-
-
-
     function placeBid(uint256 id) public payable returns(string memory)  {
         require(itemDetails[id].auction_time > block.timestamp,"not started yet");
         require(msg.value >= itemDetails[id].lastBid, "Increase the Amount");
@@ -110,13 +112,5 @@ contract finaL  {
         delete itemDetails[id];
 
     }
-
-    // function auctionEnd(uint256 id) public payable {
-    //     require(block.timestamp > itemDetails[id].auction_time);
-    //     require(msg.sender == itemDetails[id].owner, " Onle The owner of the Item can access.");
-    //     payable(itemDetails[id].owner).transfer(itemDetails[id].highestBid);
-    //     itemDetails[id].owner= itemDetails[id].highestBider;
-    //     delete itemDetails[id];
-    // }
 
 }
