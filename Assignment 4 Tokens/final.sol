@@ -8,9 +8,9 @@ import "./ERC-1155.sol";
 
 contract finaL  {
 
- ERC20Basic a;
- MyToken b;
- ERC1155MYTOKEN c;
+ ERC20Basic token;
+ MyToken nft;
+ ERC1155MYTOKEN tokenwithsupply;
 
     
     struct itemD{
@@ -24,7 +24,6 @@ contract finaL  {
         address lastHighestBider;
     }
     uint itemID =1;
-    uint256 FixedPrice =0.001 ether;
 
     struct listItem{
         uint256 id;
@@ -42,23 +41,39 @@ contract finaL  {
         event Bid(address _address, uint256 _bidamount);
         event transfer(address _from, address _to, itemD  _item);
     
-    function Register(string memory _name, string memory _nft_type, address _addr, uint256 _listedItemPrice, uint256 id, string memory checkListAuction) public {
+    function Register( string memory _nft_type, address _addr, uint256 _listedItemPrice, uint256 id, string memory checkListAuction) public {
        // require(msg.sender != address(0) ,"Not Valid");
         if(keccak256(abi.encodePacked(_nft_type)) == keccak256(abi.encodePacked("ERC721"))){
             if(keccak256(abi.encodePacked(checkListAuction))== keccak256(abi.encodePacked("Auction"))){
-                 itemDetails[itemID].name=_name;
                 itemDetails[itemID].owner=msg.sender;
                 itemDetails[itemID].lastBid=0;
                 itemDetails[itemID].highestBid=0;
                 itemDetails[itemID].highestBider=address(0);
                 itemDetails[itemID].lastHighestBider=address (0);
                 itemDetails[itemID].auction_time=block.timestamp + 3600;
-                emit createItem(msg.sender, itemID , _name);
                 itemID+=1;
                 }
+            else if(keccak256(abi.encodePacked(checkListAuction))==keccak256(abi.encodePacked("Fixed_Price"))){
+                ListItem[id].listedItemPrice=  _listedItemPrice;
+                ListItem[id].addr=  _addr;
+                ListItem[id].nft_type=  _nft_type;                
+                }
         }
-
-        
+        else if(keccak256(abi.encodePacked(_nft_type)) == keccak256(abi.encodePacked("ERC1155"))){
+             if(keccak256(abi.encodePacked(checkListAuction))== keccak256(abi.encodePacked("Auction"))){                itemDetails[itemID].owner=msg.sender;
+                itemDetails[itemID].lastBid=0;
+                itemDetails[itemID].highestBid=0;
+                itemDetails[itemID].highestBider=address(0);
+                itemDetails[itemID].lastHighestBider=address (0);
+                itemDetails[itemID].auction_time=block.timestamp + 3600;
+                itemID+=1;
+                }
+            else if(keccak256(abi.encodePacked(checkListAuction))==keccak256(abi.encodePacked("Fixed_Price"))){
+                ListItem[id].listedItemPrice=  _listedItemPrice;
+                ListItem[id].addr=  _addr;
+                ListItem[id].nft_type=  _nft_type;                
+                }   
+        }
     }
 
 
