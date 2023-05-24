@@ -79,16 +79,23 @@ contract finaL  {
 
 
 
-    function placeBid(uint256 id) public payable  {
-        require(itemDetails[id].owner != msg.sender," owner can't bid");
+    function placeBid(uint256 id) public payable returns(string memory)  {
         require(itemDetails[id].auction_time > block.timestamp,"not started yet");
         require(msg.value >= itemDetails[id].lastBid, "Increase the Amount");
-        itemDetails[id].lastBid=itemDetails[id].highestBid;
-        itemDetails[id].lastHighestBider=itemDetails[id].highestBider;
-        itemDetails[id].highestBid=msg.value;
-        itemDetails[id].highestBider=msg.sender;
-        payable(itemDetails[id].lastHighestBider).transfer(itemDetails[id].lastBid);
+        if(itemDetails[id].highestBid == 0){
+            require(itemDetails[id].owner != msg.sender," owner can't bid");
+            itemDetails[id].highestBid=msg.value;
+            itemDetails[id].highestBider=msg.sender;
+        }
+        else if(itemDetails[id].highestBid != 0){
+            itemDetails[id].highestBid=msg.value;
+            itemDetails[id].highestBider=msg.sender;
+            itemDetails[id].lastBid=itemDetails[id].highestBid;
+            itemDetails[id].lastHighestBider=itemDetails[id].highestBider;
+            payable(itemDetails[id].lastHighestBider).transfer(itemDetails[id].lastBid);
+        }
         emit Bid(msg.sender, msg.value);
+        return "Bid successfully Completed";
 
     }
 

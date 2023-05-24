@@ -278,7 +278,13 @@
 					}
 				],
 				"name": "placeBid",
-				"outputs": [],
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
 				"stateMutability": "payable",
 				"type": "function"
 			}
@@ -335,11 +341,11 @@
 			]
 		},
 		"Assignment 4 Tokens/final.sol": {
-			"keccak256": "0x076ce0e9aefe36629df0140e6a4e41f077a43f383b9558fb30071136ab3b44cb",
+			"keccak256": "0x00efabf9adda44bd70490532dddac8517d6dcd39a813967b07bbd38a76780c59",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://7f1fe75c3664145c014b1b14191071c0610865c02eec573bede6296ea4894402",
-				"dweb:/ipfs/QmZ7RegucLnKHQeRFSatTtStTpvy78xPTyiXezy7sAA9RF"
+				"bzz-raw://7db6cbb7a659c197006301dc5f7a4efed11c6ffde49ae9404dfba40de78d60a5",
+				"dweb:/ipfs/QmYpvqyx3pzERaE54Bdp1MujMU7VimQ2jm38Vq8zgT2oxs"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol": {
