@@ -15,7 +15,6 @@ contract finaL  {
     
     struct itemD{
         string name;
-        uint256 id;
         address owner;
         uint256 lastBid;
         uint256 highestBid;
@@ -26,7 +25,6 @@ contract finaL  {
     uint itemID =1;
 
     struct listItem{
-        uint256 id;
         uint256 listedItemPrice;
         address addr;
         string nft_type;
@@ -75,7 +73,8 @@ contract finaL  {
             else if(keccak256(abi.encodePacked(checkListAuction))==keccak256(abi.encodePacked("Fixed_Price"))){
                 ListItem[id].listedItemPrice=  _listedItemPrice;
                 ListItem[id].addr=  _addr;
-                ListItem[id].nft_type=  _nft_type;                
+                ListItem[id].nft_type=  _nft_type; 
+                itemID+=1;               
                 }
         }
         else if(keccak256(abi.encodePacked(_nft_type)) == keccak256(abi.encodePacked("ERC1155"))){
@@ -90,7 +89,8 @@ contract finaL  {
             else if(keccak256(abi.encodePacked(checkListAuction))==keccak256(abi.encodePacked("Fixed_Price"))){
                 ListItem[id].listedItemPrice=  _listedItemPrice;
                 ListItem[id].addr=  _addr;
-                ListItem[id].nft_type=  _nft_type;                
+                ListItem[id].nft_type=  _nft_type;   
+                itemID+=1;             
                 }   
         }
     }
@@ -117,6 +117,8 @@ contract finaL  {
 
 
     function LowerthePrice(uint256 id, uint256 loweredamount) public payable{
+        require(msg.sender == ListItem[id].addr,"Only owner can lower the price");
+        require(loweredamount < ListItem[id].listedItemPrice,"Amount should be smaller then the previous one ");
          ListItem[id].listedItemPrice = loweredamount;
     }
 
@@ -127,7 +129,9 @@ contract finaL  {
 
 
     function cancelListing(uint256 id) public {
-        
+        require(msg.sender == ListItem[id].addr,"Only owner can cancel listing");
+        payable(ListItem[id].addr).transfer(ListItem[id].listedItemPrice);
+        delete ListItem[id];        
     }
  
     // function cancelAuction( uint256 id) public  {

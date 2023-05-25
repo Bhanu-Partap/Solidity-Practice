@@ -395,11 +395,11 @@
 			]
 		},
 		"Assignment 4 Tokens/final.sol": {
-			"keccak256": "0x1fe7417bcb2f0d2a89aaa84fa718374da61bdf9b83209c99b513dc452e28a171",
+			"keccak256": "0xf3c446f0ba274791192ec98589f1dabb9d3296152d80667874c3c472963903c4",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://16b30ac9e463d2688134eb07c6dafd00d545462d17993e47b56777edef957235",
-				"dweb:/ipfs/QmZjGSnSSCHqtW4C8YKFjBoznBJAv95ijTZmMwBmbRm7iw"
+				"bzz-raw://7864cca54f0fc0f3b0117da614a2a0348018f541cb68420117b1d5464d9fac65",
+				"dweb:/ipfs/Qmb5VHRw2jf5Xa2osfkaxXYoib9RuFp8AouXoYTwA7Q2aF"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol": {
