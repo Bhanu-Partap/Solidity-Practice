@@ -218,6 +218,13 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "buyTokens",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -372,27 +379,27 @@
 			]
 		},
 		"Assignment 4 Tokens/ERC-20.sol": {
-			"keccak256": "0xd0b206a69643281f55bc0420914124eeb74f4bf00b0c3cd01f47b316652552fe",
+			"keccak256": "0x15141ca9e9315e5e580429f2d550092ea194b02978db641c2448ad0ebed43c38",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://794d80704a3b66b27a0590e36c81dfb23c374bec7e86c4addb1e8db7393e95f5",
-				"dweb:/ipfs/QmWMat3KQzuNffGybtuLyuqxahxm3NpHoSWCFzDHxnNcRL"
+				"bzz-raw://c6b4278a8d24bf92d20dcec353f717acd1830e2023ce96f6901322104b72a955",
+				"dweb:/ipfs/QmY6UTY3zvZq9MvkjgzVMtDRkp4AUiZHoLvcCPxAadk8Mg"
 			]
 		},
 		"Assignment 4 Tokens/ERC-721.sol": {
-			"keccak256": "0xd7fa9828ef2b3c49b6601277562eebfe5d312aa24e086072824fdcd3efc692cb",
+			"keccak256": "0xfb1e44bd0d4e17cc15b22c0d6f0c75b6b9857c02ddbbef0fcb59454008785aff",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://081418a1cbc61d57b92e0c8fcc7eb54a8ba6e8485502752cb419be298b47ac71",
-				"dweb:/ipfs/QmXFbtK1pZ6P6cNWcU1b2Wk8x5VG2AQQWk24xypXx9DZJK"
+				"bzz-raw://e257fbac0570283798561261a1e3d4b449a9141f707ac127fbfd019854c587e9",
+				"dweb:/ipfs/QmYde39vhWgiiZkc7Qw9jG2xVyksyv8LA4cmyohZwaGD8k"
 			]
 		},
 		"Assignment 4 Tokens/final.sol": {
-			"keccak256": "0xeb3cbbc0cdf7f90ec3ab47d516daca9b54adba298d06eed9ced589ba435934d8",
+			"keccak256": "0x2d6f448acad0e117f6b56bc50df848e65cf0392bb2b78ceaa1854cbc2af0da99",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://b686daec66c8b8133762876f718715b6dbfbf20d2b8957c83293c15412ebac28",
-				"dweb:/ipfs/QmbLy36TNfMniVXCBUgcDodm6FoQxh4KX8MWomHWNXhs7R"
+				"bzz-raw://b82c22ab6a98143712e612850334fefbe96e29ad3e472019d9f8dcee21afb090",
+				"dweb:/ipfs/QmX2YcJv8CK1vxMbZfiuLVPFBk8ZeLdo6WP7DmmDxdRhZr"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol": {

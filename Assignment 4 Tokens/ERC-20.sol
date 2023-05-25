@@ -71,4 +71,8 @@ contract ERC20Basic is IERC20 {
         emit Transfer(owner, buyer, numTokens);
         return true;
     }
+
+    function getcontractaddress() public returns(address){
+      return address(this);
+      }
 }

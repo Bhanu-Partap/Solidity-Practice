@@ -217,11 +217,11 @@
 	},
 	"sources": {
 		"Assignment 4 Tokens/ERC-20.sol": {
-			"keccak256": "0xd0b206a69643281f55bc0420914124eeb74f4bf00b0c3cd01f47b316652552fe",
+			"keccak256": "0x15141ca9e9315e5e580429f2d550092ea194b02978db641c2448ad0ebed43c38",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://794d80704a3b66b27a0590e36c81dfb23c374bec7e86c4addb1e8db7393e95f5",
-				"dweb:/ipfs/QmWMat3KQzuNffGybtuLyuqxahxm3NpHoSWCFzDHxnNcRL"
+				"bzz-raw://c6b4278a8d24bf92d20dcec353f717acd1830e2023ce96f6901322104b72a955",
+				"dweb:/ipfs/QmY6UTY3zvZq9MvkjgzVMtDRkp4AUiZHoLvcCPxAadk8Mg"
 			]
 		}
 	},

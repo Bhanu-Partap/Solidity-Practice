@@ -35,6 +35,7 @@ contract finaL  {
     constructor(address addr1, address addr2 ){
          nft=NFT (addr1);
          nftwithsupply = ERC1155MYTOKEN(addr2);
+         token = new ERC20Basic();
 
     }
         // mapping
@@ -47,6 +48,19 @@ contract finaL  {
         event transfer(address _from, address _to, itemD  _item);
     
     //functions
+
+    function buyTokens() public payable {
+        uint256 amounttoBuy = msg.value;
+        uint256 ContractBalance = token.balanceOf(address(this));
+        require(amounttoBuy > 0,"send some more ethers");
+        require(amounttoBuy <= ContractBalance,"not enough tokens" );
+        
+
+    }
+
+
+
+
     function Register( string memory _nft_type, address _addr, uint256 _listedItemPrice, uint256 id, string memory checkListAuction) public {
        require(msg.sender != address(0) ,"Not Valid");
         if(keccak256(abi.encodePacked(_nft_type)) == keccak256(abi.encodePacked("ERC721"))){
