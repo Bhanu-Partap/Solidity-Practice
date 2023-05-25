@@ -9,7 +9,7 @@ import "./ERC-1155.sol";
 contract finaL  {
 
  ERC20Basic token;
- MyToken nft;
+ NFT nft;
  ERC1155MYTOKEN nftwithsupply;
 
     
@@ -33,7 +33,7 @@ contract finaL  {
     }
 
     constructor(address addr1, address addr2 ){
-         nft=MyToken (addr1);
+         nft=NFT (addr1);
          nftwithsupply = ERC1155MYTOKEN(addr2);
 
     }

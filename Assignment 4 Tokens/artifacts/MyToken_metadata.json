@@ -161,6 +161,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "getcontractaddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -488,11 +501,11 @@
 	},
 	"sources": {
 		"Assignment 4 Tokens/ERC-721.sol": {
-			"keccak256": "0xd0f730eca306e73ce07a3cd2b1e47e5f32deaebc51eee17d481196a5b302df89",
+			"keccak256": "0xd7fa9828ef2b3c49b6601277562eebfe5d312aa24e086072824fdcd3efc692cb",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://9a80d738593330f2fc20194f99daac94187de802db4c1d8b42e34d9265370d13",
-				"dweb:/ipfs/QmVQts6oEqhVnPYrTwBEn9DmX8P5aXSCvCxgvqGFuoXydt"
+				"bzz-raw://081418a1cbc61d57b92e0c8fcc7eb54a8ba6e8485502752cb419be298b47ac71",
+				"dweb:/ipfs/QmXFbtK1pZ6P6cNWcU1b2Wk8x5VG2AQQWk24xypXx9DZJK"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol": {
