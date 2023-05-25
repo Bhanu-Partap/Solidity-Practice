@@ -105,7 +105,6 @@ contract finaL  {
             itemDetails[id].lastBid=itemDetails[id].highestBid;
             itemDetails[id].lastHighestBider=itemDetails[id].highestBider;
             payable(itemDetails[id].lastHighestBider).transfer(itemDetails[id].lastBid);
-
         emit Bid(msg.sender, msg.value);
         return "Bid successfully Completed";
 
