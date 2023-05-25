@@ -54,11 +54,10 @@ contract finaL  {
         uint256 ContractBalance = token.balanceOf(address(this));
         require(amounttoBuy > 0,"send some more ethers");
         require(amounttoBuy <= ContractBalance,"not enough tokens" );
-        
+        token.transfer(msg.sender, amounttoBuy);
+
 
     }
-
-
 
 
     function Register( string memory _nft_type, address _addr, uint256 _listedItemPrice, uint256 id, string memory checkListAuction) public {
