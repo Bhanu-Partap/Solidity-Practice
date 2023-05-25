@@ -58,10 +58,11 @@ contract finaL  {
     }
 
 
-    function Register( string memory _nft_type, address _addr, uint256 _listedItemPrice, uint256 id, string memory checkListAuction) public {
+    function Register(string memory _name, string memory _nft_type, address _addr, uint256 _listedItemPrice, uint256 id, string memory checkListAuction) public {
        require(msg.sender != address(0) ,"Not Valid");
         if(keccak256(abi.encodePacked(_nft_type)) == keccak256(abi.encodePacked("ERC721"))){
             if(keccak256(abi.encodePacked(checkListAuction))== keccak256(abi.encodePacked("Auction"))){
+                itemDetails[itemID].name=_name;
                 itemDetails[itemID].owner=msg.sender;
                 itemDetails[itemID].lastBid=0;
                 itemDetails[itemID].highestBid=0;
@@ -98,18 +99,13 @@ contract finaL  {
     function placeBid(uint256 id) public payable returns(string memory)  {
         require(itemDetails[id].auction_time > block.timestamp,"not started yet");
         require(msg.value >= itemDetails[id].lastBid, "Increase the Amount");
-        if(itemDetails[id].highestBid == 0){
             require(itemDetails[id].owner != msg.sender," owner can't bid");
-            itemDetails[id].highestBid=msg.value;
-            itemDetails[id].highestBider=msg.sender;
-        }
-        else if(itemDetails[id].highestBid != 0){
             itemDetails[id].highestBid=msg.value;
             itemDetails[id].highestBider=msg.sender;
             itemDetails[id].lastBid=itemDetails[id].highestBid;
             itemDetails[id].lastHighestBider=itemDetails[id].highestBider;
             payable(itemDetails[id].lastHighestBider).transfer(itemDetails[id].lastBid);
-        }
+
         emit Bid(msg.sender, msg.value);
         return "Bid successfully Completed";
 

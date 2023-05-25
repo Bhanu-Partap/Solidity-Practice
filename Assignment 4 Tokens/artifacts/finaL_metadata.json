@@ -88,11 +88,6 @@
 								"type": "string"
 							},
 							{
-								"internalType": "uint256",
-								"name": "id",
-								"type": "uint256"
-							},
-							{
 								"internalType": "address",
 								"name": "owner",
 								"type": "address"
@@ -144,11 +139,6 @@
 				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "id",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
 						"name": "listedItemPrice",
 						"type": "uint256"
 					},
@@ -186,6 +176,11 @@
 			},
 			{
 				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
 					{
 						"internalType": "string",
 						"name": "_nft_type",
@@ -283,11 +278,6 @@
 						"internalType": "string",
 						"name": "name",
 						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "id",
-						"type": "uint256"
 					},
 					{
 						"internalType": "address",
@@ -395,11 +385,11 @@
 			]
 		},
 		"Assignment 4 Tokens/final.sol": {
-			"keccak256": "0xf3c446f0ba274791192ec98589f1dabb9d3296152d80667874c3c472963903c4",
+			"keccak256": "0x647490e0c4f1ecaf83646f5bb77ad9d2634fcee4ad7aabf5631247fb7103b667",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://7864cca54f0fc0f3b0117da614a2a0348018f541cb68420117b1d5464d9fac65",
-				"dweb:/ipfs/Qmb5VHRw2jf5Xa2osfkaxXYoib9RuFp8AouXoYTwA7Q2aF"
+				"bzz-raw://08a1dcf1e67f30a90cdd15d9b72a5bfc66a082dc82c6e7f914cc6c6f2aa65300",
+				"dweb:/ipfs/Qmf4SqVDqHTw71W9zeHuqMVPGCdTgmpxtwKqMn8Z5ziVQm"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol": {

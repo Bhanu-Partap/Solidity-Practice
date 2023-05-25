@@ -28,7 +28,7 @@ contract ERC20Basic is IERC20 {
 
     mapping(address => mapping (address => uint256)) allowed;
 
-    uint256 totalSupply_ ;
+    uint256 totalSupply_ = 10 ether;
 
 
    constructor() {
