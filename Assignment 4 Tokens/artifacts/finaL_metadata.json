@@ -6,6 +6,22 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "addr1",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "addr2",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
 				"anonymous": false,
 				"inputs": [
 					{
@@ -153,6 +169,24 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "loweredamount",
+						"type": "uint256"
+					}
+				],
+				"name": "LowerthePrice",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "string",
 						"name": "_nft_type",
 						"type": "string"
@@ -191,7 +225,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "cancelAuction",
+				"name": "cancelListing",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -210,6 +244,19 @@
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getcontractaddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -317,11 +364,11 @@
 	},
 	"sources": {
 		"Assignment 4 Tokens/ERC-1155.sol": {
-			"keccak256": "0x383859918645b1238f6819c221f391f3daa544affda9c83ee092fbfe5a515f4c",
+			"keccak256": "0x4ab76e6f89bc2777538096afc9879f9886ecd681e8bdcc211e63eefe36a6324b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://0987f236b754eb0ae27aefba695e826faec6dc75e2adcb8623e6613311af52bf",
-				"dweb:/ipfs/QmU7RrdiF1jr75kMaVeAANpEPzRtgZze5BpyA7QSX8uV7b"
+				"bzz-raw://451daf27e4866196a2229dd284ce5850f9c17d35531a86a07cf34394e537755b",
+				"dweb:/ipfs/QmYtWMD4GXKgJyCBQMFkFbi6K8FzoEGvLxsWpuS7dUShk8"
 			]
 		},
 		"Assignment 4 Tokens/ERC-20.sol": {
@@ -333,19 +380,19 @@
 			]
 		},
 		"Assignment 4 Tokens/ERC-721.sol": {
-			"keccak256": "0xd0f730eca306e73ce07a3cd2b1e47e5f32deaebc51eee17d481196a5b302df89",
+			"keccak256": "0xd7fa9828ef2b3c49b6601277562eebfe5d312aa24e086072824fdcd3efc692cb",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://9a80d738593330f2fc20194f99daac94187de802db4c1d8b42e34d9265370d13",
-				"dweb:/ipfs/QmVQts6oEqhVnPYrTwBEn9DmX8P5aXSCvCxgvqGFuoXydt"
+				"bzz-raw://081418a1cbc61d57b92e0c8fcc7eb54a8ba6e8485502752cb419be298b47ac71",
+				"dweb:/ipfs/QmXFbtK1pZ6P6cNWcU1b2Wk8x5VG2AQQWk24xypXx9DZJK"
 			]
 		},
 		"Assignment 4 Tokens/final.sol": {
-			"keccak256": "0xe97db474764e1e48dba2ea93038c89635d8b26b9ef3350ef055d2db80eb44f9b",
+			"keccak256": "0xeb3cbbc0cdf7f90ec3ab47d516daca9b54adba298d06eed9ced589ba435934d8",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://d6c211b467973bde104e09d76a5dabb52370e0ceb4077078670adcc52de7ebd1",
-				"dweb:/ipfs/QmUEGXoKfgiwY56gJAZhAtsnKsDs8cB6GQcDspRpjL7tWn"
+				"bzz-raw://b686daec66c8b8133762876f718715b6dbfbf20d2b8957c83293c15412ebac28",
+				"dweb:/ipfs/QmbLy36TNfMniVXCBUgcDodm6FoQxh4KX8MWomHWNXhs7R"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol": {

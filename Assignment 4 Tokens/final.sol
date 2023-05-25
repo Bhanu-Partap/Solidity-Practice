@@ -10,7 +10,7 @@ contract finaL  {
 
  ERC20Basic token;
  MyToken nft;
- ERC1155MYTOKEN tokenwithsupply;
+ ERC1155MYTOKEN nftwithsupply;
 
     
     struct itemD{
@@ -34,7 +34,7 @@ contract finaL  {
 
     constructor(address addr1, address addr2 ){
          nft=MyToken (addr1);
-         tokenwithsupply = ERC1155MYTOKEN(addr2);
+         nftwithsupply = ERC1155MYTOKEN(addr2);
 
     }
         // mapping
@@ -112,13 +112,17 @@ contract finaL  {
         return itemDetails[id].highestBid;
     }
 
- 
-    function cancelAuction( uint256 id) public  {
-        require(msg.sender == itemDetails[id].owner," Only Owner can cancel the Auction");
-        payable (itemDetails[id].highestBider).transfer(itemDetails[id].highestBid);
-        delete itemDetails[id];
 
+    function cancelListing(uint256 id) public {
+        
     }
+ 
+    // function cancelAuction( uint256 id) public  {
+    //     require(msg.sender == itemDetails[id].owner," Only Owner can cancel the Auction");
+    //     payable (itemDetails[id].highestBider).transfer(itemDetails[id].highestBid);
+    //     delete itemDetails[id];
+
+    // }
 
 
 
