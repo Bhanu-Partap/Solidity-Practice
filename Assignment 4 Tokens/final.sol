@@ -49,16 +49,149 @@ contract finaL {
     event Bid(address _address, uint256 _bidamount);
     event transfer(address _from, address _to, itemD _item);
 
+     mapping(uint => bundle[]) public bundledata;
+    struct bundle {
+        uint256 id;
+        address _address;
+    }
+    uint BundleId=1;
+    mapping(uint => uint256) bundle_selling_price;
+    mapping(uint => itemD) bundle_auction_data;
+
+    mapping(uint => listItem) public sell;
+    mapping(uint => itemD) public AuctionMap;
+
+    
+    event bundleCreated(uint _BundleId,uint[],uint Price);
+    event bundleOwnerChange(uint ,uint[],uint);
+
     //functions
 
-    function buyTokens() public payable {
-        uint256 amounttoBuy = msg.value;
-        uint256 ContractBalance = token.balanceOf(address(this));
-        require(amounttoBuy > 0, "send some more ethers");
-        require(amounttoBuy <= ContractBalance, "not enough tokens");
-        token.transfer(msg.sender, amounttoBuy);
+    function bundlelist(
+        bool _sell,
+        bool _auction,
+        uint256[] calldata id_array,
+        uint256 price
+    ) public {
+        require(_sell != _auction,"decide want to sell or auction");
+        if (_sell) {
+            for (uint256 i = 0; i < id_array.length; i++) {
+                require(
+                    nft.ownerOf(id_array[i]) == msg.sender,
+                    "you are not owner"
+                );
+                bundledata[BundleId].push(
+                    bundle(id_array[i], msg.sender)
+                    
+                );
+                
+            }
+            bundle_selling_price[BundleId] = price;
+            emit bundleCreated(BundleId,id_array,bundle_selling_price[BundleId]);
+            BundleId++ ;
+        } else if (_auction) {
+            for (uint256 i = 0; i < id_array.length; i++) {
+                require(
+                    nft.ownerOf(id_array[i]) == msg.sender,
+                    "you are not owner"
+                );
+                bundledata[BundleId].push(
+                    bundle(id_array[i], msg.sender)
+                );
+            }
+            bundle_auction_data[BundleId] = itemD({
+                tokenId : BundleId,
+                TypeToken:"Erc721",
+                amount : 1,
+                timestamp : block.timestamp,
+                owner : msg.sender,
+                previousBid:0,
+                currentBid : 0,
+                previousBidder :address(0),
+                CurrentBider : address(0),
+                AuctionTime: block.timestamp + 3600
+            });
+            emit bundleCreated(BundleId,id_array,0);
+            BundleId++;
+        }
     }
 
+    function buy_bundle(uint _BundleId) public payable {
+        require(
+            bundle_selling_price[_BundleId] == msg.value,
+            "you are not paying enough ether"
+        );
+        for (uint256 i = 0; i < bundledata[_BundleId].length; i++) {
+            nft.transferFrom(
+                bundledata[_BundleId][i]._address,
+                msg.sender,
+                bundledata[_BundleId][i].id
+            );
+        }
+        //emit  bundleOwnerChange(_BundleId,bundledata[_BundleId].bundle());
+        delete bundledata[_BundleId];
+    }
+
+    function cancel_bundle(uint _BundleId) public {
+        require(msg.sender == bundledata[_BundleId][0]._address,"you are not the owner to cancel");
+        delete bundledata[_BundleId];
+        delete bundle_selling_price[_BundleId];
+        delete bundle_auction_data[_BundleId];
+    }
+
+    function bundle_bid(uint _BundleId,uint amount) public payable returns(string memory) {
+        require(_BundleId != 0,"item is not registed for auction");
+        require(block.timestamp <bundle_auction_data[_BundleId].AuctionTime,"auction time already ended so please cancel or end the auction");
+        require(amount >bundle_auction_data[_BundleId].currentBid,"Bid is not higher than previous bid");
+        if(bundle_auction_data[_BundleId].currentBid == 0){
+            require(msg.sender != bundle_auction_data[_BundleId].owner," owner can't BID");
+            bundle_auction_data[_BundleId].currentBid = amount;
+            bundle_auction_data[_BundleId].CurrentBider = msg.sender;
+            }
+        else if(bundle_auction_data[_BundleId].currentBid !=0) {
+            bundle_auction_data[_BundleId].previousBid = bundle_auction_data[_BundleId].currentBid ;
+            bundle_auction_data[_BundleId].previousBidder =  bundle_auction_data[_BundleId].CurrentBider;
+            bundle_auction_data[_BundleId].currentBid = amount;
+            bundle_auction_data[_BundleId].CurrentBider = msg.sender;
+            payable(bundle_auction_data[_BundleId].previousBidder).transfer(bundle_auction_data[_BundleId].previousBid);
+            }
+        return "bid successfully done";
+        }
+    
+
+    function HighestBundleBid(uint _BundleId) public view returns(uint,address)
+    {
+        return (bundle_auction_data[_BundleId].currentBid, bundle_auction_data[_BundleId].CurrentBider);
+    }  
+
+
+    function BundleAuctionEnds(uint Id) public payable 
+    {
+        require(bundle_auction_data[Id].currentBid!=0,"firstly place a bid");
+        payable(bundle_auction_data[Id].owner).transfer(bundle_auction_data[Id].currentBid);
+        bundle_auction_data[Id].owner = payable(bundle_auction_data[Id].CurrentBider);
+        bundle_auction_data[Id].previousBid = bundle_auction_data[Id].currentBid ;
+        bundle_auction_data[Id].previousBidder =  bundle_auction_data[Id].CurrentBider;
+        bundle_auction_data[Id].currentBid = 0;
+        bundle_auction_data[Id].CurrentBider = address(0);
+        nft.transferFrom(msg.sender,bundle_auction_data[Id].owner,Id); 
+        
+
+    }
+
+
+    function BundlecancelAuction(uint Id) public payable returns(string memory)
+    {
+        require(bundle_auction_data[Id].currentBid!=0,"firstly place a bid");
+        payable(bundle_auction_data[Id].CurrentBider).transfer(bundle_auction_data[Id].currentBid);
+        bundle_auction_data[Id].previousBid = 0 ;
+        bundle_auction_data[Id].previousBidder =  address(0);
+        bundle_auction_data[Id].currentBid = 0;
+        bundle_auction_data[Id].CurrentBider = address(0);
+        return ("Auction is been canceled");
+    } 
+
+ 
     function Register(
         string memory _name,
         string memory _nft_type,
@@ -117,15 +250,13 @@ contract finaL {
         payable
         returns (string memory){
         require(itemDetails[itemID].auction_time > block.timestamp,  "not started yet");
-       require(_amount > itemDetails[itemID].lastBid, "Increase the Amount");
+        require(_amount > itemDetails[itemID].lastBid, "Increase the Amount");
         require(itemDetails[itemID].owner != msg.sender, " owner can't bid");
         itemDetails[itemID].lastBid = itemDetails[itemID].highestBid;
         itemDetails[itemID].lastHighestBider = itemDetails[itemID].highestBider;
         itemDetails[itemID].highestBid = _amount;
         itemDetails[itemID].highestBider = msg.sender;
-        payable(itemDetails[itemID].lastHighestBider).transfer(
-            itemDetails[itemID].lastBid
-        );
+        payable(itemDetails[itemID].lastHighestBider).transfer(itemDetails[itemID].lastBid);
         emit Bid(msg.sender, _amount);
         return "Bid successfully Completed";
     }
