@@ -93,6 +93,11 @@
 								"type": "string"
 							},
 							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
 								"internalType": "address",
 								"name": "owner",
 								"type": "address"
@@ -298,6 +303,11 @@
 						"type": "string"
 					},
 					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
 						"internalType": "address",
 						"name": "owner",
 						"type": "address"
@@ -408,11 +418,11 @@
 			]
 		},
 		"Assignment 4 Tokens/final.sol": {
-			"keccak256": "0xc844fb0b7043db394fe2bdc5aa38bb0facd10b85c6585c3693bb46a9f8b0899b",
+			"keccak256": "0xb77f6079f76ca93dcfe1277097b7ac9c405e7945dac4a959d95e2a8a02e99edb",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://e3d1e8fed5f7c02df6eddf67ea03a41ca8ee796587f2b4bb14f11493eb72f6c1",
-				"dweb:/ipfs/Qmd3yHw8iHcfpLT9t7FE7A5d9VJeBPZVMiJvBVJGpjGsB4"
+				"bzz-raw://0ea79e181b651f4d51cc9a096b8efe81ada8bebe250b0a17abda97c5c4319fb8",
+				"dweb:/ipfs/QmQyfwdtrx3eTHRKeFQjZwkGnjZhBqo8eoRnxKHvVFjbT7"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol": {
