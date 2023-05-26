@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.18+commit.87f61d96"
+		"version": "0.8.20+commit.a1b79de6"
 	},
 	"language": "Solidity",
 	"output": {
@@ -488,7 +488,7 @@
 		"compilationTarget": {
 			"Assignment 4 Tokens/ERC-721.sol": "NFT"
 		},
-		"evmVersion": "paris",
+		"evmVersion": "shanghai",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -501,11 +501,11 @@
 	},
 	"sources": {
 		"Assignment 4 Tokens/ERC-721.sol": {
-			"keccak256": "0xfb1e44bd0d4e17cc15b22c0d6f0c75b6b9857c02ddbbef0fcb59454008785aff",
+			"keccak256": "0x8dc4fcbc751ddd856038ba0fac0087942623cadfb575e0a8f62e2bc2feab568a",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://e257fbac0570283798561261a1e3d4b449a9141f707ac127fbfd019854c587e9",
-				"dweb:/ipfs/QmYde39vhWgiiZkc7Qw9jG2xVyksyv8LA4cmyohZwaGD8k"
+				"bzz-raw://80c447592f2699dbceb19ab11ffd5e430ff882392bf51bb1c62f577ad2724d3b",
+				"dweb:/ipfs/QmYRpfvZCxvBdfTfJQ6atFSMuuCEfJubu8RmfmZ99e4j4q"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol": {

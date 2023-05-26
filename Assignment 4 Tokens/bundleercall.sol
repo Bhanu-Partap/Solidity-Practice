@@ -1,15 +1,21 @@
 // SPDX-License-Identifier: MIT
+
 pragma solidity ^0.8.0;
-import "./erc721_2.sol";
-import "./Erc1155.sol";
+
+import "./ERC-721.sol";
+import "./ERC-1155.sol";
+import "./ERC-20.sol";
+
 contract NFTstaker
 {
-    Erc1155 token;
-    Erc721 nft;
+    ERC1155MYTOKEN token;
+    ERC20Basic token_20;
+    NFT nft;
 
-    constructor(Erc1155 _addressERC1155,Erc721  _addressERC721){
+    constructor(ERC1155MYTOKEN _addressERC1155,NFT  _addressERC721,ERC20Basic _addressERC20 ){
         token = _addressERC1155;
         nft = _addressERC721;
+        token_20=_addressERC20;
     }
     uint itemId=1;
     struct SellingItem{
@@ -301,4 +307,7 @@ contract NFTstaker
         delete(sell[Id]);
         return ("token is sold at the desired price");
         }
+        function getcontractaddress() public returns(address){
+         return address(this);
+      }
 } 
