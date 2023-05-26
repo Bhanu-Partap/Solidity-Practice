@@ -68,7 +68,7 @@ contract finaL {
         string memory checkListAuction
     ) public {
         if (keccak256(abi.encodePacked(checkListAuction)) ==keccak256(abi.encodePacked("Auction"))) {
-            require(nft.ownerOf(_id) == msg.sender ||nftwithsupply.balanceOf(msg.sender, _id) > 0, "not authorized" );
+            require(nft.ownerOf(itemID) == msg.sender ||nftwithsupply.balanceOf(msg.sender, itemID) > 0, "not authorized" );
             require(token.balanceOf(msg.sender) > 0, "Insufficient tokens");
             if ( keccak256(abi.encodePacked(_nft_type)) ==keccak256(abi.encodePacked("ERC721"))) {
                 itemDetails[itemID].name = _name;
@@ -115,13 +115,9 @@ contract finaL {
     function placeBid(uint256 itemID, uint256 _amount)
         public
         payable
-        returns (string memory)
-    {
-        require(
-            itemDetails[itemID].auction_time > block.timestamp,
-            "not started yet"
-        );
-        require(_amount > itemDetails[itemID].lastBid, "Increase the Amount");
+        returns (string memory){
+        require(itemDetails[itemID].auction_time > block.timestamp,  "not started yet");
+       require(_amount > itemDetails[itemID].lastBid, "Increase the Amount");
         require(itemDetails[itemID].owner != msg.sender, " owner can't bid");
         itemDetails[itemID].lastBid = itemDetails[itemID].highestBid;
         itemDetails[itemID].lastHighestBider = itemDetails[itemID].highestBider;
@@ -150,13 +146,9 @@ contract finaL {
         return itemDetails[id].highestBid;
     }
 
-    function cancelListing(uint256 id) public {
+    function cancelListing(uint256 itemID) public {
         // require(ListItem[itemID].listedItemPrice > 0 ,"Item did't exist");
-        require(
-            msg.sender == ListItem[itemID].owner,
-            "Only owner can cancel listing"
-        );
-        payable(ListItem[itemID].owner).transfer(ListItem[itemID].listedItemPrice);
+        require(msg.sender == ListItem[itemID].owner,  "Only owner can cancel listing"  );
         delete ListItem[itemID];
     }
 
