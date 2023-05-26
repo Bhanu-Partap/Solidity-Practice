@@ -110,17 +110,17 @@ contract finaL {
         returns (string memory)
     {
         require(
-            itemDetails[id].auction_time > block.timestamp,
+            itemDetails[itemID].auction_time > block.timestamp,
             "not started yet"
         );
-        require(_amount > itemDetails[id].lastBid, "Increase the Amount");
-        require(itemDetails[id].owner != msg.sender, " owner can't bid");
-        itemDetails[id].lastBid = itemDetails[id].highestBid;
-        itemDetails[id].lastHighestBider = itemDetails[id].highestBider;
-        itemDetails[id].highestBid = _amount;
-        itemDetails[id].highestBider = msg.sender;
-        payable(itemDetails[id].lastHighestBider).transfer(
-            itemDetails[id].lastBid
+        require(_amount > itemDetails[itemID].lastBid, "Increase the Amount");
+        require(itemDetails[itemID].owner != msg.sender, " owner can't bid");
+        itemDetails[itemID].lastBid = itemDetails[itemID].highestBid;
+        itemDetails[itemID].lastHighestBider = itemDetails[itemID].highestBider;
+        itemDetails[itemID].highestBid = _amount;
+        itemDetails[itemID].highestBider = msg.sender;
+        payable(itemDetails[itemID].lastHighestBider).transfer(
+            itemDetails[itemID].lastBid
         );
         emit Bid(msg.sender, _amount);
         return "Bid successfully Completed";

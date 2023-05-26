@@ -16,6 +16,11 @@
 						"internalType": "address",
 						"name": "addr2",
 						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "addr3",
+						"type": "address"
 					}
 				],
 				"stateMutability": "nonpayable",
@@ -227,6 +232,19 @@
 						"type": "uint256"
 					}
 				],
+				"name": "cancelAuction",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
 				"name": "cancelListing",
 				"outputs": [],
 				"stateMutability": "nonpayable",
@@ -319,6 +337,11 @@
 						"internalType": "uint256",
 						"name": "id",
 						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
 					}
 				],
 				"name": "placeBid",
@@ -385,11 +408,11 @@
 			]
 		},
 		"Assignment 4 Tokens/final.sol": {
-			"keccak256": "0x5a76c5afd1da7b0051004451e890b98ae71890fc2670fd1c527623c90c9bc691",
+			"keccak256": "0xc844fb0b7043db394fe2bdc5aa38bb0facd10b85c6585c3693bb46a9f8b0899b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://d321b0180ebc7b516b5b79eb9c7b403414bcad6cfe31a5c35a72b2bfe923d5d9",
-				"dweb:/ipfs/QmVvdiqkuaavJLy2M6nobhugiT732DRsCVRNshzVN1tMyg"
+				"bzz-raw://e3d1e8fed5f7c02df6eddf67ea03a41ca8ee796587f2b4bb14f11493eb72f6c1",
+				"dweb:/ipfs/Qmd3yHw8iHcfpLT9t7FE7A5d9VJeBPZVMiJvBVJGpjGsB4"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol": {
