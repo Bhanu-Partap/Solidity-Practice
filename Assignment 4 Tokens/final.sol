@@ -98,12 +98,14 @@ contract finaL {
             if (keccak256(abi.encodePacked(_nft_type)) ==keccak256(abi.encodePacked("ERC721")) ) {
                 ListItem[itemID].listedItemPrice = _listedItemPrice;
                 ListItem[itemID].owner = _owner;
+                ListItem[itemID].id = _id;
                 ListItem[itemID].nft_type = _nft_type;
                 itemID += 1;
             }
              else if (keccak256(abi.encodePacked(_nft_type)) ==keccak256(abi.encodePacked("ERC1155")) ) {
                 ListItem[itemID].listedItemPrice = _listedItemPrice;
                 ListItem[itemID].owner = _owner;
+                ListItem[itemID].id = _id;
                 ListItem[itemID].nft_type = _nft_type;
                 itemID += 1;
             }
