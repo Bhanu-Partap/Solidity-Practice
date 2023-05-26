@@ -118,14 +118,19 @@
 								"type": "address"
 							},
 							{
+								"internalType": "address",
+								"name": "lastHighestBider",
+								"type": "address"
+							},
+							{
 								"internalType": "uint256",
 								"name": "auction_time",
 								"type": "uint256"
 							},
 							{
-								"internalType": "address",
-								"name": "lastHighestBider",
-								"type": "address"
+								"internalType": "string",
+								"name": "nft_type",
+								"type": "string"
 							}
 						],
 						"indexed": false,
@@ -149,12 +154,17 @@
 				"outputs": [
 					{
 						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
 						"name": "listedItemPrice",
 						"type": "uint256"
 					},
 					{
 						"internalType": "address",
-						"name": "addr",
+						"name": "owner",
 						"type": "address"
 					},
 					{
@@ -170,7 +180,7 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "id",
+						"name": "itemID",
 						"type": "uint256"
 					},
 					{
@@ -198,7 +208,7 @@
 					},
 					{
 						"internalType": "address",
-						"name": "_addr",
+						"name": "_owner",
 						"type": "address"
 					},
 					{
@@ -208,7 +218,7 @@
 					},
 					{
 						"internalType": "uint256",
-						"name": "id",
+						"name": "_id",
 						"type": "uint256"
 					},
 					{
@@ -328,14 +338,19 @@
 						"type": "address"
 					},
 					{
+						"internalType": "address",
+						"name": "lastHighestBider",
+						"type": "address"
+					},
+					{
 						"internalType": "uint256",
 						"name": "auction_time",
 						"type": "uint256"
 					},
 					{
-						"internalType": "address",
-						"name": "lastHighestBider",
-						"type": "address"
+						"internalType": "string",
+						"name": "nft_type",
+						"type": "string"
 					}
 				],
 				"stateMutability": "view",
@@ -345,7 +360,7 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "id",
+						"name": "itemID",
 						"type": "uint256"
 					},
 					{
@@ -418,11 +433,11 @@
 			]
 		},
 		"Assignment 4 Tokens/final.sol": {
-			"keccak256": "0xb77f6079f76ca93dcfe1277097b7ac9c405e7945dac4a959d95e2a8a02e99edb",
+			"keccak256": "0x749f344ee4dcd4698ae5b87e0fa51c333a912a8c0ae56aa983fde12240951ec8",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://0ea79e181b651f4d51cc9a096b8efe81ada8bebe250b0a17abda97c5c4319fb8",
-				"dweb:/ipfs/QmQyfwdtrx3eTHRKeFQjZwkGnjZhBqo8eoRnxKHvVFjbT7"
+				"bzz-raw://daaed3479437318eaf2762635ed90ee293739f3e62509fe508a6981169edac59",
+				"dweb:/ipfs/QmNmNyQALLxRAuz175cycTsxTP5wqyMTZicp47TmH5eS4v"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol": {

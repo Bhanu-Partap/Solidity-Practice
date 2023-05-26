@@ -18,6 +18,7 @@ contract finaL {
         uint256 highestBid;
         address highestBider;
         address lastHighestBider;
+        uint256 auction_time;
         string nft_type;
     }
     uint256 itemID = 1;
@@ -78,6 +79,7 @@ contract finaL {
                 itemDetails[itemID].highestBid = 0;
                 itemDetails[itemID].highestBider = address(0);
                 itemDetails[itemID].lastHighestBider = address(0);
+                itemDetails[itemID].auction_time=block.timestamp + 3600;
                 itemID += 1;
             } 
             else if(keccak256(abi.encodePacked(_nft_type)) == keccak256(abi.encodePacked("ERC1155"))) {
@@ -88,17 +90,18 @@ contract finaL {
                 itemDetails[itemID].highestBid = 0;
                 itemDetails[itemID].highestBider = address(0);
                 itemDetails[itemID].lastHighestBider = address(0);
+                itemDetails[itemID].auction_time=block.timestamp + 3600;
                 itemID += 1;
             }
         } 
         else if (keccak256(abi.encodePacked(checkListAuction)) ==keccak256(abi.encodePacked("Fixed_Price")) ) {
-            if (keccak256(abi.encodePacked(checkListAuction)) ==keccak256(abi.encodePacked("ERC721")) ) {
+            if (keccak256(abi.encodePacked(_nft_type)) ==keccak256(abi.encodePacked("ERC721")) ) {
                 ListItem[itemID].listedItemPrice = _listedItemPrice;
                 ListItem[itemID].owner = _owner;
                 ListItem[itemID].nft_type = _nft_type;
                 itemID += 1;
             }
-             else if (keccak256(abi.encodePacked(checkListAuction)) ==keccak256(abi.encodePacked("ERC1155")) ) {
+             else if (keccak256(abi.encodePacked(_nft_type)) ==keccak256(abi.encodePacked("ERC1155")) ) {
                 ListItem[itemID].listedItemPrice = _listedItemPrice;
                 ListItem[itemID].owner = _owner;
                 ListItem[itemID].nft_type = _nft_type;
@@ -107,7 +110,7 @@ contract finaL {
         }
     }
 
-    function placeBid(uint256 id, uint256 _amount)
+    function placeBid(uint256 itemID, uint256 _amount)
         public
         payable
         returns (string memory)
@@ -129,16 +132,16 @@ contract finaL {
         return "Bid successfully Completed";
     }
 
-    function LowerthePrice(uint256 id, uint256 loweredamount) public payable {
+    function LowerthePrice(uint256 itemID, uint256 loweredamount) public payable {
         require(
-            msg.sender == ListItem[id].addr,
+            msg.sender == ListItem[itemID].owner,
             "Only owner can lower the price"
         );
         require(
-            loweredamount < ListItem[id].listedItemPrice,
+            loweredamount < ListItem[itemID].listedItemPrice,
             "Amount should be smaller then the previous one "
         );
-        ListItem[id].listedItemPrice = loweredamount;
+        ListItem[itemID].listedItemPrice = loweredamount;
     }
 
     function getHighestBid(uint256 id) public view returns (uint256) {
@@ -146,13 +149,13 @@ contract finaL {
     }
 
     function cancelListing(uint256 id) public {
-        // require(ListItem[id].listedItemPrice > 0 ,"Item did't exist");
+        // require(ListItem[itemID].listedItemPrice > 0 ,"Item did't exist");
         require(
-            msg.sender == ListItem[id].addr,
+            msg.sender == ListItem[itemID].owner,
             "Only owner can cancel listing"
         );
-        payable(ListItem[id].addr).transfer(ListItem[id].listedItemPrice);
-        delete ListItem[id];
+        payable(ListItem[itemID].owner).transfer(ListItem[itemID].listedItemPrice);
+        delete ListItem[itemID];
     }
 
     function cancelAuction(uint256 id) public {
