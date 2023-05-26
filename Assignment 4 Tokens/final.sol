@@ -30,10 +30,10 @@ contract finaL  {
         string nft_type;
     }
 
-    constructor(address addr1, address addr2 ){
+    constructor(address addr1, address addr2, address addr3 ){
          nft=NFT (addr1);
          nftwithsupply = ERC1155MYTOKEN(addr2);
-         token = new ERC20Basic();
+         token = ERC20Basic(addr3);
 
     }
         // mapping
@@ -97,17 +97,17 @@ contract finaL  {
         }
     }
 
-    function placeBid(uint256 id) public payable returns(string memory)  {
+    function placeBid(uint256 id, uint256 _amount) public payable returns(string memory)  {
         require(itemDetails[id].auction_time > block.timestamp,"not started yet");
-        require(msg.value >= itemDetails[id].lastBid, "Increase the Amount");
+        require(_amount > itemDetails[id].lastBid, "Increase the Amount");
             require(itemDetails[id].owner != msg.sender," owner can't bid");
-            itemDetails[id].highestBid=msg.value;
-            itemDetails[id].highestBider=msg.sender;
             itemDetails[id].lastBid=itemDetails[id].highestBid;
             itemDetails[id].lastHighestBider=itemDetails[id].highestBider;
+            itemDetails[id].highestBid=_amount;
+            itemDetails[id].highestBider=msg.sender;
             payable(itemDetails[id].lastHighestBider).transfer(itemDetails[id].lastBid);
-        emit Bid(msg.sender, msg.value);
-        return "Bid successfully Completed";
+            emit Bid(msg.sender, _amount);
+            return "Bid successfully Completed";
 
     }
 
@@ -125,17 +125,19 @@ contract finaL  {
 
 
     function cancelListing(uint256 id) public {
+        // require(ListItem[id].listedItemPrice > 0 ,"Item did't exist");
         require(msg.sender == ListItem[id].addr,"Only owner can cancel listing");
         payable(ListItem[id].addr).transfer(ListItem[id].listedItemPrice);
         delete ListItem[id];        
     }
  
-    // function cancelAuction( uint256 id) public  {
-    //     require(msg.sender == itemDetails[id].owner," Only Owner can cancel the Auction");
-    //     payable (itemDetails[id].highestBider).transfer(itemDetails[id].highestBid);
-    //     delete itemDetails[id];
+    function cancelAuction( uint256 id) public  {
+        require(itemDetails[id].highestBid >0, "Auctioned item didnt exist");
+        require(msg.sender == itemDetails[id].owner," Only Owner can cancel the Auction");
+        payable (itemDetails[id].highestBider).transfer(itemDetails[id].highestBid);
+        delete itemDetails[id];
 
-    // }
+    }
 
 
 
