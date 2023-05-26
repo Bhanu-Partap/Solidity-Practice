@@ -59,9 +59,10 @@ contract finaL  {
 
 
     function Register(string memory _name, string memory _nft_type, address _addr, uint256 _listedItemPrice, uint256 id, string memory checkListAuction) public {
-       require(msg.sender != address(0) ,"Not Valid");
-        if(keccak256(abi.encodePacked(_nft_type)) == keccak256(abi.encodePacked("ERC721"))){
-            if(keccak256(abi.encodePacked(checkListAuction))== keccak256(abi.encodePacked("Auction"))){
+        if(keccak256(abi.encodePacked(checkListAuction)) == keccak256(abi.encodePacked("Auction"))){
+            require(nft.ownerOf(id)==msg.sender || nftwithsupply.balanceOf(msg.sender, id) > 0,"not authorized" );
+            require(token.balanceOf(msg.sender) > 0,"Insufficient tokens" );
+            if(keccak256(abi.encodePacked(_nft_type)) == keccak256(abi.encodePacked("ERC721"))){
                 itemDetails[itemID].name=_name;
                 itemDetails[itemID].owner=msg.sender;
                 itemDetails[itemID].lastBid=0;
