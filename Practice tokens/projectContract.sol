@@ -10,26 +10,23 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 contract MyNFT is ERC721URIStorage, Ownable {
     using Counters for Counters.Counter;
 
+
     Counters.Counter private _tokenIds;
 
-    constructor() ERC721("Abhishek Garg", "AG") {}
+    constructor() ERC721("Car Ethusiast", "NSX") {}
+    string baseURI = "https://gateway.pinata.cloud/ipfs/QmZ1cAGhixojEhamSgqbdPVexCvAL5TJF1iSpQAx9DtQR2/";
 
-    string baseURI =
-        "https://gateway.pinata.cloud/ipfs/QmZ1cAGhixojEhamSgqbdPVexCvAL5TJF1iSpQAx9DtQR2/";
 
-    function mintNFT(address recipient) public onlyOwner {
-        uint256 newItemId = _tokenIds.current();
-        _mint(recipient, newItemId);
-        _setTokenURI(
-            newItemId,
-            string(
-                abi.encodePacked(baseURI, Strings.toString(newItemId), ".json")
-            )
-        );
-        _tokenIds.increment();
+    function mintNFT(address recipient) public onlyOwner 
+    {
+
+            uint newItemId = _tokenIds.current();
+            _mint(recipient, newItemId);
+            _setTokenURI(newItemId, string(abi.encodePacked(baseURI,Strings.toString(newItemId),".json")));
+            _tokenIds.increment();
+    }
+  function getcontractaddress() public view returns(address){
+      return address(this);
     }
 
-    function getcontractaddress() public returns (address) {
-        return address(this);
     }
-}

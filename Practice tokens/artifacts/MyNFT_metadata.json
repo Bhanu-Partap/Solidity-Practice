@@ -202,7 +202,7 @@
 						"type": "address"
 					}
 				],
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -681,11 +681,11 @@
 			]
 		},
 		"Practice tokens/projectContract.sol": {
-			"keccak256": "0x91a8c2cc7c85f36aec971852dcfb2b373dd9ea127d44143e5521e350e2dc795a",
+			"keccak256": "0x42aca99ac4826d74c8801b499b352e9cada3c32864805568367def6b78d2993b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ecf16ca137d86822443c0662e198437097d7fc6d5a51edd7f8c24d6d52265162",
-				"dweb:/ipfs/QmVBEWA5rr4n2PFyrVvxKGHeRXLAsfFXpbj9KXwvoJaqG2"
+				"bzz-raw://d85ba62c8b5f49e287f65944a81e4d18aea2960618ca9724c1ea5a298bbd71be",
+				"dweb:/ipfs/QmPqC7uCQWJPCjVQmW2yvoBDYZ8uuWyhWeWBPMEJB9vCQ8"
 			]
 		},
 		"hardhat/console.sol": {
