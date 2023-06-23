@@ -139,7 +139,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Practice tokens/vhjnj.sol": "Token"
+			"Practice tokens/hardhattestcase.sol": "Token"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -153,7 +153,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"Practice tokens/vhjnj.sol": {
+		"Practice tokens/hardhattestcase.sol": {
 			"keccak256": "0x9192c39cc2438e6806ccb489ad60507e6ee9bbff761098ffec3df6a4872b4c93",
 			"license": "MIT",
 			"urls": [

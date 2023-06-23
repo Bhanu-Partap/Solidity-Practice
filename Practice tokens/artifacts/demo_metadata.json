@@ -66,11 +66,11 @@
 	},
 	"sources": {
 		"Practice tokens/testfile.sol": {
-			"keccak256": "0x6306b86aff5c793f80f04cd82e2aed28fd60ba14d90b7b49ff3c1d56ac477e41",
+			"keccak256": "0x2d18eb5f8e69375a75445dd90b533ea44bb76c51f4cb5c13cb64323d6b9465fe",
 			"license": "SEE LICENSE IN LICENSE",
 			"urls": [
-				"bzz-raw://d80ceaa1a43595c8c61cc86f47c6b5e5c1e41a43d4af3715ffd00acd4f4ccc77",
-				"dweb:/ipfs/QmXfnz8vBRVThd4ubuAi5njgRQYzb6vKdXBn2oTRXQfkHA"
+				"bzz-raw://f50fa831b4754f4f27af08204d7025493b309846df842fb1ceba608b1cf5d0ad",
+				"dweb:/ipfs/QmVMMArePscKxRuuJZ3vqPxudtwmRaBagFLV2NVXjE3Hx7"
 			]
 		}
 	},
