@@ -7,4 +7,7 @@ contract methods{
     function set(uint _x) public {
         x=_x;
     }
+       function contractAddress() external view returns(address){
+        return address(this);
+    }
 }

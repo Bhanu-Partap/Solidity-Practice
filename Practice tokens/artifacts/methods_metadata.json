@@ -6,6 +6,19 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [],
+				"name": "contractAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -60,11 +73,11 @@
 	},
 	"sources": {
 		"Practice tokens/methodscall.sol": {
-			"keccak256": "0x949a04735b56cbcdd7493c5974ff8754cfaa15d442ec285833d6305b0f68c516",
+			"keccak256": "0x793347f21ae08d3c406615eeeaab06789624cec61af25da3fc72026f96b48816",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://eae84aee900879d3a07fd4b6d7086893ad971591fd412e3132b9eef772bfcb77",
-				"dweb:/ipfs/QmQdKiuX3mbDexgN2fKB7ucu2Pa2cK9t8K1mxGiM8TL1yw"
+				"bzz-raw://b73882fd9c1832cede89c5a9e02f984bd87327aff5a8364f1301bcd040ce4e78",
+				"dweb:/ipfs/QmeJFjWaa5CYRsxh9UjSdaga94g19PLu47GVdtmM5tkLTP"
 			]
 		}
 	},
