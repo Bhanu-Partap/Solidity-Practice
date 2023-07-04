@@ -71,5 +71,8 @@ contract finaL  {
         itemDetails[id].owner= itemDetails[id].highestBider;
         delete itemDetails[id];
     }
+       function contractAddress() external view returns(address){
+        return address(this);
+    }
 
 }

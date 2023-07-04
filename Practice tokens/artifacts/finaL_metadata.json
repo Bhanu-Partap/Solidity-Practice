@@ -151,6 +151,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "contractAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -279,11 +292,11 @@
 	},
 	"sources": {
 		"Practice tokens/Auction.sol": {
-			"keccak256": "0x55131b34857b15aabbf5b19d90cf684b7e07ce6f4aa848e0d939191dda4056f7",
+			"keccak256": "0xcb018b95296654d8e1c3dc5950916317cc315df26e21ccebaa64a15e28b0ba59",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://562f67f7fac60a3b77182f36d706bc15d52c70f27d9c97989c7b90b4c50e34de",
-				"dweb:/ipfs/QmdmojkWgFjCaM3A3QFM77sHjygsvuTYxpJ3ehvS3MnqhP"
+				"bzz-raw://8f9476e338fbea43494a931dd392b687ac2c8f85e00e6f174a6d62d7ac7e4490",
+				"dweb:/ipfs/QmPXfX4RKymWpLK7RvBVDee1FMJhZFL9KxbDKYqJunaGyn"
 			]
 		}
 	},
