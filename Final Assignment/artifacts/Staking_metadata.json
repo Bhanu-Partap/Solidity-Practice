@@ -33,11 +33,11 @@
 	},
 	"sources": {
 		"Final Assignment/final_assignment_staking 1.sol": {
-			"keccak256": "0xad1be1399edfd8d9831563df1567cd9084923c7964d6f26d86e8342db72cbfa3",
+			"keccak256": "0xae1dc6513d3a9d787507d1853b6da1e6e2ba153965d0ddeb53ba7634a278cda4",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://57e752346e886d88176b80623130a84a71b4cf545134ee461ef9a7ea41b0341c",
-				"dweb:/ipfs/QmfU6cvV7EFHrWyZ4CQNEzWuZ6x3PGVgYhQwvZ9Mp33pRr"
+				"bzz-raw://4b0debabfbd522b3cb9517b688496cd1ae5eab283c3d16e79c72a3f16f5a0ed0",
+				"dweb:/ipfs/QmNZwzWFwg6ktc9TVoCvLGYPSazBDNFwF43MHoSnUDMPcN"
 			]
 		}
 	},
