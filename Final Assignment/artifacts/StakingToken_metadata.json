@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.20+commit.a1b79de6"
+		"version": "0.8.18+commit.87f61d96"
 	},
 	"language": "Solidity",
 	"output": {
@@ -11,23 +11,17 @@
 					{
 						"indexed": true,
 						"internalType": "address",
-						"name": "owner",
-						"type": "address"
-					},
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "spender",
+						"name": "account",
 						"type": "address"
 					},
 					{
 						"indexed": false,
 						"internalType": "uint256",
-						"name": "value",
+						"name": "amount",
 						"type": "uint256"
 					}
 				],
-				"name": "Approval",
+				"name": "RewardClaimed",
 				"type": "event"
 			},
 			{
@@ -36,39 +30,60 @@
 					{
 						"indexed": true,
 						"internalType": "address",
-						"name": "from",
-						"type": "address"
-					},
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "to",
+						"name": "account",
 						"type": "address"
 					},
 					{
 						"indexed": false,
 						"internalType": "uint256",
-						"name": "value",
+						"name": "amount",
 						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "isFixedStake",
+						"type": "bool"
 					}
 				],
-				"name": "Transfer",
+				"name": "Staked",
 				"type": "event"
 			},
 			{
+				"anonymous": false,
 				"inputs": [
 					{
+						"indexed": true,
 						"internalType": "address",
-						"name": "owner",
+						"name": "account",
 						"type": "address"
 					},
 					{
-						"internalType": "address",
-						"name": "spender",
-						"type": "address"
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "isFixedStake",
+						"type": "bool"
 					}
 				],
-				"name": "allowance",
+				"name": "Unstaked",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "claimReward",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "penaltyPercentage",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -83,23 +98,41 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "spender",
+						"name": "",
 						"type": "address"
-					},
+					}
+				],
+				"name": "rewards",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
 					{
 						"internalType": "uint256",
 						"name": "amount",
 						"type": "uint256"
-					}
-				],
-				"name": "approve",
-				"outputs": [
+					},
 					{
 						"internalType": "bool",
-						"name": "",
+						"name": "isFixedStake",
 						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "duration",
+						"type": "uint256"
 					}
 				],
+				"name": "stake",
+				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
@@ -107,16 +140,31 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "account",
+						"name": "",
 						"type": "address"
 					}
 				],
-				"name": "balanceOf",
+				"name": "stakes",
 				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "amount",
 						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "startTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "duration",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isFixedStake",
+						"type": "bool"
 					}
 				],
 				"stateMutability": "view",
@@ -124,67 +172,8 @@
 			},
 			{
 				"inputs": [],
-				"name": "totalSupply",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "recipient",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
-					}
-				],
-				"name": "transfer",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "sender",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "recipient",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
-					}
-				],
-				"name": "transferFrom",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
+				"name": "unstake",
+				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			}
@@ -202,9 +191,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Final Assignment/ERC-20.sol": "IERC20"
+			"Final Assignment/final_assignment_staking 1.sol": "StakingToken"
 		},
-		"evmVersion": "shanghai",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -216,12 +205,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"Final Assignment/ERC-20.sol": {
-			"keccak256": "0x0ef3be4ed5a97ab318cfb6e5f1effd6e9a09fd842a7683c39a36138f096f4862",
+		"Final Assignment/final_assignment_staking 1.sol": {
+			"keccak256": "0x68cea10b3e745a8a001faff8a4a269945bbbe6cb34059ffb82ce0518cc17b49d",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://d48225bcdabe160631ef140d63aa9e8c145034bdc1e0c90a55e53d1840af07db",
-				"dweb:/ipfs/QmS11EoB4UZYUpAEqNFvE1FJois7DLJx6izkKkXGmoCwBv"
+				"bzz-raw://78f903c14a18815d5d72cb373f70a04ca7922585cc0e639a3e1806737eb98923",
+				"dweb:/ipfs/QmahPvjoZwuw2nWpmgCULy9QNwAWDxuM2Jp9NnVn1iZUkw"
 			]
 		}
 	},

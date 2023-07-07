@@ -35,6 +35,14 @@ contract ERC20Basic is IERC20 {
     balances[msg.sender] = totalSupply_;
     }
 
+
+    function mint(uint _amount)public returns(uint){
+        totalSupply_ += _amount;
+        balances[msg.sender] += _amount;
+        return totalSupply_; 
+    
+    }
+
     function totalSupply() public override view returns (uint256) {
     return totalSupply_;
     }
