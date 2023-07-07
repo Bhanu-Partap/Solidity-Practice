@@ -75,7 +75,7 @@ contract Staking_Token {
         }
         else if(Stake_details[_address].stake_time < experttime_forfixedstaking){
             // require();
-        Interest = (Stake_details[_address].stake_amount * fixedinterest_rate * (Stake_details[_address].stake_time -(Stake_details[_address].stake_time - block.timestamp)));    
+        Interest = (Stake_details[_address].stake_amount * fixedinterest_rate * (Stake_details[_address].stake_time -(Stake_details[_address].stake_time - block.timestamp)))/100 / 365 days;    
              console.log(Interest);
         totalIntrestAmount = Stake_details[_address].stake_amount + Interest;
              console.log(totalIntrestAmount);
