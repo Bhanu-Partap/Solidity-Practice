@@ -175,11 +175,19 @@
 			]
 		},
 		"Final Assignment/final_assignment_staking 1.sol": {
-			"keccak256": "0x9f0aa4b7f30d213220dd6677b91a879bfca38f51a8626e07b138c2d327744954",
+			"keccak256": "0xfb28b91a9478e4ee6eabbfe1f683bfff49aa217055f93cbf257849816344e7bb",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://44a1a1212fd0367bccf747993bbd359d6e05255f8e9a67fd5693563e4b177bed",
-				"dweb:/ipfs/QmZNGfTegyjkz72UYYKegaz8fnciKL5bxpN5F13pQeyEVW"
+				"bzz-raw://8c7f004cab76fc95574ca90639172d7e363ff974194805e0ea6ecf031f4fa8b8",
+				"dweb:/ipfs/QmNmD1TgCUUsGbnH4duME1vhvgE2g9mmBGbNznQ32yHEj1"
+			]
+		},
+		"hardhat/console.sol": {
+			"keccak256": "0x60b0215121bf25612a6739fb2f1ec35f31ee82e4a8216c032c8243d904ab3aa9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6e29880d33dd479bb046ba306993d26ccb779a4b1d94a046cb3567f22948bb4d",
+				"dweb:/ipfs/QmfTY1qzPt5C63Wc7y6JqfZr5899NRvXYdCpyLzR5FXQic"
 			]
 		}
 	},

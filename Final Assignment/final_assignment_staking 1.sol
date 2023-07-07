@@ -2,6 +2,7 @@
 pragma solidity ^0.8.10;
 
 import "./ERC-20.sol";
+import "hardhat/console.sol";
 
 contract Staking_Token {
 
@@ -63,18 +64,25 @@ contract Staking_Token {
     }
 
 
+
     function interestCalculated(address _address) public returns(uint){
-        if (Stake_details[msg.sender].stake_time > experttime_forfixedstaking){
-        Interest = Stake_details[msg.sender].stake_amount * fixedinterest_rate * Stake_details[msg.sender].stake_time;
-        totalIntrestAmount = (Stake_details[msg.sender].stake_amount + Interest) /100;
+        console.log("hello");
+        if (Stake_details[_address].stake_time > experttime_forfixedstaking){
+            console.log("inside the loop");
+        Interest = Stake_details[msg.sender].stake_amount * fixedinterest_rate * Stake_details[_address].stake_time;
+        totalIntrestAmount = (Stake_details[_address].stake_amount + Interest) /100;
+        return totalIntrestAmount;
         }
-        else if(Stake_details[msg.sender].stake_time < experttime_forfixedstaking){
+        else if(Stake_details[_address].stake_time < experttime_forfixedstaking){
             // require();
-        Interest = (Stake_details[msg.sender].stake_amount * fixedinterest_rate * (Stake_details[msg.sender].stake_time -(Stake_details[msg.sender].stake_time - block.timestamp)));    
-        totalIntrestAmount = Stake_details[msg.sender].stake_amount + Interest;
+        Interest = (Stake_details[_address].stake_amount * fixedinterest_rate * (Stake_details[_address].stake_time -(Stake_details[_address].stake_time - block.timestamp)));    
+             console.log(Interest);
+        totalIntrestAmount = Stake_details[_address].stake_amount + Interest;
+             console.log(totalIntrestAmount);
         finalAmount = (totalIntrestAmount - penality_stake) / 100 ;
-        }
-        
+             console.log(finalAmount);
+        return finalAmount;
+        }      
     }
 
 
