@@ -274,11 +274,11 @@
 	},
 	"sources": {
 		"Final Assignment/ERC-20.sol": {
-			"keccak256": "0x15141ca9e9315e5e580429f2d550092ea194b02978db641c2448ad0ebed43c38",
+			"keccak256": "0xcf2e1bcb9c8bc0454959ef273639f8ddf2755cb6f1057f185e64aa2ba2bfd0c2",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://c6b4278a8d24bf92d20dcec353f717acd1830e2023ce96f6901322104b72a955",
-				"dweb:/ipfs/QmY6UTY3zvZq9MvkjgzVMtDRkp4AUiZHoLvcCPxAadk8Mg"
+				"bzz-raw://cf83c01f7df01de6b7f8c847710b0e28896a0edde10ce8e15ba735bd4f9852f1",
+				"dweb:/ipfs/QmNkLiGgL5viusdzkPdi4gMsEzVKjFrgLaQ5LPfkL2SFqk"
 			]
 		}
 	},
