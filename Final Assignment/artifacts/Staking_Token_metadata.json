@@ -65,6 +65,11 @@
 						"internalType": "uint256",
 						"name": "stake_time",
 						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "starting_stake_time",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -175,11 +180,11 @@
 			]
 		},
 		"Final Assignment/final_assignment_staking 1.sol": {
-			"keccak256": "0xd841e2c08f45c563bca6957471441410fc7b340d9423d41c97d9ec6117c9f6bc",
+			"keccak256": "0xb17ac4838ed508e00bfe818a726a1f3e3bc63498fae678d93493e56768339e8c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5f95614c7f542cc077bd0c80073e0f655978ac140fca8c67e2687ed5a2b15f3c",
-				"dweb:/ipfs/QmRHpm8cngCFUVLPbwMQbMJgnTSzZKDnQ5q6q8fz6WeZkj"
+				"bzz-raw://db6bb7a4312385f15db4225918f394b0d5499660f7768973cd2ff2254a95d86f",
+				"dweb:/ipfs/QmTGuhhioqssiUcU7AVgTxYMcKDXZgczVsHZtPN4iqaxN4"
 			]
 		},
 		"hardhat/console.sol": {

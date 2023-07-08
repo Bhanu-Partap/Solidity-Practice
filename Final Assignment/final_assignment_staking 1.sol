@@ -16,6 +16,7 @@ contract Staking_Token {
         uint stake_amount;
         string stake_type;
         uint stake_time;
+        uint starting_stake_time;
     }
 
     address mapping_address;
@@ -47,6 +48,7 @@ contract Staking_Token {
             Stake_details[msg.sender].stake_amount = _amount;
             Stake_details[msg.sender].stake_type = _type;
             Stake_details[msg.sender].stake_time = block.timestamp + _duration;
+            Stake_details[msg.sender].starting_stake_time = block.timestamp;
         Token.transferFrom(msg.sender, address(this), _amount);
         emit tokensStaked(msg.sender, _amount, block.timestamp);
 
@@ -56,6 +58,7 @@ contract Staking_Token {
             Stake_details[msg.sender].stake_amount = _amount;
             Stake_details[msg.sender].stake_type = _type;
             Token.transferFrom(msg.sender, address(this), _amount);
+            Stake_details[msg.sender].starting_stake_time = block.timestamp;
 
 
         }
@@ -65,13 +68,13 @@ contract Staking_Token {
         console.log("hello");
         if (Stake_details[_address].stake_time > experttime_forfixedstaking){
             console.log("inside the loop");
-        Interest = Stake_details[msg.sender].stake_amount * fixedinterest_rate * Stake_details[_address].stake_time;
+        Interest = Stake_details[_address].stake_amount * fixedinterest_rate * Stake_details[_address].stake_time;
         totalIntrestAmount = (Stake_details[_address].stake_amount + Interest) /100;
         return totalIntrestAmount;
         }
         else if(Stake_details[_address].stake_time < experttime_forfixedstaking){
             // require();
-        Interest = (Stake_details[_address].stake_amount * fixedinterest_rate * (Stake_details[_address].stake_time -( block.timestamp - Stake_details[_address].stake_time)))/100 / 365 days;    
+        Interest = (Stake_details[_address].stake_amount * fixedinterest_rate * (block.timestamp - Stake_details[_address].starting_stake_time ));    
              console.log(Interest);
         totalIntrestAmount = (Interest * 96) /100 ;
              console.log(totalIntrestAmount);
