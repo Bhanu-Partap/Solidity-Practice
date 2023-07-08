@@ -71,11 +71,12 @@ contract Staking_Token {
         }
         else if(Stake_details[_address].stake_time < experttime_forfixedstaking){
             // require();
-        Interest = (Stake_details[_address].stake_amount * fixedinterest_rate * (Stake_details[_address].stake_time -(Stake_details[_address].stake_time - block.timestamp)))/100 / 365 days;    
+        Interest = (Stake_details[_address].stake_amount * fixedinterest_rate * (Stake_details[_address].stake_time -( block.timestamp - Stake_details[_address].stake_time)))/100 / 365 days;    
              console.log(Interest);
-        totalIntrestAmount = Stake_details[_address].stake_amount + Interest;
+        totalIntrestAmount = (Interest * 96) /100 ;
              console.log(totalIntrestAmount);
-        finalAmount = (totalIntrestAmount - penality_stake) / 100 ;
+        // finalAmount = totalIntrestAmount -(totalIntrestAmount * penality_stake / 100) ;
+        finalAmount = totalIntrestAmount + Stake_details[_address].stake_amount;
              console.log(finalAmount);
         return finalAmount;
         }      
