@@ -59,11 +59,7 @@ contract Staking_Token {
 
 
         }
-    
-
     }
-
-
 
     function interestCalculated(address _address) public returns(uint){
         console.log("hello");
@@ -84,9 +80,6 @@ contract Staking_Token {
         return finalAmount;
         }      
     }
-
-
-
 
     function unstaking()public returns(string memory){
 
