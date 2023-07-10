@@ -70,6 +70,11 @@
 						"internalType": "uint256",
 						"name": "starting_stake_time",
 						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isFixed",
+						"type": "bool"
 					}
 				],
 				"stateMutability": "view",
@@ -123,6 +128,11 @@
 						"internalType": "uint256",
 						"name": "_duration",
 						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isFixed",
+						"type": "bool"
 					}
 				],
 				"name": "staking",
@@ -186,11 +196,11 @@
 			]
 		},
 		"Final Assignment/final_assignment_staking 1.sol": {
-			"keccak256": "0xcd581cc5c71ba1a7e74d6c0d12e94b1f4262962e1b6883ce87b8b8d3fea48212",
+			"keccak256": "0xfd53e247baee1ff90c7036b8d217335a7b0ea3808971e20f23be052c3dd1d965",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://1a3084341119859aa693042558c99b09a1e1b8aaef41b12d011eb5696d8ec738",
-				"dweb:/ipfs/QmZj5DeYFFbVNWA8zzkMhjECbxB244f84gHoUcJnAoBJcN"
+				"bzz-raw://e632e484e031fc7eee384b56b92dbb1976d94193972ff7588527a6285cde9a14",
+				"dweb:/ipfs/QmdijqDTqYGPWgvHeJ1sqxJYnqc6vNEUwsFUwN2MjVJ3qv"
 			]
 		},
 		"hardhat/console.sol": {
