@@ -70,6 +70,7 @@ contract Staking_Token {
         Interest = Stake_details[_address].stake_amount * fixedinterest_rate * (block.timestamp - Stake_details[_address].starting_stake_time );
         totalIntrestAmount = (Stake_details[_address].stake_amount + Interest) /100;
         return totalIntrestAmount;
+        console.log(totalIntrestAmount);
         }
 
         //unstaked before fixed time so the penality will be taken 
