@@ -66,18 +66,20 @@ contract Staking_Token {
 
         if (Stake_details[_address].isFixed == true) {
             if (Stake_details[_address].stake_time > expirytime_forfixedstaking ) {
-                console.log("inside the loop");
+                console.log("inside the fixed stake after complete time");
                 Interest =Stake_details[_address].stake_amount *fixedinterest_rate *(block.timestamp - Stake_details[_address].starting_stake_time);
-                totalIntrestAmount =(Stake_details[_address].stake_amount + Interest) / 100;
+                totalIntrestAmount =((Stake_details[_address].stake_amount + Interest) / 100)/365 days;
                 return totalIntrestAmount;
                 console.log(totalIntrestAmount);
             }
+
             //unstaked before fixed time so the penality will be taken
             else if (Stake_details[_address].stake_time < expirytime_forfixedstaking) {
+                console.log("inside the fixed stake before complete time and got penality");
                 require(  Stake_details[_address].stake_time <  expirytime_forfixedstaking,"" );
-                Interest = (Stake_details[_address].stake_amount * fixedinterest_rate *(block.timestamp -Stake_details[_address].starting_stake_time)) / 100;
+                Interest = Stake_details[_address].stake_amount * fixedinterest_rate *(block.timestamp -Stake_details[_address].starting_stake_time);
                 console.log(Interest);
-                totalIntrestAmount = (Interest * 96) / 100;
+                totalIntrestAmount = ((Interest * 96) / 100) /365 days;
                 console.log(totalIntrestAmount);
                 // finalAmount = totalIntrestAmount -(totalIntrestAmount * penality_stake / 100) ;
                 finalAmount =totalIntrestAmount +Stake_details[_address].stake_amount;
@@ -86,6 +88,10 @@ contract Staking_Token {
             }
         } 
         else if (Stake_details[_address].isFixed == false) {
+            Interest =Stake_details[_address].stake_amount *fixedinterest_rate *(block.timestamp - Stake_details[_address].starting_stake_time);
+                totalIntrestAmount =((Stake_details[_address].stake_amount + Interest) / 100) /365 days;
+                return totalIntrestAmount;
+                console.log(totalIntrestAmount);
 
         }
     }
