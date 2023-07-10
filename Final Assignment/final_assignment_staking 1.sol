@@ -76,7 +76,7 @@ contract Staking_Token {
 
         else if(Stake_details[_address].stake_time < expirytime_forfixedstaking){
             require(Stake_details[_address].stake_time < expirytime_forfixedstaking, "");
-        Interest = (Stake_details[_address].stake_amount * fixedinterest_rate * (block.timestamp - Stake_details[_address].starting_stake_time ));    
+        Interest = (Stake_details[_address].stake_amount * fixedinterest_rate * (block.timestamp - Stake_details[_address].starting_stake_time ))/100;    
              console.log(Interest);
         totalIntrestAmount = (Interest * 96) /100 ;
              console.log(totalIntrestAmount);
