@@ -20,7 +20,7 @@ contract Staking_Token {
     }
 
     address mapping_address;
-    uint experttime_forfixedstaking = block.timestamp + 300 ;
+    uint expirytime_forfixedstaking = block.timestamp + 300 ;
     uint penality_stake = 4; // percent 4%
     uint fixedinterest_rate = 6;
     uint unfixedinterest_rate = 2;
@@ -51,7 +51,6 @@ contract Staking_Token {
             Stake_details[msg.sender].starting_stake_time = block.timestamp;
         Token.transferFrom(msg.sender, address(this), _amount);
         emit tokensStaked(msg.sender, _amount, block.timestamp);
-
         }
 
         else if(keccak256(abi.encodePacked(_type)) == keccak256(abi.encodePacked("unfixed"))){
@@ -59,21 +58,24 @@ contract Staking_Token {
             Stake_details[msg.sender].stake_type = _type;
             Token.transferFrom(msg.sender, address(this), _amount);
             Stake_details[msg.sender].starting_stake_time = block.timestamp;
-
-
+            Token.transferFrom(msg.sender, address(this), _amount);
+        emit tokensStaked(msg.sender, _amount, block.timestamp);
         }
     }
 
-    function interestCalculated(address _address) public returns(uint){
+    function unstaking(address _address) public returns(uint){
         console.log("hello");
-        if (Stake_details[_address].stake_time > experttime_forfixedstaking){
+        if (Stake_details[_address].stake_time > expirytime_forfixedstaking){
             console.log("inside the loop");
-        Interest = Stake_details[_address].stake_amount * fixedinterest_rate * Stake_details[_address].stake_time;
+        Interest = Stake_details[_address].stake_amount * fixedinterest_rate * (block.timestamp - Stake_details[_address].starting_stake_time );
         totalIntrestAmount = (Stake_details[_address].stake_amount + Interest) /100;
         return totalIntrestAmount;
         }
-        else if(Stake_details[_address].stake_time < experttime_forfixedstaking){
-            // require();
+
+        //unstaked before fixed time so the penality will be taken 
+
+        else if(Stake_details[_address].stake_time < expirytime_forfixedstaking){
+            require(Stake_details[_address].stake_time < expirytime_forfixedstaking, "");
         Interest = (Stake_details[_address].stake_amount * fixedinterest_rate * (block.timestamp - Stake_details[_address].starting_stake_time ));    
              console.log(Interest);
         totalIntrestAmount = (Interest * 96) /100 ;
@@ -85,8 +87,10 @@ contract Staking_Token {
         }      
     }
 
-    function unstaking()public returns(string memory){
 
+    function TokenBalance(address _address) public view  returns(uint){
+       return  Token.balanceOf(_address);
+        
     }
 
  function getcontractaddress() public returns(address){
