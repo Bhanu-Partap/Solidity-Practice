@@ -90,8 +90,8 @@ contract Staking_Token {
         else if (Stake_details[_address].isFixed == false) {
             Interest =Stake_details[_address].stake_amount *fixedinterest_rate *(block.timestamp - Stake_details[_address].starting_stake_time);
                 totalIntrestAmount =((Stake_details[_address].stake_amount + Interest) / 100) /365 days;
-                return totalIntrestAmount;
                 console.log(totalIntrestAmount);
+                return totalIntrestAmount;
 
         }
     }
