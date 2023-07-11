@@ -68,7 +68,7 @@ contract Staking_Token {
             require(Stake_details[_address].starting_stake_time > expirytime_forfixedstaking );
             if (Stake_details[_address].starting_stake_time > expirytime_forfixedstaking ) {
                 console.log("inside the fixed stake after complete time");
-                Interest =(Stake_details[_address].stake_amount *fixedinterest_rate *(Stake_details[_address].stake_time)) /100;
+                Interest =(Stake_details[_address].stake_amount *fixedinterest_rate *(Stake_details[_address].stake_time)) /(100 * 365 days);
                 totalIntrestAmount =(Stake_details[_address].stake_amount + Interest)/365 days;
                 console.log(totalIntrestAmount);
                 Token.transfer(_address, totalIntrestAmount);
