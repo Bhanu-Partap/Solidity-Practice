@@ -69,8 +69,8 @@ contract Staking_Token {
                 console.log("inside the fixed stake after complete time");
                 Interest =Stake_details[_address].stake_amount *fixedinterest_rate *(block.timestamp - Stake_details[_address].starting_stake_time);
                 totalIntrestAmount =((Stake_details[_address].stake_amount + Interest) / 100)/365 days;
-                return totalIntrestAmount;
                 console.log(totalIntrestAmount);
+                return totalIntrestAmount;
             }
 
             //unstaked before fixed time so the penality will be taken
