@@ -79,9 +79,9 @@ contract Staking_Token {
             else if (Stake_details[_address].starting_stake_time < expirytime_forfixedstaking) {
                 console.log("inside the fixed stake before complete time and got penality");
                 require(  Stake_details[_address].stake_time <  expirytime_forfixedstaking,"" );
-                Interest = (Stake_details[_address].stake_amount * fixedinterest_rate *(block.timestamp -Stake_details[_address].starting_stake_time))/ 100;
+                Interest = (Stake_details[_address].stake_amount * fixedinterest_rate *(block.timestamp -Stake_details[_address].starting_stake_time))/ (100 * 365 days) ;
                 console.log(Interest);
-                totalIntrestAmount = ((Interest * 96) / 100) /365 days;
+                totalIntrestAmount = (Interest * 96) / 100;
                 console.log(totalIntrestAmount);
                 finalAmount =totalIntrestAmount +Stake_details[_address].stake_amount;
                 console.log(finalAmount);
@@ -90,8 +90,8 @@ contract Staking_Token {
             }
         } 
         else if (Stake_details[_address].isFixed == false) {
-            Interest =Stake_details[_address].stake_amount *unfixedinterest_rate *Stake_details[_address].starting_stake_time /100 ;
-                totalIntrestAmount =(Stake_details[_address].stake_amount + Interest) /365 days;
+            Interest =(Stake_details[_address].stake_amount *unfixedinterest_rate *( block.timestamp - Stake_details[_address].starting_stake_time)) /365 days ;
+                totalIntrestAmount =(Stake_details[_address].stake_amount + Interest) /100;
                 console.log(totalIntrestAmount);
                 Token.transfer(_address, totalIntrestAmount);
                 return totalIntrestAmount;
