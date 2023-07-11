@@ -65,34 +65,36 @@ contract Staking_Token {
         console.log("hello");
 
         if (Stake_details[_address].isFixed == true) {
-            if (Stake_details[_address].stake_time > expirytime_forfixedstaking ) {
+            require(Stake_details[_address].starting_stake_time > expirytime_forfixedstaking );
+            if (Stake_details[_address].starting_stake_time > expirytime_forfixedstaking ) {
                 console.log("inside the fixed stake after complete time");
-                Interest =Stake_details[_address].stake_amount *fixedinterest_rate *(block.timestamp - Stake_details[_address].starting_stake_time);
-                totalIntrestAmount =((Stake_details[_address].stake_amount + Interest) / 100)/365 days;
+                Interest =(Stake_details[_address].stake_amount *fixedinterest_rate *(Stake_details[_address].stake_time)) /100;
+                totalIntrestAmount =(Stake_details[_address].stake_amount + Interest)/365 days;
                 console.log(totalIntrestAmount);
+                Token.transfer(_address, totalIntrestAmount);
                 return totalIntrestAmount;
             }
 
             //unstaked before fixed time so the penality will be taken
-            else if (Stake_details[_address].stake_time < expirytime_forfixedstaking) {
+            else if (Stake_details[_address].starting_stake_time < expirytime_forfixedstaking) {
                 console.log("inside the fixed stake before complete time and got penality");
                 require(  Stake_details[_address].stake_time <  expirytime_forfixedstaking,"" );
-                Interest = Stake_details[_address].stake_amount * fixedinterest_rate *(block.timestamp -Stake_details[_address].starting_stake_time);
+                Interest = (Stake_details[_address].stake_amount * fixedinterest_rate *(block.timestamp -Stake_details[_address].starting_stake_time))/ 100;
                 console.log(Interest);
                 totalIntrestAmount = ((Interest * 96) / 100) /365 days;
                 console.log(totalIntrestAmount);
-                // finalAmount = totalIntrestAmount -(totalIntrestAmount * penality_stake / 100) ;
                 finalAmount =totalIntrestAmount +Stake_details[_address].stake_amount;
                 console.log(finalAmount);
+                Token.transfer(_address, finalAmount);
                 return finalAmount;
             }
         } 
         else if (Stake_details[_address].isFixed == false) {
-            Interest =Stake_details[_address].stake_amount *fixedinterest_rate *(block.timestamp - Stake_details[_address].starting_stake_time);
-                totalIntrestAmount =((Stake_details[_address].stake_amount + Interest) / 100) /365 days;
+            Interest =Stake_details[_address].stake_amount *unfixedinterest_rate *Stake_details[_address].starting_stake_time /100 ;
+                totalIntrestAmount =(Stake_details[_address].stake_amount + Interest) /365 days;
                 console.log(totalIntrestAmount);
+                Token.transfer(_address, totalIntrestAmount);
                 return totalIntrestAmount;
-
         }
     }
 
