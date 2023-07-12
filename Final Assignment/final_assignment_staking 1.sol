@@ -18,6 +18,7 @@ contract Staking_Token {
         uint256 starting_stake_time;
         bool isFixed;
         address owner;
+        bool isClaimed;
     }
 
     address mapping_address;
@@ -45,6 +46,7 @@ contract Staking_Token {
             Stake_details[msg.sender].stake_time = block.timestamp + _duration;
             Stake_details[msg.sender].isFixed = _isFixed;
             Stake_details[msg.sender].owner =msg.sender;
+            Stake_details[msg.sender].isClaimed =false;
             Stake_details[msg.sender].starting_stake_time = block.timestamp;
             Token.transferFrom(msg.sender, address(this), _amount);
             emit tokensStaked(msg.sender, _amount, block.timestamp);
@@ -54,6 +56,7 @@ contract Staking_Token {
             Stake_details[msg.sender].stake_type = _type;
             Stake_details[msg.sender].isFixed = _isFixed;
             Stake_details[msg.sender].owner =msg.sender;
+            Stake_details[msg.sender].isClaimed =false;
             Stake_details[msg.sender].starting_stake_time = block.timestamp;
             Token.transferFrom(msg.sender, address(this), _amount);
             emit tokensStaked(msg.sender, _amount, block.timestamp);
@@ -73,6 +76,7 @@ contract Staking_Token {
                 console.log(totalIntrestAmount);
                 Token.transfer(_address, totalIntrestAmount);
                 delete Stake_details[_address];
+                Stake_details[msg.sender].isClaimed =true;
                 return totalIntrestAmount;
             }
 
@@ -89,6 +93,7 @@ contract Staking_Token {
                 console.log(finalAmount);
                 Token.transfer(_address, finalAmount);
                 delete Stake_details[_address];
+                Stake_details[msg.sender].isClaimed =true;
                 return finalAmount;
             }
         } 
@@ -100,6 +105,7 @@ contract Staking_Token {
                 console.log(totalIntrestAmount);
                 Token.transfer(_address, totalIntrestAmount);
                 delete Stake_details[_address];
+                Stake_details[msg.sender].isClaimed =true;
                 return totalIntrestAmount;
         }
     }
@@ -121,10 +127,9 @@ contract Staking_Token {
     }
 }
 
-function unclaimedRewards(address _address) public view returns (uint256) {
-    uint256 totalRewards = claimedRewards(_address);
+function unclaimedRewards(address _address) public view  returns (uint256) {
     if (Stake_details[_address].isFixed == true) {
-        if (block.timestamp > expirytime_forfixedstaking) {
+        if (Stake_details[_address].isClaimed == true) {
             return 0;
         } else {
             return Interest;
