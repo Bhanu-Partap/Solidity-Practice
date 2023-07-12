@@ -21,7 +21,7 @@ contract Staking_Token {
     }
 
     address mapping_address;
-    uint256 expirytime_forfixedstaking = block.timestamp + 60;
+    uint256 expirytime_forfixedstaking = block.timestamp + 300;
     uint256 penality_stake = 4; // percent 4%
     uint256 fixedinterest_rate = 6;
     uint256 unfixedinterest_rate = 2;
@@ -79,9 +79,9 @@ contract Staking_Token {
             //unstaked before fixed time so the penality will be taken
             else if (block.timestamp < expirytime_forfixedstaking) {
                 console.log("inside the fixed stake before complete time and got penality");
-                uint256 fixed_time_before=block.timestamp - Stake_details[_address].starting_stake_time;
+                // uint256 fixed_time_before=block.timestamp - Stake_details[_address].starting_stake_time;
                 require( block.timestamp <  expirytime_forfixedstaking,"" );
-                Interest = (Stake_details[_address].stake_amount * fixedinterest_rate *fixed_time_before)/ 100 ;
+                Interest = (Stake_details[_address].stake_amount * fixedinterest_rate )/ 100 ;
                 console.log(Interest);
                 totalIntrestAmount = (Interest * 96) / 100;
                 console.log(totalIntrestAmount);
