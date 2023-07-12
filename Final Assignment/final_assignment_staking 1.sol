@@ -59,13 +59,13 @@ contract Staking_Token {
 
     function unstaking(address _address) public returns (uint256) {
         console.log("hello");
-
+        require(msg.sender == _address,"Stake has not been initiated");
         if (Stake_details[_address].isFixed == true) {
             // require(Stake_details[_address].stake_time > expirytime_forfixedstaking );
             if (block.timestamp > expirytime_forfixedstaking ) {
                 console.log("inside the fixed stake after complete time");
-                uint256 fixed_time_after=  expirytime_forfixedstaking - Stake_details[_address].starting_stake_time ;
-                Interest =(Stake_details[_address].stake_amount *fixedinterest_rate *fixed_time_after) /100;
+                // uint256 fixed_time_after=  expirytime_forfixedstaking - Stake_details[_address].starting_stake_time ;
+                Interest =(Stake_details[_address].stake_amount *fixedinterest_rate ) /100;
                 totalIntrestAmount =Stake_details[_address].stake_amount + Interest;
                 console.log(totalIntrestAmount);
                 Token.transfer(_address, totalIntrestAmount);
@@ -101,6 +101,8 @@ contract Staking_Token {
     function TokenBalance(address _address) public view returns (uint256) {
         return Token.balanceOf(_address);
     }
+
+    
 
     function getcontractaddress() public returns (address) {
         return address(this);
