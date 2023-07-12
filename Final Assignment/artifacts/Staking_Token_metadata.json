@@ -196,11 +196,11 @@
 			]
 		},
 		"Final Assignment/final_assignment_staking 1.sol": {
-			"keccak256": "0x73ca785649eed418d128999039d4c617d518334ea7e71371a85fc96574832204",
+			"keccak256": "0xd0ec70f08e5ee4cb702997ac98140961570ca4dfb31158cf6e71055692007f5f",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://cd22352f5534047fa5218e4f3eec200e1ccc77ad30051fd49296a49aca8b9efa",
-				"dweb:/ipfs/QmYPdxBUfoyn6MkMHsuMoRE97tUsd9u8Y7hP1dwXwV9RF3"
+				"bzz-raw://41f360198ecb1375ff9854d0994c6418fb3accff589a418d385390207b90fec0",
+				"dweb:/ipfs/QmNbU5NSGrz1uXTxmp1Gytg3WY3q8X1TEkvidByniVfWbg"
 			]
 		},
 		"hardhat/console.sol": {

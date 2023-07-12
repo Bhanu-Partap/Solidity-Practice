@@ -34,9 +34,6 @@ contract Staking_Token {
 
     event tokensStaked(address from, uint256 amount, uint256 _duration);
 
-    // function balanceToken(address _address) public  {
-    //     Token.balanceOf(msg.sender);
-    // }
 
     function staking(uint256 _amount,string memory _type,uint256 _duration, bool _isFixed) public {
         require(Token.balanceOf(msg.sender) >= _amount, "Insufficient Balance");
@@ -65,8 +62,8 @@ contract Staking_Token {
         console.log("hello");
 
         if (Stake_details[_address].isFixed == true) {
-            require(Stake_details[_address].starting_stake_time > expirytime_forfixedstaking );
-            if (Stake_details[_address].starting_stake_time > expirytime_forfixedstaking ) {
+            // require(Stake_details[_address].stake_time > expirytime_forfixedstaking );
+            if (block.timestamp > expirytime_forfixedstaking ) {
                 console.log("inside the fixed stake after complete time");
                 Interest =(Stake_details[_address].stake_amount *fixedinterest_rate *(Stake_details[_address].stake_time)) /(100 * 365 days);
                 totalIntrestAmount =(Stake_details[_address].stake_amount + Interest)/365 days;
@@ -76,7 +73,7 @@ contract Staking_Token {
             }
 
             //unstaked before fixed time so the penality will be taken
-            else if (Stake_details[_address].starting_stake_time < expirytime_forfixedstaking) {
+            else if (block.timestamp < expirytime_forfixedstaking) {
                 console.log("inside the fixed stake before complete time and got penality");
                 require(  Stake_details[_address].stake_time <  expirytime_forfixedstaking,"" );
                 Interest = (Stake_details[_address].stake_amount * fixedinterest_rate *(block.timestamp -Stake_details[_address].starting_stake_time))/ (100 * 365 days) ;
@@ -90,8 +87,10 @@ contract Staking_Token {
             }
         } 
         else if (Stake_details[_address].isFixed == false) {
-            Interest =(Stake_details[_address].stake_amount *unfixedinterest_rate *( block.timestamp - Stake_details[_address].starting_stake_time)) /365 days ;
-                totalIntrestAmount =(Stake_details[_address].stake_amount + Interest) /100;
+            console.log("not fixed loop");
+            Interest =(Stake_details[_address].stake_amount *unfixedinterest_rate *( block.timestamp - Stake_details[_address].starting_stake_time)) /(100 *365 days) ;
+                console.log(Interest);
+                totalIntrestAmount =Stake_details[_address].stake_amount + Interest;
                 console.log(totalIntrestAmount);
                 Token.transfer(_address, totalIntrestAmount);
                 return totalIntrestAmount;
