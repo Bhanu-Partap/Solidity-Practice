@@ -102,7 +102,32 @@ contract Staking_Token {
         return Token.balanceOf(_address);
     }
 
-    
+
+    function claimedRewards(address _address) public view returns (uint256) {
+    if (Stake_details[_address].isFixed == true) {
+        if (block.timestamp > expirytime_forfixedstaking) {
+            return Stake_details[_address].stake_amount + Interest;
+        } else {
+            return Stake_details[_address].stake_amount;
+        }
+    } else {
+        return Stake_details[_address].stake_amount + Interest;
+    }
+}
+
+function unclaimedRewards(address _address) public view returns (uint256) {
+    uint256 totalRewards = claimedRewards(_address);
+    if (Stake_details[_address].isFixed == true) {
+        if (block.timestamp > expirytime_forfixedstaking) {
+            return 0;
+        } else {
+            return Interest;
+        }
+    } else {
+        return Interest;
+    }
+}
+
 
     function getcontractaddress() public returns (address) {
         return address(this);
