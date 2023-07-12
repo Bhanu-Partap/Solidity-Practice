@@ -47,6 +47,11 @@
 						"internalType": "address",
 						"name": "",
 						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"name": "Stake_details",
@@ -133,6 +138,11 @@
 						"internalType": "bool",
 						"name": "_isFixed",
 						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
 					}
 				],
 				"name": "staking",
@@ -146,6 +156,11 @@
 						"internalType": "address",
 						"name": "_address",
 						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
 					}
 				],
 				"name": "unstaking",
@@ -196,11 +211,11 @@
 			]
 		},
 		"Final Assignment/final_assignment_staking 1.sol": {
-			"keccak256": "0xd0ec70f08e5ee4cb702997ac98140961570ca4dfb31158cf6e71055692007f5f",
+			"keccak256": "0xfbe669dffcfb7d7dabd5e1597adea6959b0bcb348431d4706774883b2fac4906",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://41f360198ecb1375ff9854d0994c6418fb3accff589a418d385390207b90fec0",
-				"dweb:/ipfs/QmNbU5NSGrz1uXTxmp1Gytg3WY3q8X1TEkvidByniVfWbg"
+				"bzz-raw://fe8c162ceb129ac7ecafc9b14123314144f8938e61529a67de761439eff04895",
+				"dweb:/ipfs/QmSjEjCiCWfNxw59PrxwXGo5zkeLYHPK3fwaUPFMEknQZB"
 			]
 		},
 		"hardhat/console.sol": {
