@@ -17,6 +17,7 @@ contract Staking_Token {
         uint256 stake_time;
         uint256 starting_stake_time;
         bool isFixed;
+        address owner;
     }
 
     address mapping_address;
@@ -43,6 +44,7 @@ contract Staking_Token {
             Stake_details[msg.sender].stake_type = _type;
             Stake_details[msg.sender].stake_time = block.timestamp + _duration;
             Stake_details[msg.sender].isFixed = _isFixed;
+            Stake_details[msg.sender].owner =msg.sender;
             Stake_details[msg.sender].starting_stake_time = block.timestamp;
             Token.transferFrom(msg.sender, address(this), _amount);
             emit tokensStaked(msg.sender, _amount, block.timestamp);
@@ -51,6 +53,7 @@ contract Staking_Token {
             Stake_details[msg.sender].stake_amount = _amount;
             Stake_details[msg.sender].stake_type = _type;
             Stake_details[msg.sender].isFixed = _isFixed;
+            Stake_details[msg.sender].owner =msg.sender;
             Stake_details[msg.sender].starting_stake_time = block.timestamp;
             Token.transferFrom(msg.sender, address(this), _amount);
             emit tokensStaked(msg.sender, _amount, block.timestamp);
@@ -59,7 +62,7 @@ contract Staking_Token {
 
     function unstaking(address _address) public returns (uint256) {
         console.log("hello");
-        require(msg.sender == _address,"Stake has not been initiated");
+        require(msg.sender == Stake_details[msg.sender].owner,"Stake has not been initiated");
         if (Stake_details[_address].isFixed == true) {
             // require(Stake_details[_address].stake_time > expirytime_forfixedstaking );
             if (block.timestamp > expirytime_forfixedstaking ) {
@@ -69,6 +72,7 @@ contract Staking_Token {
                 totalIntrestAmount =Stake_details[_address].stake_amount + Interest;
                 console.log(totalIntrestAmount);
                 Token.transfer(_address, totalIntrestAmount);
+                delete Stake_details[_address];
                 return totalIntrestAmount;
             }
 
@@ -84,6 +88,7 @@ contract Staking_Token {
                 finalAmount =totalIntrestAmount +Stake_details[_address].stake_amount;
                 console.log(finalAmount);
                 Token.transfer(_address, finalAmount);
+                delete Stake_details[_address];
                 return finalAmount;
             }
         } 
@@ -94,6 +99,7 @@ contract Staking_Token {
                 totalIntrestAmount =Stake_details[_address].stake_amount + Interest;
                 console.log(totalIntrestAmount);
                 Token.transfer(_address, totalIntrestAmount);
+                delete Stake_details[_address];
                 return totalIntrestAmount;
         }
     }

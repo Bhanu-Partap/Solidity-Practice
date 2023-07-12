@@ -75,6 +75,11 @@
 						"internalType": "bool",
 						"name": "isFixed",
 						"type": "bool"
+					},
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -234,11 +239,11 @@
 			]
 		},
 		"Final Assignment/final_assignment_staking 1.sol": {
-			"keccak256": "0x6b1e07f2675255372e3baf63c078cc27d748eabd61dc7786f3db12ef1da7d67c",
+			"keccak256": "0xa91a03736c8afb69b491534cfe8b97bffdfd689681a4f51fab579c70fca8d5c1",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://e8853ab3b3687e5113b729a94431c561e4617141e96276628ab5f81e8117352a",
-				"dweb:/ipfs/QmdADf24xBtzgUvYd8ogEasyqrmi2dajWCWm1KKPKpoU53"
+				"bzz-raw://35d1c30c120925dafc173416418b0fab237b5ecc042303105b0d2581dfdde784",
+				"dweb:/ipfs/Qma3varFWAdJxMMWQNZiMkAasheLDcPumx8Efc1Zvtyyj6"
 			]
 		},
 		"hardhat/console.sol": {
