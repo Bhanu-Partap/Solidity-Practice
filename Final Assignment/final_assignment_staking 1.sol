@@ -43,7 +43,7 @@ contract Staking_Token {
             require( _amount > 0," Stake can not be 0 , Enter some amount of tokens");
             Stake_details[msg.sender].stake_amount = _amount;
             Stake_details[msg.sender].stake_type = _type;
-            Stake_details[msg.sender].stake_time = block.timestamp + _duration;
+            Stake_details[msg.sender].stake_time = expirytime_forfixedstaking + _duration;
             Stake_details[msg.sender].isFixed = _isFixed;
             Stake_details[msg.sender].owner =msg.sender;
             Stake_details[msg.sender].isClaimed =false;
@@ -68,7 +68,7 @@ contract Staking_Token {
         require(msg.sender == Stake_details[msg.sender].owner,"Stake has not been initiated");
         if (Stake_details[_address].isFixed == true) {
             // require(Stake_details[_address].stake_time > expirytime_forfixedstaking );
-            if (block.timestamp > expirytime_forfixedstaking ) {
+            if (block.timestamp > Stake_details[msg.sender].stake_time ) {
                 console.log("inside the fixed stake after complete time");
                 // uint256 fixed_time_after=  expirytime_forfixedstaking - Stake_details[_address].starting_stake_time ;
                 Interest =(Stake_details[_address].stake_amount *fixedinterest_rate ) /100;
@@ -81,7 +81,7 @@ contract Staking_Token {
             }
 
             //unstaked before fixed time so the penality will be taken
-            else if (block.timestamp < expirytime_forfixedstaking) {
+            else if (block.timestamp < Stake_details[msg.sender].stake_time) {
                 console.log("inside the fixed stake before complete time and got penality");
                 // uint256 fixed_time_before=block.timestamp - Stake_details[_address].starting_stake_time;
                 require( block.timestamp <  expirytime_forfixedstaking,"" );
@@ -117,12 +117,17 @@ contract Staking_Token {
 
     function claimedRewards(address _address) public view returns (uint256) {
     if (Stake_details[_address].isFixed == true) {
-        if (block.timestamp > expirytime_forfixedstaking) {
+        if (block.timestamp > Stake_details[msg.sender].stake_time) {
             return Stake_details[_address].stake_amount + Interest;
         } else {
             return Stake_details[_address].stake_amount;
         }
-    } else {
+    }
+    else if(block.timestamp < Stake_details[msg.sender].stake_time){
+         return finalAmount - totalIntrestAmount;
+    
+    }
+     else {
         return Stake_details[_address].stake_amount + Interest;
     }
 }
@@ -135,7 +140,11 @@ function unclaimedRewards(address _address) public view  returns (uint256) {
             return Interest;
         }
     } else {
-        return Interest;
+        if (Stake_details[_address].isClaimed == true) {
+            return 0;
+        } else {
+            return Interest;
+        }
     }
 }
 
